@@ -1,34 +1,41 @@
 package com.uniovi.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.uniovi.entities.User;
 import com.uniovi.services.UsersService;
 
-@RestController
+@Controller
 public class UserController {
 	
 	@Autowired
 	private UsersService usersService;
 	
-	@RequestMapping(value="/user/login",method=RequestMethod.POST)
+	@RequestMapping("/user/goToLogin")
 	public String loginUser(){
-		return "User Login";
+		return "user/login";
 	}
 	
 	@RequestMapping(value="/user/register",method=RequestMethod.POST)
 	public String registerUser(@ModelAttribute User user){
 		usersService.addUser(user);
-		return "Se ha registrado correctamente";
+		return "redirect:/user/list";
 	}
 	
 	@RequestMapping("/user/list")
-	public String getList(){
-		return usersService.getUsers().toString();
+	public String getList(Model model){
+		model.addAttribute("userList", usersService.getUsers() );//markList es lo que espera la vista
+		return "user/list";
+	}
+	
+	@RequestMapping("/user/goToRegister")
+	public String goToRegister(){
+		return "user/register";
 	}
 	
 }
