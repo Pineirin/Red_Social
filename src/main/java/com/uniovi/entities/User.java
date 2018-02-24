@@ -1,36 +1,42 @@
 package com.uniovi.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class User {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
-	private String nombre;
+	private long id;
+	
+	@Column(unique=true)
 	private String email;
+	
+	private String name;
+	
 	private String password;
+	@Transient //propiedad que no se almacena e la tabla.
+	private String passwordConfirm;
 	
 	public User() {
 		
 	}
 	
-	public User(Long id,String nombre,String email,String password) {
+	public User(String email,String name) {
 		super();
-		this.id=id;
-		this.nombre=nombre;
 		this.email=email;
-		this.password=password;
+		this.name=name;
 	}
-
-	public String getNombre() {
-		return nombre;
+	
+	public long getId() {
+		return id;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getEmail() {
 		return email;
@@ -38,22 +44,29 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String nombre) {
+		this.name = nombre;
+	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Long getId() {
-		return id;
+	
+	public String getPasswordConfirm() {
+		 return passwordConfirm;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setPasswordConfirm(String passwordConfirm) {
+		 this.passwordConfirm = passwordConfirm;
 	}
 	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", nombre=" + nombre + ", email=" + email + ", password=" + password + "]";
+		return "User [id=" + id + ", nombre=" + name + ", email=" + email + ", password=" + password + "]";
 	}
 	
 	
