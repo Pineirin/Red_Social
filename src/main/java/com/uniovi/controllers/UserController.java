@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,12 +38,12 @@ public class UserController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String setUser(@Validated User user, BindingResult result, Model model) {
-		signUpFormValidator.validate(user, result);
+		/*signUpFormValidator.validate(user, result);
 		if (result.hasErrors()) {
 			return "signup";
 		}
 		usersService.addUser(user);
-		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());
+		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());*/
 		return "redirect:home";
 	}
 	

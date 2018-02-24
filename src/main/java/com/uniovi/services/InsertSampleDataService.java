@@ -14,14 +14,14 @@ public class InsertSampleDataService {
 	private UsersService usersService;
 	@PostConstruct
 	public void init() {
-	User user1 = new User("adripc@live.com", "Adrian");
-	user1.setPassword("123456");
-	User user2 = new User("Juan@hotmail.com", "Juan");
-	user2.setPassword("123456");
+		User user1 = new User("adripc@live.com", "Adrian");
+		user1.setPassword("123456");
+		User user2 = new User("Juan@hotmail.com", "Juan");
+		user2.setPassword("123456");
 
 	
-	usersService.addUser(user1);
-	usersService.addUser(user2);
+		usersService.addUser(user1);
+		usersService.addUser(user2);
 	}
 
 }
