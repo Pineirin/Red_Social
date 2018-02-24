@@ -39,10 +39,10 @@ public class UserController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String setUser(@Validated User user, BindingResult result, Model model) {
-		/*signUpFormValidator.validate(user, result);
+		signUpFormValidator.validate(user, result);
 		if (result.hasErrors()) {
 			return "signup";
-		}*/
+		}
 		usersService.addUser(user);
 		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());
 		return "redirect:home";
