@@ -14,7 +14,8 @@
         <th class="col-md-1">id</th>
         <th>Nombre</th>
         <th>Email</th>
-        <th>Password</th>
+        <th>Password encriptada</th>
+        <th>Password desencriptada</th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
@@ -24,7 +25,7 @@
 	<tbody>
 	  <tr th:each="user : ${userList}">
 	    <td th:text="${user.id}"> 1</td>
-	    <td th:text="${user.nombre}"> Carlos</td>
+	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
 	    <td th:text="${user.password}">abcd</td>
 	  </tr>
