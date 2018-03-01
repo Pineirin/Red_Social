@@ -25,8 +25,12 @@ public class UserController {
 	@Autowired
 	private SignUpFormValidator signUpFormValidator;
 	
+	@Autowired
+	private LoginFormValidator loginFormValidator;
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
+		model.addAttribute("user", new User());
 		return "login";
 	}
 	
