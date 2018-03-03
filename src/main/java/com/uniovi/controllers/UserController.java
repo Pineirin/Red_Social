@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,6 +40,23 @@ public class UserController {
 	public String login(Model model) {
 		model.addAttribute("user", new User());
 		return "login";
+	}
+	
+	/*
+	 * El usuario accede a goToHomeAfterLogin por URL:
+	 * Si el usuario está autentificado le redirije a home
+	 * Si el usuario no está autentificado le redirije a login
+	 */
+	@RequestMapping(value = "/goToHomeAfterLogin", method = RequestMethod.GET)
+	public String goToHomeAfterLogin(Model model) {
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(auth.isAuthenticated()) {
+			return "redirect:home";
+		}
+		else {
+			return "redirect:login";
+		}
 	}
 	
 	@RequestMapping(value = "/goToHomeAfterLogin", method = RequestMethod.POST)
