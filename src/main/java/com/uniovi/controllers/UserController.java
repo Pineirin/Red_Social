@@ -66,7 +66,7 @@ public class UserController {
 			return "login";
 		}
 		securityService.autoLogin(user.getEmail(), user.getPassword());
-		return "redirect:home";
+		return "redirect:user/list";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
