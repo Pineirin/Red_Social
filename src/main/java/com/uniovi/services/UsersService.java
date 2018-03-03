@@ -52,4 +52,9 @@ public class UsersService {
 		
 		return bCryptPasswordEncoder.encode(password);
 	}
+	
+	public boolean passwordsIguales(String password,String passwordEncriptada) {
+		
+		return bCryptPasswordEncoder.matches(password, passwordEncriptada);
+	}
 }

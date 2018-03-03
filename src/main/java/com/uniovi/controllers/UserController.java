@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.uniovi.entities.User;
 import com.uniovi.services.SecurityService;
 import com.uniovi.services.UsersService;
+import com.uniovi.validators.LoginFormValidator;
 import com.uniovi.validators.SignUpFormValidator;
 
 @Controller
@@ -32,6 +33,16 @@ public class UserController {
 	public String login(Model model) {
 		model.addAttribute("user", new User());
 		return "login";
+	}
+	
+	@RequestMapping(value = "/goToHomeAfterLogin", method = RequestMethod.POST)
+	public String login(@Validated User user, BindingResult result, Model model) {
+		loginFormValidator.validate(user, result);
+		if (result.hasErrors()) {
+			return "login";
+		}
+		securityService.autoLogin(user.getEmail(), user.getPassword());
+		return "redirect:home";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)

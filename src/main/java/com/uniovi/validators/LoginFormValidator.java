@@ -22,18 +22,20 @@ public class LoginFormValidator implements Validator{
 	@Override
 	public void validate(Object target, Errors errors) {
 		User user = (User) target;
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "Error.empty");
 		
 		User userEnBD=usersService.getUserByEmail(user.getEmail());
 		
-		if (user.getEmail().length() < 5 || user.getEmail().length() > 24) {
-			errors.rejectValue("email", "Error.signup.email.length");
+		if (userEnBD != null) {//si existe
+			
+			boolean sonPasswordsIguales=usersService.passwordsIguales(user.getPassword(), userEnBD.getPassword());
+			
+			if(!sonPasswordsIguales) {//si no tienen la misma contraseña
+				
+				errors.rejectValue("password", "Error.login.password.coincidence");
+			}
 		}
-		if (user.getPassword().length() < 5 || user.getPassword().length() > 24) {
-			errors.rejectValue("password", "Error.signup.password.length");
-		}
-		if (user.getPassword() != userEnBD.getPassword()) {
-			errors.rejectValue("password", "Error.signup.password.length");
+		else {
+			errors.rejectValue("email", "Error.login.email.notExist");
 		}
 	}
 }
