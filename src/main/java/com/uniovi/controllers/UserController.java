@@ -1,6 +1,11 @@
 package com.uniovi.controllers;
 
+import java.util.LinkedList;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -63,8 +68,13 @@ public class UserController {
 	}
 	
 	@RequestMapping("/user/list")
-	public String getList(Model model){
-		model.addAttribute("userList", usersService.getUsers() );//markList es lo que espera la vista
+	public String getList(Model model, Pageable pageable){
+		
+		Page<User> users = new PageImpl<User>(new LinkedList<User>());
+		users=usersService.getUsers(pageable);
+		
+		model.addAttribute("usersList",users);
+		model.addAttribute("page", users);
 		return "user/list";
 	}
 	
