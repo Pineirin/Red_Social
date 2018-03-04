@@ -11,9 +11,9 @@ import com.uniovi.entities.User;
 
 public interface UsersRepository extends CrudRepository<User, Long>{
 	
-	@Modifying //modifica el registro
-	@Transactional //operación realizada de forma transaccional
-	@Query("UPDATE User SET resend = ?1 WHERE id = ?2")
+	@Modifying 
+	@Transactional
+	@Query("UPDATE User SET sendPetition = ?1 WHERE id = ?2")
 	void updateResend(Boolean resend, Long id); //modifica el reenvio de la nota en el repositorio
 	
 	User findByEmail(String email);//Email es lo que se utiliza para el login, es decir le nombre de usuario

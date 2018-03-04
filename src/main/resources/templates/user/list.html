@@ -26,7 +26,7 @@
 	    <td>
 	    
 	    <div>
-	    <div th:if="${user.resend}">
+	    <div th:if="${user.sendPetition}">
 	    
 	    <button type="button" th:id="${'cancelPetitionButton' + user.id}"
  		class="btn btn-default">Cancelar petición</button>
@@ -46,7 +46,7 @@
  		</script> 
  		
  		</div>
- 		<div th:unless="${user.resend}">
+ 		<div th:unless="${user.sendPetition}">
  		
  		<button type="button" th:id="${'sendPetitionButton' + user.id}"
  		class="btn btn-info">Agregar amigo</button>

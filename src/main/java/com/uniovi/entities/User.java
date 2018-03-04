@@ -22,7 +22,7 @@ public class User {
 	@Transient //propiedad que no se almacena e la tabla.
 	private String passwordConfirm;
 	
-	private Boolean resend = false;
+	private Boolean sendPetition = false;
 	
 	public User() {
 		
@@ -71,12 +71,12 @@ public class User {
 		return "User [id=" + id + ", nombre=" + name + ", email=" + email + ", password=" + password + "]";
 	}
 
-	public Boolean getResend() {
-		return resend;
+	public Boolean getSendPetition() {
+		return sendPetition;
 	}
 
-	public void setResend(Boolean resend) {
-		this.resend = resend;
+	public void setSendPetition(Boolean sendPetition) {
+		this.sendPetition = sendPetition;
 	}
 	
 	

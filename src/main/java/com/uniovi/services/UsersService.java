@@ -70,12 +70,12 @@ public class UsersService {
 		return bCryptPasswordEncoder.matches(password, passwordEncriptada);
 	}
 	
-	public void setMarkResend(boolean revised,Long id){
+	public void setSendPetition(boolean sendPetition,Long id){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
 		User user = usersRepository.findOne(id);
 		if( user.getEmail().equals(email) ) {//¿el propietario de la nota es el mismo que el autenticado?
-			usersRepository.updateResend(revised, id);
+			usersRepository.updateResend(sendPetition, id);
 		}
 	}
 }

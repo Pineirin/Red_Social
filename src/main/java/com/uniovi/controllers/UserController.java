@@ -101,13 +101,13 @@ public class UserController {
 	
 	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)
 	public String setResendFalse(Model model, @PathVariable Long id){
-		usersService.setMarkResend(true, id);
+		usersService.setSendPetition(true, id);
 		return "redirect:/user/list";
 	}
 	
 	@RequestMapping(value="/user/{id}/cancelPetition", method=RequestMethod.GET)
 	public String setResendTrue(Model model, @PathVariable Long id){
-		usersService.setMarkResend(false, id);
+		usersService.setSendPetition(false, id);
 		return "redirect:/user/list";
 	}
 	
