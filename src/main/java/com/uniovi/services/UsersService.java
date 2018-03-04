@@ -71,10 +71,10 @@ public class UsersService {
 	}
 	
 	public void setSendPetition(boolean sendPetition,Long id){
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String email = auth.getName();
+		/*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();*/
 		User user = usersRepository.findOne(id);
-		if( user.getEmail().equals(email) ) {//¿el propietario de la nota es el mismo que el autenticado?
+		if( user!=null) {//¿el propietario de la nota es el mismo que el autenticado?
 			usersRepository.updateResend(sendPetition, id);
 		}
 	}
