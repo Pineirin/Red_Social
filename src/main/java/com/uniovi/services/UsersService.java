@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -66,5 +68,14 @@ public class UsersService {
 	public boolean passwordsIguales(String password,String passwordEncriptada) {
 		
 		return bCryptPasswordEncoder.matches(password, passwordEncriptada);
+	}
+	
+	public void setMarkResend(boolean revised,Long id){
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();
+		User user = usersRepository.findOne(id);
+		if( user.getEmail().equals(email) ) {//¿el propietario de la nota es el mismo que el autenticado?
+			usersRepository.updateResend(revised, id);
+		}
 	}
 }

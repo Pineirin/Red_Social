@@ -8,7 +8,7 @@
   <h2>Usuarios</h2>
   <p>Los usuarios de la aplicación son los siguientes:</p>                                                                                      
   <div class="table-responsive">          
-  <table class="table table-hover">
+  <table class="table table-hover" th:fragment="tableUsers" id="tableUsers">
     <thead>
       <tr>
         <th>Nombre</th>
@@ -24,22 +24,50 @@
 	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
 	    <td>
-	    <button type="button"
- 		class="btn btn-info">Agregar amigo</button>
- 		<!-- <script th:inline="javascript">
+	    
+	    <div>
+	    <div th:if="${user.resend}">
+	    
+	    <button type="button" th:id="${'cancelPetitionButton' + user.id}"
+ 		class="btn btn-default">Cancelar petición</button>
+ 		<script th:inline="javascript">
  		/*<![CDATA[*/
- 		 $("#resendButton[[${mark.id}]]" ).click(function() {
- 		 $.get( "/mark/[[${mark.id}]]/noresend", function( data ) {
+ 		 $( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
+ 		 $.get( "/user/[[${user.id}]]/cancelPetition", function( data ) {
  		 var numberPage = [[${param.page}]];
- 		 var urlUpdate = '/mark/list/update';
+ 		 var urlUpdate = '/user/list/update';
  		 if ( numberPage != null ){
  		 urlUpdate += "?page="+numberPage[0];
  		 }
- 		$("#tableMarks").load(urlUpdate);
+ 		$("#tableUsers").load(urlUpdate);
  		 });
  		 });
  		 /*]]>*/
- 		</script> -->
+ 		</script> 
+ 		
+ 		</div>
+ 		<div th:unless="${user.resend}">
+ 		
+ 		<button type="button" th:id="${'sendPetitionButton' + user.id}"
+ 		class="btn btn-info">Agregar amigo</button>
+ 		<script th:inline="javascript">
+ 		/*<![CDATA[*/
+ 		 $("#sendPetitionButton[[${user.id}]]" ).click(function() {
+ 		 $.get( "/user/[[${user.id}]]/sendPetition", function( data ) {
+ 		 var numberPage = [[${param.page}]];
+ 		 var urlUpdate = '/user/list/update';
+ 		 if ( numberPage != null ){
+ 		 urlUpdate += "?page="+numberPage[0];
+ 		 }
+ 		$("#tableUsers").load(urlUpdate);
+ 		 });
+ 		 });
+ 		 /*]]>*/
+ 		</script> 
+ 
+ 		</div>
+ 		</div>
+ 		
 	    </td>
 	  </tr>
 	</tbody>

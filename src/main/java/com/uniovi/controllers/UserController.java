@@ -1,5 +1,6 @@
 package com.uniovi.controllers;
 
+import java.security.Principal;
 import java.util.LinkedList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -95,6 +97,26 @@ public class UserController {
 		model.addAttribute("usersList",users);
 		model.addAttribute("page", users);
 		return "user/list";
+	}
+	
+	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)
+	public String setResendFalse(Model model, @PathVariable Long id){
+		usersService.setMarkResend(true, id);
+		return "redirect:/user/list";
+	}
+	
+	@RequestMapping(value="/user/{id}/cancelPetition", method=RequestMethod.GET)
+	public String setResendTrue(Model model, @PathVariable Long id){
+		usersService.setMarkResend(false, id);
+		return "redirect:/user/list";
+	}
+	
+	@RequestMapping("/user/list/update")
+	public String updateList(Model model, Pageable pageable, Principal principal){
+		
+		Page<User> users = usersService.getUsers(pageable);
+		model.addAttribute("usersList", users.getContent() );
+		return "user/list :: tableUsers";
 	}
 	
 }

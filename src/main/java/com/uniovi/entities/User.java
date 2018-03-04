@@ -22,6 +22,8 @@ public class User {
 	@Transient //propiedad que no se almacena e la tabla.
 	private String passwordConfirm;
 	
+	private Boolean resend = false;
+	
 	public User() {
 		
 	}
@@ -67,6 +69,14 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", nombre=" + name + ", email=" + email + ", password=" + password + "]";
+	}
+
+	public Boolean getResend() {
+		return resend;
+	}
+
+	public void setResend(Boolean resend) {
+		this.resend = resend;
 	}
 	
 	
