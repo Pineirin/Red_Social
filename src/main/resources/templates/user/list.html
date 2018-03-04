@@ -23,6 +23,24 @@
 	  <tr th:each="user : ${usersList}">
 	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
+	    <td>
+	    <button type="button"
+ 		class="btn btn-info">Agregar amigo</button>
+ 		<!-- <script th:inline="javascript">
+ 		/*<![CDATA[*/
+ 		 $("#resendButton[[${mark.id}]]" ).click(function() {
+ 		 $.get( "/mark/[[${mark.id}]]/noresend", function( data ) {
+ 		 var numberPage = [[${param.page}]];
+ 		 var urlUpdate = '/mark/list/update';
+ 		 if ( numberPage != null ){
+ 		 urlUpdate += "?page="+numberPage[0];
+ 		 }
+ 		$("#tableMarks").load(urlUpdate);
+ 		 });
+ 		 });
+ 		 /*]]>*/
+ 		</script> -->
+	    </td>
 	  </tr>
 	</tbody>
   </table>
