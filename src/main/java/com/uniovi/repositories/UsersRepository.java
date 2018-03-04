@@ -1,5 +1,7 @@
 package com.uniovi.repositories;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
@@ -19,4 +21,7 @@ public interface UsersRepository extends CrudRepository<User, Long>{
 	User findByEmail(String email);//Email es lo que se utiliza para el login, es decir le nombre de usuario
 	
 	Page<User> findAll(Pageable pageable); 
+	
+	@Query("SELECT r FROM User r WHERE (LOWER(r.email) LIKE LOWER(?1) OR LOWER(r.name) LIKE LOWER(?1))")
+	List<User> searchByEmailAndName(String seachtext); 
 }

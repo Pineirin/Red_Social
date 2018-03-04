@@ -78,4 +78,11 @@ public class UsersService {
 			usersRepository.updateResend(sendPetition, id);
 		}
 	}
+	
+	public List<User> searchUsersByEmailAndName (String searchText){  
+		List<User> users = new ArrayList<User>();    
+		searchText= "%"+searchText+"%";
+	    users = usersRepository.searchByEmailAndName(searchText);      
+	    return users; 
+	} 
 }
