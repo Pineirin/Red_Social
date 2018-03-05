@@ -27,56 +27,65 @@
       </tr>
     </thead>
 	<tbody>
-	  <tr th:each="user : ${usersList}">
+	    
+	    <div>
+	    	
+	    <tr th:each="userDestination : ${usersDestinationsList}">
+	    		
+	    		<td th:text="${userDestination.name}"> Carlos</td>
+	    		<td th:text="${userDestination.email}">c@hotmail.com</td>
+	    		<td>
+	    		
+	    		<button type="button" th:id="${'cancelPetitionButton' + userDestination.id}"
+ 				class="btn btn-default">Cancelar petición</button>
+ 				<script th:inline="javascript">
+ 				/*<![CDATA[*/
+ 		 		$( "#cancelPetitionButton[[${userDestination.id}]]" ).click(function() {
+ 		 		$.get( "/user/[[${userDestination.id}]]/cancelPetition", function( data ) {
+ 		 		var numberPage = [[${param.page}]];
+ 		 		var urlUpdate = '/user/list/update';
+ 		 		if ( numberPage != null ){
+ 		 		urlUpdate += "?page="+numberPage[0];
+ 		 		}
+ 		 		$("#tableUsers").load(urlUpdate);
+ 	
+ 		 		});
+ 		 		});
+ 		 		/*]]>*/
+ 				</script> 
+ 				
+ 				</td>
+	    		
+	    </tr>
+	    
+	    <tr th:each="user : ${usersList}">
 	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
 	    <td>
 	    
-	    <div>
-	    <div th:if="${user.sendPetition}">
+	    	<button type="button" th:id="${'sendPetitionButton' + user.id}"
+ 				class="btn btn-info">Agregar amigo</button>
+ 				<script th:inline="javascript">
+ 				/*<![CDATA[*/
+ 		 		$("#sendPetitionButton[[${user.id}]]" ).click(function() {
+ 		 		$.get( "/user/[[${user.id}]]/sendPetition", function( data ) {
+ 		 		var numberPage = [[${param.page}]];
+ 				 var urlUpdate = '/user/list/update';
+ 		 		if ( numberPage != null ){
+ 		 		urlUpdate += "?page="+numberPage[0];
+ 		 		}
+ 				$("#tableUsers").load(urlUpdate);
+ 		 		});
+ 		 		});
+ 		 		/*]]>*/
+ 				</script> 
 	    
-	    <button type="button" th:id="${'cancelPetitionButton' + user.id}"
- 		class="btn btn-default">Cancelar petición</button>
- 		<script th:inline="javascript">
- 		/*<![CDATA[*/
- 		 $( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
- 		 $.get( "/user/[[${user.id}]]/cancelPetition", function( data ) {
- 		 var numberPage = [[${param.page}]];
- 		 var urlUpdate = '/user/list/update';
- 		 if ( numberPage != null ){
- 		 urlUpdate += "?page="+numberPage[0];
- 		 }
- 		$("#tableUsers").load(urlUpdate);
- 		 });
- 		 });
- 		 /*]]>*/
- 		</script> 
- 		
- 		</div>
- 		<div th:unless="${user.sendPetition}">
- 		
- 		<button type="button" th:id="${'sendPetitionButton' + user.id}"
- 		class="btn btn-info">Agregar amigo</button>
- 		<script th:inline="javascript">
- 		/*<![CDATA[*/
- 		 $("#sendPetitionButton[[${user.id}]]" ).click(function() {
- 		 $.get( "/user/[[${user.id}]]/sendPetition", function( data ) {
- 		 var numberPage = [[${param.page}]];
- 		 var urlUpdate = '/user/list/update';
- 		 if ( numberPage != null ){
- 		 urlUpdate += "?page="+numberPage[0];
- 		 }
- 		$("#tableUsers").load(urlUpdate);
- 		 });
- 		 });
- 		 /*]]>*/
- 		</script> 
- 
- 		</div>
- 		</div>
- 		
 	    </td>
-	  </tr>
+	    
+	    </tr>
+	    
+	    </div>
+
 	</tbody>
   </table>
   </div>

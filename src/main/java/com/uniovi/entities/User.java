@@ -1,9 +1,13 @@
 package com.uniovi.entities;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -24,6 +28,9 @@ public class User {
 	
 	private Boolean sendPetition = false;
 	
+	//@OneToMany(mappedBy = "userDestino", cascade = CascadeType.ALL)
+	//private Set<Petition> petitions;
+
 	public User() {
 		
 	}
@@ -78,6 +85,14 @@ public class User {
 	public void setSendPetition(Boolean sendPetition) {
 		this.sendPetition = sendPetition;
 	}
+	
+	/*public Set<Petition> getPetitions() {
+		return petitions;
+	}
+
+	public void setPetitions(Set<Petition> petitions) {
+		this.petitions = petitions;
+	}*/
 	
 	
 }

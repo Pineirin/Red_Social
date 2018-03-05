@@ -2,6 +2,7 @@ package com.uniovi.controllers;
 
 import java.security.Principal;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.uniovi.entities.Petition;
 import com.uniovi.entities.User;
+import com.uniovi.services.PetitionsService;
 import com.uniovi.services.SecurityService;
 import com.uniovi.services.UsersService;
 import com.uniovi.validators.LoginFormValidator;
@@ -31,6 +34,9 @@ public class UserController {
 	private UsersService usersService;
 	
 	@Autowired
+	private PetitionsService petitionsService;
+	
+	@Autowired
 	private SecurityService securityService;
 	
 	@Autowired
@@ -38,6 +44,8 @@ public class UserController {
 	
 	@Autowired
 	private LoginFormValidator loginFormValidator;
+	
+	int cont=0;
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
@@ -92,28 +100,53 @@ public class UserController {
 	@RequestMapping("/user/list")
 	public String getList(Model model, Pageable pageable, @RequestParam(value = "", required=false) String searchText){
 		
+		/*if(cont==1) {
+			cont++;
+		}
+		cont++;*/
 		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		users=usersService.getUsers(pageable);
+		
 		if (searchText != null && !searchText.isEmpty()) {   
-			model.addAttribute("usersList", usersService.searchUsersByEmailAndName (searchText) );  
-			model.addAttribute("page", users);
-		}else {
-			model.addAttribute("usersList",users);
-			model.addAttribute("page", users);
+			users=usersService.searchUsersByEmailAndName (pageable, searchText) ;
 		}
+		
+		User user=usersService.searchOriginUser();
+		
+		//ESTE NO DEVUELVE NADA
+		Page<User> usuariosALosQueEnviePeticion=petitionsService.searchUsuariosDestinosForUser(pageable, user);
+		
+		//ESTE NO DEVUELVE NADA
+		Page<User> usuariosNoDestinos=petitionsService.searchUsuariosNoDestinosForUser(pageable,user);
+		
+		model.addAttribute("usersList",usuariosNoDestinos);
+		model.addAttribute("usersDestinationsList",usuariosALosQueEnviePeticion);
+		model.addAttribute("page", users);
 		
 		return "user/list";
 	}
 	
 	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)
-	public String setResendFalse(Model model, @PathVariable Long id){
-		usersService.setSendPetition(true, id);
+	public String sendPetition(Model model, @PathVariable Long id){
+		long idOrigin=usersService.getIdOriginUser();
+		User userOrigin=usersService.getUser(idOrigin);
+		
+		long idDestino=id;
+		User userDestino=usersService.getUser(idDestino);
+				
+		petitionsService.sendPetition(userOrigin, userDestino);
 		return "redirect:/user/list"; 
 	}
 	
 	@RequestMapping(value="/user/{id}/cancelPetition", method=RequestMethod.GET)
-	public String setResendTrue(Model model, @PathVariable Long id){
-		usersService.setSendPetition(false, id);
+	public String cancelPetition(Model model, @PathVariable Long id){
+		long idOrigin=usersService.getIdOriginUser();
+		User userOrigin=usersService.getUser(idOrigin);
+		
+		long idDestino=id;
+		User userDestino=usersService.getUser(idDestino);
+				
+		petitionsService.cancelarPetition(userOrigin, userDestino);
 		return "redirect:/user/list";
 	}
 	
@@ -124,5 +157,6 @@ public class UserController {
 		model.addAttribute("usersList", users.getContent() );
 		return "user/list :: tableUsers";
 	}
+
 	
 }
