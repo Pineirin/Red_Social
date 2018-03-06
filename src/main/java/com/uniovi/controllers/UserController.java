@@ -100,10 +100,6 @@ public class UserController {
 	@RequestMapping("/user/list")
 	public String getList(Model model, Pageable pageable, @RequestParam(value = "", required=false) String searchText){
 		
-		/*if(cont==1) {
-			cont++;
-		}
-		cont++;*/
 		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		users=usersService.getUsers(pageable);
 		
@@ -113,13 +109,13 @@ public class UserController {
 		
 		User user=usersService.searchOriginUser();
 		
-		//ESTE NO DEVUELVE NADA
+
 		Page<User> usuariosALosQueEnviePeticion=petitionsService.searchUsuariosDestinosForUser(pageable, user);
-		
-		//ESTE NO DEVUELVE NADA
-		Page<User> usuariosNoDestinos=petitionsService.searchUsuariosNoDestinosForUser(pageable,user);
+
+		Page<User> usuariosNoDestinos=usersService.searchUsersQueNoEstanEnLista(pageable, usuariosALosQueEnviePeticion.getContent());
 		
 		model.addAttribute("usersList",usuariosNoDestinos);
+
 		model.addAttribute("usersDestinationsList",usuariosALosQueEnviePeticion);
 		model.addAttribute("page", users);
 		
@@ -153,8 +149,13 @@ public class UserController {
 	@RequestMapping("/user/list/update")
 	public String updateList(Model model, Pageable pageable, Principal principal){
 		
-		Page<User> users = usersService.getUsers(pageable);
-		model.addAttribute("usersList", users.getContent() );
+		User user=usersService.searchOriginUser();
+		Page<User> usuariosALosQueEnviePeticion=petitionsService.searchUsuariosDestinosForUser(pageable, user);
+		
+		Page<User> usuariosNoDestinos=usersService.searchUsersQueNoEstanEnLista(pageable, usuariosALosQueEnviePeticion.getContent());
+		
+		model.addAttribute("usersList",usuariosNoDestinos);
+		model.addAttribute("usersDestinationsList",usuariosALosQueEnviePeticion);
 		return "user/list :: tableUsers";
 	}
 

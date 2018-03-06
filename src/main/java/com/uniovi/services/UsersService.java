@@ -71,20 +71,6 @@ public class UsersService {
 		return bCryptPasswordEncoder.matches(password, passwordEncriptada);
 	}
 	
-	/*public void setSendPetition(boolean sendPetition,Long id){
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String email = auth.getName();
-		User userOrigen=usersRepository.findByEmail(email);
-		
-		User userDestino = usersRepository.findOne(id);
-		if( userDestino!=null) {//¿el propietario de la nota es el mismo que el autenticado?
-			Petition peticion=new Petition(userDestino);
-			userOrigen.getPetitions().add(peticion);
-			
-			usersRepository.updateResend(sendPetition, id);
-		}
-	}*/
-	
 	public Page<User> searchUsersByEmailAndName (Pageable pageable, String searchText){  
 		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		searchText= "%"+searchText+"%";
@@ -106,6 +92,15 @@ public class UsersService {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
 		return usersRepository.findByEmail(email);
+	}
+	
+	public Page<User> searchUsersQueNoEstanEnLista(Pageable pageable, List<User> users) {
+		
+		if(!users.isEmpty()) {
+			return usersRepository.searchUsersQueNoEstanEnLista(pageable,users);
+		}
+		return usersRepository.findAll(pageable);
+		
 	}
 
 }

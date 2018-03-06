@@ -79,9 +79,6 @@ public class PetitionsService {
 		return petitionsRepository.searchUsuariosDestinosForUser(pageable,user);
 	}
 	
-	public Page<User> searchUsuariosNoDestinosForUser(Pageable pageable, User user){
-		
-		return petitionsRepository.searchUsuariosNoDestinosForUser(pageable, user);
-	}
+	
 	
 }

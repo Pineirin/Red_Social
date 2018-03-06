@@ -34,9 +34,6 @@ public interface PetitionsRepository extends CrudRepository<Petition, Long>{
 	@Query("SELECT p.userDestino FROM Petition p WHERE p.userOrigen = ?1")
 	Page<User> searchUsuariosDestinosForUser(Pageable pageable,User user);
 	
-	@Query("SELECT p.userDestino FROM Petition p WHERE p.userOrigen != ?1")
-	Page<User> searchUsuariosNoDestinosForUser(Pageable pageable,User user);
-	
 	
 	
 }
