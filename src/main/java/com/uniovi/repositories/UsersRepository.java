@@ -34,6 +34,9 @@ public interface UsersRepository extends CrudRepository<User, Long>{
 	@Query("SELECT u FROM User u WHERE u NOT IN(?1)")
 	Page<User> searchUsersQueNoEstanEnLista(Pageable pageable, List<User> users); 
 	
+	//@Query("SELECT u FROM User u WHERE u IN(?1) and u IN(?2)")
+	//Page<User> unirListas(Pageable pageable,List<User> users1,List<User> users2);
+	
 	
 	
 }

@@ -112,11 +112,14 @@ public class UserController {
 
 		Page<User> usuariosALosQueEnviePeticion=petitionsService.searchUsuariosDestinosForUser(pageable, user);
 
-		Page<User> usuariosNoDestinos=usersService.searchUsersQueNoEstanEnLista(pageable, usuariosALosQueEnviePeticion.getContent());
+		Page<User> usuariosNoEnviePeticion=usersService.searchUsersQueNoEstanEnLista(pageable, usuariosALosQueEnviePeticion.getContent());
 		
-		model.addAttribute("usersList",usuariosNoDestinos);
+		model.addAttribute("usersNoDestinationsList",usuariosNoEnviePeticion);
 
 		model.addAttribute("usersDestinationsList",usuariosALosQueEnviePeticion);
+		
+		//Page<User> usersPaginados=usersService.unirListas(pageable, usuariosALosQueEnviePeticion.getContent(), usuariosNoEnviePeticion.getContent());
+		
 		model.addAttribute("page", users);
 		
 		return "user/list";
@@ -152,9 +155,9 @@ public class UserController {
 		User user=usersService.searchOriginUser();
 		Page<User> usuariosALosQueEnviePeticion=petitionsService.searchUsuariosDestinosForUser(pageable, user);
 		
-		Page<User> usuariosNoDestinos=usersService.searchUsersQueNoEstanEnLista(pageable, usuariosALosQueEnviePeticion.getContent());
+		Page<User> usuariosNoEnviePeticion=usersService.searchUsersQueNoEstanEnLista(pageable, usuariosALosQueEnviePeticion.getContent());
 		
-		model.addAttribute("usersList",usuariosNoDestinos);
+		model.addAttribute("usersNoDestinationsList",usuariosNoEnviePeticion);
 		model.addAttribute("usersDestinationsList",usuariosALosQueEnviePeticion);
 		return "user/list :: tableUsers";
 	}

@@ -102,5 +102,11 @@ public class UsersService {
 		return usersRepository.findAll(pageable);
 		
 	}
+	
+	/*public Page<User> unirListas(Pageable pageable, List<User> users1,List<User> users2) {
+		
+		return usersRepository.unirListas(pageable, users1, users2);
+		
+	}*/
 
 }

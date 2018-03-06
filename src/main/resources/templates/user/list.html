@@ -58,17 +58,17 @@
 	    		
 	    </tr>
 	    
-	    <tr th:each="user : ${usersList}">
-	    <td th:text="${user.name}"> Carlos</td>
-	    <td th:text="${user.email}">c@hotmail.com</td>
+	    <tr th:each="userNoDestination : ${usersNoDestinationsList}">
+	    <td th:text="${userNoDestination.name}"> Carlos</td>
+	    <td th:text="${userNoDestination.email}">c@hotmail.com</td>
 	    <td>
 	    
-	    	<button type="button" th:id="${'sendPetitionButton' + user.id}"
+	    	<button type="button" th:id="${'sendPetitionButton' + userNoDestination.id}"
  				class="btn btn-info">Agregar amigo</button>
  				<script th:inline="javascript">
  				/*<![CDATA[*/
- 		 		$("#sendPetitionButton[[${user.id}]]" ).click(function() {
- 		 		$.get( "/user/[[${user.id}]]/sendPetition", function( data ) {
+ 		 		$("#sendPetitionButton[[${userNoDestination.id}]]" ).click(function() {
+ 		 		$.get( "/user/[[${userNoDestination.id}]]/sendPetition", function( data ) {
  		 		var numberPage = [[${param.page}]];
  				 var urlUpdate = '/user/list/update';
  		 		if ( numberPage != null ){
