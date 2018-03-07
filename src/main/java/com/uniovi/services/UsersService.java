@@ -3,6 +3,7 @@ package com.uniovi.services;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
@@ -15,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.uniovi.entities.Petition;
 import com.uniovi.entities.User;
 import com.uniovi.repositories.UsersRepository;
 
@@ -44,7 +46,8 @@ public class UsersService {
 	}
 	
 	public User getUser(Long id) {
-		return usersRepository.findOne(id);
+		User u = usersRepository.findOne(id);
+		return u;
 	}
 	
 	public void addUser(User user) {
@@ -79,10 +82,33 @@ public class UsersService {
 		}
 	}
 	
-	public List<User> searchUsersByEmailAndName (String searchText){  
-		List<User> users = new ArrayList<User>();    
+	public Page<User> searchUsersByEmailAndName (Pageable pageable, String searchText){  
+		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		searchText= "%"+searchText+"%";
-	    users = usersRepository.searchByEmailAndName(searchText);      
+	    users = usersRepository.searchByEmailAndName(pageable,searchText);      
 	    return users; 
 	} 
+	
+	public long getIdOriginUser() {
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();
+		User userOrigen=usersRepository.findByEmail(email);
+		
+		return userOrigen.getId();
+	}
+	
+	public List<User> searchUsersDestinosForUser(Pageable pageable, User userOrigen){
+		
+		return usersRepository.searchUsersDestinosForUser(pageable, userOrigen);
+	}
+	
+	/*public void addPetitionToUser(User userOrigin, Petition peticion) {
+		
+		Set<Petition> peticionesActualesDelUsuario=userOrigin.getPetitions();
+		peticionesActualesDelUsuario.add(peticion);
+		usersRepository.updateUserPetitions(peticionesActualesDelUsuario, userOrigin.getId());
+		
+		
+	}*/
 }

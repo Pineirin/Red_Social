@@ -2,6 +2,7 @@ package com.uniovi.controllers;
 
 import java.security.Principal;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.uniovi.entities.Petition;
 import com.uniovi.entities.User;
+import com.uniovi.services.PetitionsService;
 import com.uniovi.services.SecurityService;
 import com.uniovi.services.UsersService;
 import com.uniovi.validators.LoginFormValidator;
@@ -29,6 +32,9 @@ public class UserController {
 	
 	@Autowired
 	private UsersService usersService;
+	
+	@Autowired
+	private PetitionsService petitionsService;
 	
 	@Autowired
 	private SecurityService securityService;
@@ -95,33 +101,66 @@ public class UserController {
 		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		users=usersService.getUsers(pageable);
 		if (searchText != null && !searchText.isEmpty()) {   
-			model.addAttribute("usersList", usersService.searchUsersByEmailAndName (searchText) );  
-			model.addAttribute("page", users);
-		}else {
-			model.addAttribute("usersList",users);
-			model.addAttribute("page", users);
+			users=usersService.searchUsersByEmailAndName (pageable, searchText);  
 		}
 		
+		long idOrigin=usersService.getIdOriginUser();
+		User userOrigin=usersService.getUser(idOrigin);
+		
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
+		
+		model.addAttribute("usersList",users);
+		model.addAttribute("usuariosDestinos",usuariosDestinos);
+		//model.addAttribute("userAhora",userOrigin);
+		model.addAttribute("page", users);
 		return "user/list";
 	}
 	
 	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)
-	public String setResendFalse(Model model, @PathVariable Long id){
-		usersService.setSendPetition(true, id);
+	public String sendPetition(Model model, @PathVariable Long id){
+		long idOrigin=usersService.getIdOriginUser();
+		User userOrigin=usersService.getUser(idOrigin);
+		
+		long idDestino=id;
+		User userDestino=usersService.getUser(idDestino);
+		
+		//CREAMOS LA PETICIÓN
+		Petition peticion=new Petition(userOrigin,userDestino);
+		
+		//se mete en la tabla de peticiones
+		petitionsService.addPetition(peticion);//añadimos la petición al repositorio
+		
+		/*Petition p=petitionsService.getPetition(peticion.getId());
+		
+		User u=usersService.getUser(idOrigin);*/
+		
 		return "redirect:/user/list"; 
 	}
 	
 	@RequestMapping(value="/user/{id}/cancelPetition", method=RequestMethod.GET)
-	public String setResendTrue(Model model, @PathVariable Long id){
-		usersService.setSendPetition(false, id);
+	public String cancelPetition(Model model, @PathVariable Long id){
+		long idOrigin=usersService.getIdOriginUser();
+		User userOrigin=usersService.getUser(idOrigin);
+		
+		long idDestino=id;
+		User userDestino=usersService.getUser(idDestino);
+				
+		petitionsService.cancelarPetition(userOrigin, userDestino);
 		return "redirect:/user/list";
 	}
 	
 	@RequestMapping("/user/list/update")
 	public String updateList(Model model, Pageable pageable, Principal principal){
 		
+		long idOrigin=usersService.getIdOriginUser();
+		User userOrigin=usersService.getUser(idOrigin);
+		
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
+		
 		Page<User> users = usersService.getUsers(pageable);
-		model.addAttribute("usersList", users.getContent() );
+		model.addAttribute("usersList", users);
+		model.addAttribute("usuariosDestinos",usuariosDestinos);
+		//model.addAttribute("userAhora",userOrigin);
 		return "user/list :: tableUsers";
 	}
 	
