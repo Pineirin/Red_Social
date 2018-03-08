@@ -1,6 +1,7 @@
 package com.uniovi.controllers;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -114,6 +115,25 @@ public class UserController {
 		//model.addAttribute("userAhora",userOrigin);
 		model.addAttribute("page", users);
 		return "user/list";
+	}
+	
+	@RequestMapping("/user/petitions")
+	public String getPetitions(Model model, Principal principal){
+			
+		List<User> users = new ArrayList<User>();
+		
+		String email = principal.getName();
+		User userDestino = usersService.getUserByEmail(email);
+		
+		List<Petition> petitions = petitionsService.searchPetitionByDestinationUser(userDestino);
+		
+		
+		for (Petition petition : petitions)
+			users.add(petition.getUserOrigen());
+		
+		
+		model.addAttribute("usersList",users);
+		return "user/petitions";
 	}
 	
 	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)

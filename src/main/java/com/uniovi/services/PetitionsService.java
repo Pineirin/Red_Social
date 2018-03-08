@@ -68,6 +68,10 @@ public class PetitionsService {
 		
 		deletePetition(peticion.getId());
 	}
+	
+	public List<Petition> searchPetitionByDestinationUser(User userDestino) {
+		return petitionsRepository.searchPetitionsForDestinationUser(userDestino);
+	}
 	//+++++++++++++++++++
 	
 	/*public Page<Petition> searchPetitionsForOriginUser(Pageable pageable, User userOrigen) {
