@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.User;
 
+@Service
 public class InsertSampleDataService {
 	
 	@Autowired

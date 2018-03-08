@@ -108,17 +108,13 @@ public class UserController {
 			users=usersService.searchUsersByEmailAndName (pageable, searchText);  
 		}
 		
-		long idOrigin=usersService.getIdOriginUser();
-		User userOrigin=usersService.getUser(idOrigin);
-		
-		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, currentUser);
 
 		
 		model.addAttribute("usersList",users);
-		model.addAttribute("usuariosDestinos",usuariosDestinos);
-		//model.addAttribute("userAhora",userOrigin);
-		model.addAttribute("page", users);
 		model.addAttribute("currentUser", currentUser);
+		model.addAttribute("usuariosDestinos",usuariosDestinos);
+		model.addAttribute("page", users);
 		return "user/list";
 	}
 	
@@ -157,10 +153,6 @@ public class UserController {
 		//se mete en la tabla de peticiones
 		petitionsService.addPetition(peticion);//añadimos la petición al repositorio
 		
-		/*Petition p=petitionsService.getPetition(peticion.getId());
-		
-		User u=usersService.getUser(idOrigin);*/
-		
 		return "redirect:/user/list"; 
 	}
 	
@@ -179,15 +171,16 @@ public class UserController {
 	@RequestMapping("/user/list/update")
 	public String updateList(Model model, Pageable pageable, Principal principal){
 		
-		long idOrigin=usersService.getIdOriginUser();
-		User userOrigin=usersService.getUser(idOrigin);
+		String email = principal.getName();
+		User currentUser = usersService.getUserByEmail(email);
 		
-		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, currentUser);
 		
 		Page<User> users = usersService.getUsers(pageable);
 		model.addAttribute("usersList", users);
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
-		//model.addAttribute("userAhora",userOrigin);
+		model.addAttribute("currentUser", currentUser);
+		
 		return "user/list :: tableUsers";
 	}
 	
