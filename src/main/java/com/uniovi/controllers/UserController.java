@@ -107,7 +107,7 @@ public class UserController {
 		long idOrigin=usersService.getIdOriginUser();
 		User userOrigin=usersService.getUser(idOrigin);
 		
-		Page<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
 		
 		model.addAttribute("usersList",users);
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
@@ -155,7 +155,7 @@ public class UserController {
 		long idOrigin=usersService.getIdOriginUser();
 		User userOrigin=usersService.getUser(idOrigin);
 		
-		Page<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
 		
 		Page<User> users = usersService.getUsers(pageable);
 		model.addAttribute("usersList", users);

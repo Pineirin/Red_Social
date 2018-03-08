@@ -98,7 +98,7 @@ public class UsersService {
 		return userOrigen.getId();
 	}
 	
-	public Page<User> searchUsersDestinosForUser(Pageable pageable, User userOrigen){
+	public List<User> searchUsersDestinosForUser(Pageable pageable, User userOrigen){
 		
 		return usersRepository.searchUsersDestinosForUser(pageable, userOrigen);
 	}
