@@ -97,7 +97,10 @@ public class UserController {
 	}
 	
 	@RequestMapping("/user/list")
-	public String getList(Model model, Pageable pageable, @RequestParam(value = "", required=false) String searchText){
+	public String getList(Model model, Pageable pageable, Principal principal, @RequestParam(value = "", required=false) String searchText){
+		
+		String email = principal.getName();
+		User currentUser = usersService.getUserByEmail(email);
 		
 		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		users=usersService.getUsers(pageable);
@@ -115,6 +118,7 @@ public class UserController {
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
 		//model.addAttribute("userAhora",userOrigin);
 		model.addAttribute("page", users);
+		model.addAttribute("currentUser", currentUser);
 		return "user/list";
 	}
 	
