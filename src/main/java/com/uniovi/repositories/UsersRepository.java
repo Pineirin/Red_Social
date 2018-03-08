@@ -33,5 +33,5 @@ public interface UsersRepository extends CrudRepository<User, Long>{
 	Page<User> searchByEmailAndName(Pageable pageable, String seachtext); 
 	
 	@Query("SELECT p.userDestino FROM Petition p where p.userOrigen = ?1")
-	List<User> searchUsersDestinosForUser(Pageable pageable, User userOrigin); 
+	Page<User> searchUsersDestinosForUser(Pageable pageable, User userOrigin); 
 }
