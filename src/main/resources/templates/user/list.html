@@ -33,15 +33,15 @@
 	    <td>
 	    
 	   <div>
-	    <div th:if="${#strings.equals(user, currentUser)}">
+	    <div th:if="${user.equals(currentUser)}">
 	    	
  		</div>
  		
- 		<div th:unless="${#strings.equals(user, currentUser)}">
+ 		<div th:unless="${user.equals(currentUser)}">
  			<div th:if="${#lists.contains(usuariosDestinos, user)}">
 	    		
 	    		<button type="button" th:id="${'cancelPetitionButton' + user.id}"
- 				class="btn btn-default">Cancelar petición</button>
+ 				class="btn btn-default">Cancelar peticiÃ³n</button>
  				<script th:inline="javascript">
  				/*<![CDATA[*/
  		 		$( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
