@@ -109,6 +109,7 @@ public class UserController {
 		User userOrigin=usersService.getUser(idOrigin);
 		
 		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, userOrigin);
+
 		
 		model.addAttribute("usersList",users);
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
@@ -120,7 +121,7 @@ public class UserController {
 	@RequestMapping("/user/petitions")
 	public String getPetitions(Model model, Principal principal){
 			
-		List<User> users = new ArrayList<User>();
+		List<User> users = new LinkedList<User>();
 		
 		String email = principal.getName();
 		User userDestino = usersService.getUserByEmail(email);
@@ -131,8 +132,10 @@ public class UserController {
 		for (Petition petition : petitions)
 			users.add(petition.getUserOrigen());
 		
+		Page<User> filteredUsers = new PageImpl<User>(users);
 		
-		model.addAttribute("usersList",users);
+		model.addAttribute("usersList",filteredUsers);
+		model.addAttribute("page",filteredUsers);
 		return "user/petitions";
 	}
 	
