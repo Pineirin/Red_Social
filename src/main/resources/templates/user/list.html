@@ -33,11 +33,8 @@
 	    <td>
 	    
 	   <div>
-	    <div th:if="${user.equals(currentUser)}">
-	    	
- 		</div>
  		
- 		<div th:unless="${user.equals(currentUser)}">
+ 		<div th:if="${!user.equals(currentUser)}">
  			<div th:if="${#lists.contains(usuariosDestinos, user)}">
 	    		
 	    		<button type="button" th:id="${'cancelPetitionButton' + user.id}"
