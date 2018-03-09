@@ -108,7 +108,7 @@ public class UserController {
 			users=usersService.searchUsersByEmailAndName (pageable, searchText);  
 		}
 		
-		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, currentUser);
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
 
 		
 		model.addAttribute("usersList",users);
@@ -190,7 +190,7 @@ public class UserController {
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
 		
-		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, currentUser);
+		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
 		
 		
 		

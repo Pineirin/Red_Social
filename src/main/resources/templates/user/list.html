@@ -13,7 +13,7 @@
   	</div>         
   	<button type="submit" class="btn btn-default">Buscar</button>  
   </form> 
-  <p>Usted a recibido las siguientes solicitudes de amistad:</p>                                                                                      
+  <p>Los usuarios de la aplicación son los siguientes:</p>                                                                                      
   <div class="table-responsive">          
   <table class="table table-hover" th:fragment="tableUsers" id="tableUsers">
     <thead>
@@ -33,15 +33,12 @@
 	    <td>
 	    
 	   <div>
-	    <div th:if="${#strings.equals(user, currentUser)}">
-	    	
- 		</div>
  		
- 		<div th:unless="${#strings.equals(user, currentUser)}">
+ 		<div th:if="${!user.equals(currentUser)}">
  			<div th:if="${#lists.contains(usuariosDestinos, user)}">
 	    		
 	    		<button type="button" th:id="${'cancelPetitionButton' + user.id}"
- 				class="btn btn-default">Cancelar petici�n</button>
+ 				class="btn btn-default">Cancelar petición</button>
  				<script th:inline="javascript">
  				/*<![CDATA[*/
  		 		$( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
