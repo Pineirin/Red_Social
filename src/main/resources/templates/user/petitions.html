@@ -23,15 +23,13 @@
 	  <tr th:each="user : ${usersList}">
 	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
-	    <td>
-	    	<div th:if="${#lists.contains(usuariosDestinos, user)}">
-	    		
-	    		<button type="button" th:id="${'aceptPetitionButton' + user.id}"
+	    <td>   		
+	    		<button type="button" th:id="${'acceptPetitionButton' + user.id}"
  				class="btn btn-default">Aceptar petición</button>
  				<script th:inline="javascript">
  				/*<![CDATA[*/
- 		 		$( "#aceptPetitionButton[[${user.id}]]" ).click(function() {
- 		 		$.get( "/user/[[${user.id}]]/aceptPetition", function( data ) {
+ 		 		$( "#acceptPetitionButton[[${user.id}]]" ).click(function() {
+ 		 		$.get( "/user/[[${user.id}]]/acceptPetition", function( data ) {
  		 		var numberPage = [[${param.page}]];
  		 		var urlUpdate = '/user/petitions/update';
  		 		if ( numberPage != null ){
@@ -42,8 +40,6 @@
  		 		});
  		 		/*]]>*/
  				</script> 
- 		
-	    	</div>
 	    </td>
 	  </tr>
 	</tbody>
