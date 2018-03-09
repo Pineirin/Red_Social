@@ -29,6 +29,9 @@ public interface PetitionsRepository extends CrudRepository<Petition, Long>{
 		 + "where u = ?1 and p.userDestino = ?2")
 	Petition getPetition(User userOrigen,User userDestino);
 	//@Query("SELECT p FROM Petition p WHERE p.userOrigen = ?1 and p.userDestino = ?2 ORDER BY p.id ASC")
+
+	@Query("SELECT p FROM Petition p WHERE p.userOrigen = ?1 and p.userDestino = ?2 ORDER BY p.id ASC")
+	List<Petition> searchPetitionByOriginUserAndDestinationUser(User userOrigin, User userDestination);
 	
 	//@Query("SELECT p FROM Petition p WHERE p.userOrigen = ?1")
 	//Page<Petition> searchPetitionsForOriginUser(Pageable pageable,User user);

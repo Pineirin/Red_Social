@@ -25,6 +25,9 @@ public interface UsersRepository extends CrudRepository<User, Long>{
 	@Query("UPDATE User SET petitions = ?1 WHERE id = ?2")
 	void updateUserPetitions(Set<Petition> peticiones, Long id);
 	
+	@Query("UPDATE User SET friends = ?1")
+	void updateUserFriends(Set<User> friends);
+	
 	User findByEmail(String email);//Email es lo que se utiliza para el login, es decir le nombre de usuario
 	
 	Page<User> findAll(Pageable pageable); 

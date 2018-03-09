@@ -3,7 +3,6 @@ package com.uniovi.services;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
@@ -16,7 +15,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.uniovi.entities.Petition;
 import com.uniovi.entities.User;
 import com.uniovi.repositories.UsersRepository;
 
@@ -102,6 +100,7 @@ public class UsersService {
 		
 		return usersRepository.searchUsersDestinosForUser(pageable, userOrigen);
 	}
+
 	
 	/*public void addPetitionToUser(User userOrigin, Petition peticion) {
 		

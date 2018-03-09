@@ -1,7 +1,6 @@
 package com.uniovi.controllers;
 
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.uniovi.entities.Petition;
+import com.uniovi.entities.PetitionStatus;
 import com.uniovi.entities.User;
 import com.uniovi.services.PetitionsService;
 import com.uniovi.services.SecurityService;
@@ -168,6 +168,22 @@ public class UserController {
 		return "redirect:/user/list";
 	}
 	
+	@RequestMapping(value="/user/{id}/acceptPetition", method=RequestMethod.GET)
+	public String acceptPetition(Model model, @PathVariable Long id) {
+		long idOrigin=usersService.getIdOriginUser();
+		User userOrigin=usersService.getUser(idOrigin);
+		
+		long idDestino=id;
+		User userDestination=usersService.getUser(idDestino);
+		
+		List<Petition> petitions = petitionsService.searchPetitionByOriginUserAndDestinationUser(userOrigin, userDestination);
+		
+		long idPetition = petitions.get(0).getId();
+				
+		petitionsService.updateStatus(PetitionStatus.TERMINADA, idPetition);
+		return "redirect:/user/petitions";
+	}
+	
 	@RequestMapping("/user/list/update")
 	public String updateList(Model model, Pageable pageable, Principal principal){
 		
@@ -175,6 +191,8 @@ public class UserController {
 		User currentUser = usersService.getUserByEmail(email);
 		
 		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(pageable, currentUser);
+		
+		
 		
 		Page<User> users = usersService.getUsers(pageable);
 		model.addAttribute("usersList", users);

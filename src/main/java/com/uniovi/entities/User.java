@@ -30,6 +30,8 @@ public class User {
 	
 	@OneToMany(mappedBy = "userOrigen", cascade = CascadeType.ALL)
 	private Set<Petition> petitions;
+	
+	private Set<User> friends;
 
 	public User() {
 		
@@ -119,6 +121,16 @@ public class User {
 	public void setPetitions(Set<Petition> petitions) {
 		this.petitions = petitions;
 	}
+
+	public Set<User> getFriends() {
+		return friends;
+	}
+
+	public void setFriends(Set<User> friends) {
+		this.friends = friends;
+	}
+	
+	
 	
 	
 }
