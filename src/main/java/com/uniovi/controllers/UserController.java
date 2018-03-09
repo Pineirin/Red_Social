@@ -142,7 +142,7 @@ public class UserController {
 	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)
 	public String sendPetition(Model model, @PathVariable Long id){
 		long idOrigin=usersService.getIdOriginUser();
-		User userOrigin=usersService.getUser(idOrigin);
+		User userOrigin=usersService.getUser(idOrigin);	
 		
 		long idDestino=id;
 		User userDestino=usersService.getUser(idDestino);
@@ -200,6 +200,27 @@ public class UserController {
 		model.addAttribute("currentUser", currentUser);
 		
 		return "user/list :: tableUsers";
+	}
+	
+	@RequestMapping("/user/petitions/update")
+	public String updatePetitions(Model model, Pageable pageable, Principal principal){
+		
+		List<User> users = new LinkedList<User>();
+		
+		String email = principal.getName();
+		User userDestino = usersService.getUserByEmail(email);
+		
+		List<Petition> petitions = petitionsService.searchPetitionByDestinationUser(userDestino);
+		
+		
+		for (Petition petition : petitions)
+			users.add(petition.getUserOrigen());
+		
+		Page<User> filteredUsers = new PageImpl<User>(users);
+		
+		model.addAttribute("usersList",filteredUsers);
+		
+		return "user/petitions :: tablePetitions";
 	}
 	
 }
