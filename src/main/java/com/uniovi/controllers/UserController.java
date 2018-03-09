@@ -170,11 +170,11 @@ public class UserController {
 	
 	@RequestMapping(value="/user/{id}/acceptPetition", method=RequestMethod.GET)
 	public String acceptPetition(Model model, @PathVariable Long id) {
-		long idOrigin=usersService.getIdOriginUser();
-		User userOrigin=usersService.getUser(idOrigin);
+		long idDestination=usersService.getIdOriginUser();
+		User userDestination=usersService.getUser(idDestination);
 		
-		long idDestino=id;
-		User userDestination=usersService.getUser(idDestino);
+		long idOrigin=id;
+		User userOrigin=usersService.getUser(idOrigin);
 		
 		List<Petition> petitions = petitionsService.searchPetitionByOriginUserAndDestinationUser(userOrigin, userDestination);
 		
