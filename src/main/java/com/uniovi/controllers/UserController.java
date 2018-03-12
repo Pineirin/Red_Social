@@ -133,7 +133,8 @@ public class UserController {
 		
 		
 		for (Petition petition : petitions)
-			users.add(petition.getUserOrigen());
+			if(petition.getStatus().equals(PetitionStatus.EN_PROCESO))
+				users.add(petition.getUserOrigen());
 		
 		Page<User> filteredUsers = new PageImpl<User>(users);
 		
@@ -219,7 +220,8 @@ public class UserController {
 		
 		
 		for (Petition petition : petitions)
-			users.add(petition.getUserOrigen());
+			if(petition.getStatus().equals(PetitionStatus.EN_PROCESO))
+				users.add(petition.getUserOrigen());
 		
 		Page<User> filteredUsers = new PageImpl<User>(users);
 		
