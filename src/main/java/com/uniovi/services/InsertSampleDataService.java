@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.User;
 
+@Service
 public class InsertSampleDataService {
 	
 	@Autowired
@@ -15,6 +16,17 @@ public class InsertSampleDataService {
 	public void init() {
 		User user1 = new User("adripc@live.com", "Adrian");
 		user1.setPassword("123456");
+		User user7 = new User("a1@live.com", "Adrian");
+		user7.setPassword("123456");
+		User user8 = new User("a2@live.com", "Adrian");
+		user8.setPassword("123456");
+		User user9 = new User("a3@live.com", "Adrian");
+		user9.setPassword("123456");
+		User user10 = new User("a4@live.com", "Adrian");
+		user10.setPassword("123456");
+		User user11 = new User("a5@live.com", "Adrian");
+		user11.setPassword("123456");
+		
 		User user2 = new User("Juan@hotmail.com", "Juan");
 		user2.setPassword("123456");
 		User user3 = new User("francisco12@live.com", "Francisco");
@@ -32,6 +44,12 @@ public class InsertSampleDataService {
 		usersService.addUser(user4);
 		usersService.addUser(user5);
 		usersService.addUser(user6);
+		
+		usersService.addUser(user7);
+		usersService.addUser(user8);
+		usersService.addUser(user9);
+		usersService.addUser(user10);
+		usersService.addUser(user11);
 	}
 
 }
