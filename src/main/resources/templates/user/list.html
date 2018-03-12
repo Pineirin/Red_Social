@@ -13,9 +13,26 @@
   	</div>         
   	<button type="submit" class="btn btn-default">Buscar</button>  
   </form> 
+  
+    <button type="button" id="updateButton" class="btn btn-default">Actualizar</button>
+ 
+ <script th:inline="javascript">
+ /*<![CDATA[*/
+ $( "#updateButton" ).click(function() {
+ var numberPage = [[${param.page}]];
+ var urlUpdate = '/user/list/update';
+ if ( numberPage != null ){
+ urlUpdate += "?page="+numberPage[0];
+ }
+ $("#tableUsers").load(urlUpdate);
+ });
+ /*]]>*/
+ </script> 
+ 
   <p>Los usuarios de la aplicación son los siguientes:</p>                                                                                      
+  <div th:fragment="tableUsers" id="tableUsers">
   <div class="table-responsive">          
-  <table class="table table-hover" th:fragment="tableUsers" id="tableUsers">
+  <table class="table table-hover" >
     <thead>
       <tr>
         <th>Nombre</th>
@@ -86,6 +103,7 @@
   </table>
   </div>
   <footer th:replace="fragments/pagination"/>
+  </div>
 </div>
 
 <footer th:replace="fragments/footer"/>

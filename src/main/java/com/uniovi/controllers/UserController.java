@@ -97,15 +97,17 @@ public class UserController {
 	}
 	
 	@RequestMapping("/user/list")
-	public String getList(Model model, Pageable pageable, Principal principal, @RequestParam(value = "", required=false) String searchText){
+	public String getList(Model model, Pageable pageable, Principal principal, @RequestParam(defaultValue = "", required=false) String searchText){
 		
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
 		
-		Page<User> users = new PageImpl<User>(new LinkedList<User>());
-		users=usersService.getUsers(pageable);
+		Page<User> users;
 		if (searchText != null && !searchText.isEmpty()) {   
 			users=usersService.searchUsersByEmailAndName (pageable, searchText);  
+		}
+		else {
+			users=usersService.getUsers(pageable);
 		}
 		
 		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
@@ -115,6 +117,7 @@ public class UserController {
 		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
 		model.addAttribute("page", users);
+		model.addAttribute("searchText", searchText);
 		return "user/list";
 	}
 	
@@ -198,6 +201,8 @@ public class UserController {
 		model.addAttribute("usersList", users);
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
 		model.addAttribute("currentUser", currentUser);
+		model.addAttribute("page", users);
+		model.addAttribute("searchText", "");
 		
 		return "user/list :: tableUsers";
 	}
