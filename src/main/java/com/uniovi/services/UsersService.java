@@ -101,6 +101,10 @@ public class UsersService {
 		return usersRepository.searchUsersDestinosForUser(userOrigen);
 	}
 
+	public List<User> searchFriendsForUser(User currentUser){
+		
+		return usersRepository.searchFriendsForUser(currentUser);
+	}
 	
 	/*public void addPetitionToUser(User userOrigin, Petition peticion) {
 		

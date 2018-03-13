@@ -111,11 +111,12 @@ public class UserController {
 		}
 		
 		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
-
+		List<User> amigos=usersService.searchFriendsForUser(currentUser);
 		
 		model.addAttribute("usersList",users);
 		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
+		model.addAttribute("amigos",amigos);
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", searchText);
 		return "user/list";
@@ -195,12 +196,13 @@ public class UserController {
 		User currentUser = usersService.getUserByEmail(email);
 		
 		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
-		
+		List<User> amigos=usersService.searchFriendsForUser(currentUser);
 		
 		
 		Page<User> users = usersService.getUsers(pageable);
 		model.addAttribute("usersList", users);
 		model.addAttribute("usuariosDestinos",usuariosDestinos);
+		model.addAttribute("amigos",amigos);
 		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", "");

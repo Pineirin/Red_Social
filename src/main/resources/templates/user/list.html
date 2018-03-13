@@ -53,24 +53,31 @@
  		
  		<div th:if="${!user.equals(currentUser)}">
  			<div th:if="${#lists.contains(usuariosDestinos, user)}">
+	    		<div th:if="${#lists.contains(amigos, user)}">
 	    		
-	    		<button type="button" th:id="${'cancelPetitionButton' + user.id}"
- 				class="btn btn-default">Cancelar petición</button>
- 				<script th:inline="javascript">
- 				/*<![CDATA[*/
- 		 		$( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
- 		 		$.get( "/user/[[${user.id}]]/cancelPetition", function( data ) {
- 		 		var numberPage = [[${param.page}]];
- 		 		var urlUpdate = '/user/list/update';
- 		 		if ( numberPage != null ){
- 		 		urlUpdate += "?page="+numberPage[0];
- 		 		}
- 				$("#tableUsers").load(urlUpdate);
- 		 		});
- 		 		});
+	    			<button type="button" th:id="${'friendButton' + user.id}"
+ 					class="btn btn-default">Amigo</button>
+	    		</div>
+	    		
+	    		<div th:unless="${#lists.contains(amigos, user)}">
+	    			<button type="button" th:id="${'cancelPetitionButton' + user.id}"
+ 					class="btn btn-default">Cancelar petición</button>
+ 					<script th:inline="javascript">
+ 					/*<![CDATA[*/
+ 		 			$( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
+ 		 			$.get( "/user/[[${user.id}]]/cancelPetition", function( data ) {
+ 		 			var numberPage = [[${param.page}]];
+ 		 			var urlUpdate = '/user/list/update';
+ 		 			if ( numberPage != null ){
+ 		 			urlUpdate += "?page="+numberPage[0];
+ 		 			}
+ 					$("#tableUsers").load(urlUpdate);
+ 		 			});
+ 		 			});
  		 		/*]]>*/
  				</script> 
- 		
+	    		</div>
+ 	
 	    	</div>
 	    	
 	    	 <div th:unless="${#lists.contains(usuariosDestinos, user)}">

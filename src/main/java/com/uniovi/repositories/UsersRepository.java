@@ -37,4 +37,7 @@ public interface UsersRepository extends CrudRepository<User, Long>{
 	
 	@Query("SELECT p.userDestino FROM Petition p where p.userOrigen = ?1")
 	List<User> searchUsersDestinosForUser(User userOrigin); 
+	
+	@Query("SELECT p.userDestino FROM Petition p where p.userOrigen = ?1 and p.status = 'TERMINADA'")
+	List<User> searchFriendsForUser(User currentUser);
 }
