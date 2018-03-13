@@ -1,15 +1,10 @@
 package com.uniovi.services;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,9 +26,6 @@ public class UsersService {
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
-	@Autowired
-	private HttpSession sesion;
 	
 	@PostConstruct
 	public void init() {
@@ -134,17 +126,4 @@ public class UsersService {
 		usersRepository.actualizarEnLineaDelUsuario(email, enLinea);
 	}
 	
-	/*public void desRegistrarUsuarioEnSesion(String email) {
-		
-		sesion.removeAttribute(email);
-	}*/
-	
-	/*public void addPetitionToUser(User userOrigin, Petition peticion) {
-		
-		Set<Petition> peticionesActualesDelUsuario=userOrigin.getPetitions();
-		peticionesActualesDelUsuario.add(peticion);
-		usersRepository.updateUserPetitions(peticionesActualesDelUsuario, userOrigin.getId());
-		
-		
-	}*/
 }

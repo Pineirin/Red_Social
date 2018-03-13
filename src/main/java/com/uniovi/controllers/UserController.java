@@ -52,7 +52,7 @@ public class UserController {
 		return "login";
 	}
 	
-	/*@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logoutToLogin", method = RequestMethod.GET)
 	public String logout(Model model) {
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -62,7 +62,7 @@ public class UserController {
 		}
 		
 		return "redirect:login";
-	}*/
+	}
 	
 	/*
 	 * El usuario accede a goToHomeAfterLogin por URL:
