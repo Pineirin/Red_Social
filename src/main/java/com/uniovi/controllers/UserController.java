@@ -52,6 +52,18 @@ public class UserController {
 		return "login";
 	}
 	
+	/*@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(Model model) {
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(auth.isAuthenticated()) {
+			String name=auth.getName();
+			usersService.actualizarEnLineaDelUsuario(name, false);
+		}
+		
+		return "redirect:login";
+	}*/
+	
 	/*
 	 * El usuario accede a goToHomeAfterLogin por URL:
 	 * Si el usuario está autentificado le redirije a home
@@ -76,6 +88,9 @@ public class UserController {
 			return "login";
 		}
 		securityService.autoLogin(user.getEmail(), user.getPassword());
+		
+		usersService.actualizarEnLineaDelUsuario(user.getEmail(), true);
+		
 		return "redirect:user/list";
 	}
 	
@@ -93,6 +108,9 @@ public class UserController {
 		}
 		usersService.addUser(user);
 		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());
+		
+		usersService.actualizarEnLineaDelUsuario(user.getEmail(), true);
+		
 		return "redirect:user/list";
 	}
 	
@@ -111,7 +129,8 @@ public class UserController {
 		}
 		
 		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
-		List<User> amigos=usersService.searchFriendsForUser(currentUser);
+		Page<User> amigosPage=usersService.searchFriendsForUser(pageable,currentUser);
+		List<User> amigos=amigosPage.getContent();
 		
 		model.addAttribute("usersList",users);
 		model.addAttribute("currentUser", currentUser);
@@ -142,6 +161,21 @@ public class UserController {
 		model.addAttribute("usersList",filteredUsers);
 		model.addAttribute("page",filteredUsers);
 		return "user/petitions";
+	}
+	
+	@RequestMapping("/user/friends")
+	public String getFriends(Model model, Pageable pageable, Principal principal){
+		
+		String email = principal.getName();
+		User currentUser = usersService.getUserByEmail(email);
+		
+		List<User> amigos=usersService.searchFriendsForUser(currentUser);
+		Page<User> amigosEnSesion=usersService.amigosEnSesion(pageable,amigos);
+				
+		model.addAttribute("amigos",amigosEnSesion);
+		model.addAttribute("page", amigosEnSesion);
+
+		return "user/friends";
 	}
 	
 	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)
@@ -196,8 +230,8 @@ public class UserController {
 		User currentUser = usersService.getUserByEmail(email);
 		
 		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
-		List<User> amigos=usersService.searchFriendsForUser(currentUser);
-		
+		Page<User> amigosPage=usersService.searchFriendsForUser(pageable,currentUser);
+		List<User> amigos=amigosPage.getContent();
 		
 		Page<User> users = usersService.getUsers(pageable);
 		model.addAttribute("usersList", users);

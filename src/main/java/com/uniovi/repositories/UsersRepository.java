@@ -39,5 +39,16 @@ public interface UsersRepository extends CrudRepository<User, Long>{
 	List<User> searchUsersDestinosForUser(User userOrigin); 
 	
 	@Query("SELECT p.userDestino FROM Petition p where p.userOrigen = ?1 and p.status = 'TERMINADA'")
+	Page<User> searchFriendsForUser(Pageable pageable, User currentUser);
+	
+	@Query("SELECT p.userDestino FROM Petition p where p.userOrigen = ?1 and p.status = 'TERMINADA'")
 	List<User> searchFriendsForUser(User currentUser);
-}
+	
+	@Modifying 
+	@Transactional
+	@Query("UPDATE User SET enLinea = ?2 WHERE email = ?1")
+	void actualizarEnLineaDelUsuario(String email,boolean enLinea);
+	
+	@Query("select u from User u where enLinea = true and u IN ?1")
+	Page<User> searchFriendsOnLine(Pageable pageable, List<User> amigos);
+} 

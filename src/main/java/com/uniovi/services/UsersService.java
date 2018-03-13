@@ -1,10 +1,15 @@
 package com.uniovi.services;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,8 +32,12 @@ public class UsersService {
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
+	@Autowired
+	private HttpSession sesion;
+	
 	@PostConstruct
 	public void init() {
+		
 	}
 	
 	public List<User> getUsers() {
@@ -101,10 +110,34 @@ public class UsersService {
 		return usersRepository.searchUsersDestinosForUser(userOrigen);
 	}
 
+	public Page<User> searchFriendsForUser(Pageable pageable, User currentUser){
+		
+		return usersRepository.searchFriendsForUser(pageable,currentUser);
+	}
+	
 	public List<User> searchFriendsForUser(User currentUser){
 		
 		return usersRepository.searchFriendsForUser(currentUser);
 	}
+	
+	public Page<User> amigosEnSesion(Pageable pageable, List<User> amigos){
+		
+		if(amigos.size()>0) {
+			return usersRepository.searchFriendsOnLine(pageable, amigos);
+		}
+		return new PageImpl<User>(new LinkedList<User>());
+		
+	}
+	
+	public void actualizarEnLineaDelUsuario(String email, boolean enLinea) {
+		
+		usersRepository.actualizarEnLineaDelUsuario(email, enLinea);
+	}
+	
+	/*public void desRegistrarUsuarioEnSesion(String email) {
+		
+		sesion.removeAttribute(email);
+	}*/
 	
 	/*public void addPetitionToUser(User userOrigin, Petition peticion) {
 		
