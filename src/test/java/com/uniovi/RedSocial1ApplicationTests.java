@@ -102,6 +102,28 @@ public class RedSocial1ApplicationTests{
 			//		PO_Properties.getSPANISH() );
 			PO_RegisterView.checkElement(driver, "text", "Las contraseñas no coinciden");
 	}
+	
+	//PRN2_1 Inicio de sesión con datos válidos
+	@Test
+	public void PR02_1() {
+		//Vamos al formulario de logueo.
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		//Rellenamos el formulario
+		PO_LoginView.fillForm(driver, "77777778A@uniovi.es" , "77777" );
+		//COmprobamos que entramos en la pagina privada de Alumno
+		PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes");
+	}
+	
+	//Inicio de sesión con datos inválidos (usuario no existente en la aplicación).
+	@Test
+	public void PR02_2() {
+		//Vamos al formulario de logueo.
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		//Rellenamos el formulario
+		PO_LoginView.fillForm(driver, "ZZZZZZZZA@uniovi.es" , "123456" );
+		//COmprobamos que no entramos en la pagina privada del Usuario
+		PO_View.checkElement(driver, "text", "Usuario o contraseña inválidos");
+	}
 		
 	//PR04. OPción de navegación. Cambio de idioma de Español a Ingles y vuelta a Español
 	/*@Test

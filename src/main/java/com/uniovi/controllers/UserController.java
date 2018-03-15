@@ -25,7 +25,6 @@ import com.uniovi.entities.User;
 import com.uniovi.services.PetitionsService;
 import com.uniovi.services.SecurityService;
 import com.uniovi.services.UsersService;
-import com.uniovi.validators.LoginFormValidator;
 import com.uniovi.validators.SignUpFormValidator;
 
 @Controller
@@ -43,16 +42,13 @@ public class UserController {
 	@Autowired
 	private SignUpFormValidator signUpFormValidator;
 	
-	@Autowired
-	private LoginFormValidator loginFormValidator;
-	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("user", new User());
 		return "login";
 	}
 	
-	@RequestMapping(value = "/logoutToLogin", method = RequestMethod.GET)
+	@RequestMapping(value = "/logoutFromLogin", method = RequestMethod.GET)
 	public String logout(Model model) {
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -62,36 +58,6 @@ public class UserController {
 		}
 		
 		return "redirect:login";
-	}
-	
-	/*
-	 * El usuario accede a goToHomeAfterLogin por URL:
-	 * Si el usuario está autentificado le redirije a home
-	 * Si el usuario no está autentificado le redirije a login
-	 */
-	@RequestMapping(value = "/goToHomeAfterLogin", method = RequestMethod.GET)
-	public String goToHomeAfterLogin(Model model) {
-		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if(auth.isAuthenticated()) {
-			return "redirect:home";
-		}
-		else {
-			return "redirect:login";
-		}
-	}
-	
-	@RequestMapping(value = "/goToHomeAfterLogin", method = RequestMethod.POST)
-	public String login(@Validated User user, BindingResult result, Model model) {
-		loginFormValidator.validate(user, result);
-		if (result.hasErrors()) {
-			return "login";
-		}
-		securityService.autoLogin(user.getEmail(), user.getPassword());
-		
-		usersService.actualizarEnLineaDelUsuario(user.getEmail(), true);
-		
-		return "redirect:user/list";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
@@ -117,7 +83,12 @@ public class UserController {
 	@RequestMapping("/user/list")
 	public String getList(Model model, Pageable pageable, Principal principal, @RequestParam(defaultValue = "", required=false) String searchText){
 		
-		String email = principal.getName();
+		//poner al usuario en linea
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();
+		usersService.actualizarEnLineaDelUsuario(email, true);
+		//
+		
 		User currentUser = usersService.getUserByEmail(email);
 		
 		Page<User> users;
