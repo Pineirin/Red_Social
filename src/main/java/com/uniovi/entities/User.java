@@ -32,6 +32,9 @@ public class User {
 	
 	@OneToMany(mappedBy = "userOrigen", cascade = CascadeType.ALL)
 	private Set<Petition> petitions;
+	
+	@OneToMany(mappedBy="user",cascade =CascadeType.ALL)
+	private Set<Publication> publications;
 
 	public User() {
 		
@@ -128,6 +131,14 @@ public class User {
 
 	public void setEnLinea(boolean enLinea) {
 		this.enLinea = enLinea;
+	}
+
+	public Set<Publication> getPublications() {
+		return publications;
+	}
+
+	public void setPublications(Set<Publication> publications) {
+		this.publications = publications;
 	}
 
 	
