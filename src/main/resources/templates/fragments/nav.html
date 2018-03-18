@@ -16,10 +16,22 @@
  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestión de usuarios
  <span class="caret"></span>
  </a>
+ 
  <ul class="dropdown-menu">
  <li><a href="/user/list">Ver usuarios</a></li>
  <li><a href="/user/petitions">Ver solicitudes de amistad</a></li>
  <li><a href="/user/friends">Ver amigos en sesión</a></li>
+ </ul>
+ </li>
+ 
+  <li id= "publications-menu" class="dropdown" sec:authorize="isAuthenticated()" >
+ <a class="dropdown-toggle" data-toggle="dropdown" href="#">Publicaciones
+ <span class="caret"></span>
+ </a>
+ 
+ <ul class="dropdown-menu">
+ <li><a href="/publication/create">Crear publicación</a></li>
+ <li><a href="/publication/list">Ver publicaciones</a></li>
  </ul>
  </li>
  
