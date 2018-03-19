@@ -1,5 +1,10 @@
 package com.uniovi;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+import java.awt.Button;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -181,7 +186,7 @@ public class RedSocial1ApplicationTests{
 	
 	//Listar las invitaciones recibidas por un usuario, realizar la comprobación con una lista que al menos tenga una invitación recibida. 
 	@Test
-	public void PR06() {
+	public void PR06_01() {
 		//Vamos al formulario de logueo.
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		//Rellenamos el formulario
@@ -190,6 +195,26 @@ public class RedSocial1ApplicationTests{
 		PO_NavView.clickOption(driver, "user/petitions", "class", "btn btn-primary");
 	}
 	
+	//Aceptar una invitación recibida 
+	@Test
+	public void PR07_01() {
+		
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456");
+		
+		//Miramos si antes de mandar la petición el botón contiene el texto Agregar Amigo
+		String textoAntesDelClick=driver.findElement(By.id("sendPetitionButton2")).getText();
+		assertEquals(textoAntesDelClick, "Agregar amigo");
+		
+		//Clicamos el boton para pedir amistad
+		driver.findElement(By.id("sendPetitionButton2")).click();
+		
+		//Comprovamos que se ha enviado
+		String textoDespuesDelClick=driver.findElement(By.id("sendPetitionButton2")).getText();
+		assertEquals(textoDespuesDelClick, "Cancelar petición");
+		
+	}
+		
 	//Identificación válida con usuario de ROL Administrador,  99999988F/123456
 	/*@Test
 	public void PR09() {
@@ -258,7 +283,7 @@ public class RedSocial1ApplicationTests{
 		SeleniumUtils.esperarSegundos(driver, 1);
 		//Contamos las notas
 		By enlace = By.xpath("//td[contains(text(), 'Nota A2')]/following-sibling::*[2]");
-		driver.findElement(enlace).click();
+		driver.findElement(enlace).click();---------------------------------------------------------------------
 		SeleniumUtils.esperarSegundos(driver, 1);
 		//Esperamos por la ventana de detalle
 		PO_View.checkElement(driver, "text", "Detalles de la nota");
