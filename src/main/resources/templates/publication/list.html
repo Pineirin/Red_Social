@@ -28,9 +28,9 @@
 	<tbody>
 	  <tr th:each="publication : ${publicationsList}">
 	    <td th:text="${publication.user.email}">c@hotmail.com</td>
-	    <td th:text="${publication.titulo}">titulo</td>
-	    <td th:text="${publication.texto}">texto</td>
-	    <td th:text="${publication.fecha}">Fecha</td>
+	    <td th:text="${publication.title}">titulo</td>
+	    <td th:text="${publication.description}">texto</td>
+	    <td th:text="${publication.date}">Fecha</td>
 	  </tr>
 	</tbody>
   </table>
