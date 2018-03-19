@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.uniovi.entities.Petition;
 import com.uniovi.entities.PetitionStatus;
-import com.uniovi.entities.Publication;
 import com.uniovi.entities.User;
 import com.uniovi.services.PetitionsService;
 import com.uniovi.services.SecurityService;

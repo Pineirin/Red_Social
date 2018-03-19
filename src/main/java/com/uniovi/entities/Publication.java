@@ -15,26 +15,26 @@ public class Publication {
 	@GeneratedValue
 	private long id;
 	
-	private String titulo;
-	private String texto;
+	private String title;
+	private String description;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	private Date fecha;
+	private Date date;
 	
 	public Publication() {
-		
+		this.date = new Date();
 	}
 	
-	public Publication(User user, String titulo,String texto, Date fecha) {
+	public Publication(User user, String title, String description) {
 		
 		super();
 		this.user=user;
-		this.titulo=titulo;
-		this.texto=texto;
-		this.fecha=fecha;
+		this.title=title;
+		this.description=description;
+		this.date=new Date();
 	}
 
 	public long getId() {
@@ -45,20 +45,20 @@ public class Publication {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getTexto() {
-		return texto;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setTexto(String texto) {
-		this.texto = texto;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public User getUser() {
@@ -69,11 +69,13 @@ public class Publication {
 		this.user = user;
 	}
 
-	public Date getFecha() {
-		return fecha;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
+	public void setDate(Date date) {
+		this.date = date;
 	}
+
+	
 }

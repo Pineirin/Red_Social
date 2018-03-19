@@ -1,7 +1,6 @@
 package com.uniovi.controllers;
 
 import java.security.Principal;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -38,10 +37,7 @@ public class PublicationController {
 		String email=principal.getName();
 		User currentUser=usersService.getUserByEmail(email);
 		
-		Date fecha=publicationsService.getActualDate();
-		
 		publication.setUser(currentUser);
-		publication.setFecha(fecha);
 		
 		publicationsService.savePublication(publication);
 		
