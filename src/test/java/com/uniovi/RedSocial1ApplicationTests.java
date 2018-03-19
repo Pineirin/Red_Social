@@ -187,8 +187,7 @@ public class RedSocial1ApplicationTests{
 		//Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
 		//Enviamos petición de amistad
-		By boton = By.className("sendPetitionButton2");
-		driver.findElement(boton).click();
+		PO_NavView.clickOption(driver, "user/petitions", "class", "btn btn-primary");
 	}
 	
 	//Identificación válida con usuario de ROL Administrador,  99999988F/123456
