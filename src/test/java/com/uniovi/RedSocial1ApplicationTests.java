@@ -7,11 +7,13 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.uniovi.pageobjects.PO_LoginView;
 import com.uniovi.pageobjects.PO_NavView;
+import com.uniovi.pageobjects.PO_PrivateView;
 import com.uniovi.pageobjects.PO_RegisterView;
 import com.uniovi.pageobjects.PO_SearchTextView;
 import com.uniovi.pageobjects.PO_View;
@@ -59,12 +61,6 @@ public class RedSocial1ApplicationTests{
 		driver.quit();
 	}
 
-	//PR01. Acceder a la página principal /
-	/*@Test
-	public void PR01() {
-		PO_HomeView.checkWelcome(driver, PO_Properties.getSPANISH());
-	}*/
-	
 	//PR01_1. Registro de Usuario con datos válidos
 	@Test
 	public void PR01_1() {
@@ -121,17 +117,18 @@ public class RedSocial1ApplicationTests{
 	public void PR03_1() {
 		//Vamos al formulario de logueo.
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
-		//Rellenamos el formulario
+		//Rellenamos el formulario.
 		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
-		//COmprobamos que no entramos en la pagina privada del Usuario
+		//Comprobamos que estamos en la vista lista usuarios.
 		PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes:");
 	}
 	
 	//Intento  de  acceso  con  URL  desde  un  usuario  no  identificado  al  listado  de  usuarios desde un usuario en sesión.  Debe producirse un acceso no permitido a vistas privadas.
 	@Test
 	public void PR03_2() {
+		//Tratamos de acceder a la vista lista usuarios.
 		driver.navigate().to(URL + "/user/list");
-		
+		//Comprobamos que nos redirige al login.
 		PO_View.checkElement(driver, "text", "Login");
 		
 	}
@@ -149,16 +146,38 @@ public class RedSocial1ApplicationTests{
 		PO_View.checkElement(driver, "text", "francisco12@live.com");
 	}
 	
-	//Identificación válida con usuario de ROL profesor,  99999993D/123456
-	/*@Test
-	public void PR08() {
+	//Intento de acceso con URL a la búsqueda de usuarios desde un usuario no identificado. Debe producirse un acceso no permitido a vistas privadas. 
+	@Test
+	public void PR04_02() {
+		//Tratamos de acceder a la vista lista usuarios.
+		driver.navigate().to(URL + "/user/list");
+		//Comprobamos que nos redirige al login.
+		PO_View.checkElement(driver, "text", "Login");
+	}
+	
+	// Enviar una invitación de amistad a un usuario de forma valida. 
+	@Test
+	public void PR05_01() {
 		//Vamos al formulario de logueo.
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		//Rellenamos el formulario
-		PO_LoginView.fillForm(driver, "99999993D" , "123456" );
-		//COmprobamos que entramos en la pagina privada de Profesor
-		PO_View.checkElement(driver, "text", "Notas del usuario");
-	}*/
+		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
+		//Enviamos petición de amistad
+		By boton = By.className("sendPetitionButton2");
+		driver.findElement(boton).click();
+	}
+	
+	// Enviar una invitación de amistad a un usuario al que ya le habíamos invitado la invitación previamente. No debería dejarnos enviar la invitación, se podría ocultar el botón de enviar invitación o notificar que ya había sido enviada previamente. 
+	@Test
+	public void PR05_02() {
+		//Vamos al formulario de logueo.
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		//Rellenamos el formulario
+		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
+		//Enviamos petición de amistad
+		By boton = By.className("sendPetitionButton2");
+		driver.findElement(boton).click();
+	}
 	
 	//Identificación válida con usuario de ROL Administrador,  99999988F/123456
 	/*@Test
