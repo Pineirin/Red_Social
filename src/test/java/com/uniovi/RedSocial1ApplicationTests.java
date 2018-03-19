@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import java.awt.Button;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,6 +15,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.uniovi.pageobjects.PO_LoginView;
@@ -22,6 +24,7 @@ import com.uniovi.pageobjects.PO_PrivateView;
 import com.uniovi.pageobjects.PO_RegisterView;
 import com.uniovi.pageobjects.PO_SearchTextView;
 import com.uniovi.pageobjects.PO_View;
+import com.uniovi.utils.SeleniumUtils;
 
 //Ordenamos las pruebas por el nombre del método
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -203,16 +206,35 @@ public class RedSocial1ApplicationTests{
 		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456");
 		
 		//Miramos si antes de mandar la petición el botón contiene el texto Agregar Amigo
-		String textoAntesDelClick=driver.findElement(By.id("sendPetitionButton2")).getText();
-		assertEquals(textoAntesDelClick, "Agregar amigo");
+		PO_View.checkElement(driver, "text", "Agregar amigo");
 		
-		//Clicamos el boton para pedir amistad
+		//Clicamos el boton para pedir amistad y enviamos la petición a Juan@hotmail.com
 		driver.findElement(By.id("sendPetitionButton2")).click();
 		
 		//Comprovamos que se ha enviado
-		String textoDespuesDelClick=driver.findElement(By.id("sendPetitionButton2")).getText();
-		assertEquals(textoDespuesDelClick, "Cancelar petición");
+		driver.findElement(By.id("sendPetitionButton2")).getText();
+		PO_View.checkElement(driver, "text", "Cancelar petición");
 		
+		//Cerramos sesión
+		PO_NavView.clickOption(driver, "logout", "class", "btn btn-primary");
+		
+		//Juan@hotmail.com se logea
+		PO_LoginView.fillForm(driver, "Juan@hotmail.com" , "123456");
+		
+		//Juan@hotmail.com mira sus peticiones de amistad
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
+		elementos.get(0).click();
+		//Sacamos la pestaña para ver las peticiones
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/petitions')]");
+		//Pinchamos en la pestaña para ver las peticiones
+		elementos.get(0).click();
+		PO_View.checkElement(driver, "text", "Aceptar petición");
+		
+		//Damos a aceptar la petición
+		driver.findElement(By.id("acceptPetitionButton1")).click();
+		
+		//Miramos que ha desparecido la invitación
+		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Aceptar petición",PO_View.getTimeout() );
 	}
 		
 	//Identificación válida con usuario de ROL Administrador,  99999988F/123456
