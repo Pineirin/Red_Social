@@ -163,13 +163,25 @@ public class RedSocial1ApplicationTests{
 		//Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
 		//Enviamos petición de amistad
-		By boton = By.className("sendPetitionButton2");
+		By boton = By.id("sendPetitionButton2");
 		driver.findElement(boton).click();
 	}
 	
 	// Enviar una invitación de amistad a un usuario al que ya le habíamos invitado la invitación previamente. No debería dejarnos enviar la invitación, se podría ocultar el botón de enviar invitación o notificar que ya había sido enviada previamente. 
 	@Test
 	public void PR05_02() {
+		//Vamos al formulario de logueo.
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		//Rellenamos el formulario
+		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
+		//Enviamos petición de amistad
+		By boton = By.className("sendPetitionButton2");
+		driver.findElement(boton).click();
+	}
+	
+	//Listar las invitaciones recibidas por un usuario, realizar la comprobación con una lista que al menos tenga una invitación recibida. 
+	@Test
+	public void PR06() {
 		//Vamos al formulario de logueo.
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		//Rellenamos el formulario
