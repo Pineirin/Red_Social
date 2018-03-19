@@ -1,9 +1,10 @@
 package com.uniovi.controllers;
 
 import java.security.Principal;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -40,15 +41,24 @@ public class PublicationController {
 		
 		publicationsService.savePublication(publication);
 		
-		return "publication/create";
+		return "redirect:/publication/list";
 	}
 	
 	@RequestMapping("/publication/list")
-	public String listPublications(Model model) {
+	public String listPublications(Model model, Pageable pageable, String searchText) {
 		
-		List<Publication> publications=publicationsService.getPublications();
+		Page<Publication> publications=publicationsService.getPublications(pageable);
+		
+		if (searchText != null && !searchText.isEmpty()) {   
+			publications=publicationsService.searchPublicationsByUserTitleDescription (pageable, searchText);  
+		}
+		else {
+			publications=publicationsService.getPublications(pageable);
+		}
 		
 		model.addAttribute("publicationsList", publications);
+		model.addAttribute("page", publications);
+		model.addAttribute("searchText", searchText);
 		
 		return "publication/list";
 	}

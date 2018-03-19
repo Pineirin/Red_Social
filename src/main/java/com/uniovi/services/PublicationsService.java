@@ -1,9 +1,11 @@
 package com.uniovi.services;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Publication;
@@ -19,9 +21,16 @@ public class PublicationsService {
 		publicationsRepository.save(publication);
 	}
 	
-	public List<Publication> getPublications() {
-		List<Publication> publications = new ArrayList<Publication>();
-		publicationsRepository.findAll().forEach(publications::add);
+	public Page<Publication> getPublications(Pageable pageable) {
+		Page<Publication> publications = new PageImpl<Publication>(new LinkedList<Publication>());
+		publications = publicationsRepository.findAll(pageable);
+		return publications;
+	}
+
+	public Page<Publication> searchPublicationsByUserTitleDescription(Pageable pageable, String searchText) {
+		Page<Publication> publications = new PageImpl<Publication>(new LinkedList<Publication>());
+		searchText= "%"+searchText+"%";
+		publications = publicationsRepository.searchPublicationsByUserTitleDescription(pageable, searchText);
 		return publications;
 	}
 

@@ -1,9 +1,5 @@
 package com.uniovi;
 
-import static org.junit.Assert.*;
-
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,19 +7,14 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.uniovi.pageobjects.PO_HomeView;
 import com.uniovi.pageobjects.PO_LoginView;
 import com.uniovi.pageobjects.PO_NavView;
-import com.uniovi.pageobjects.PO_PrivateView;
-import com.uniovi.pageobjects.PO_Properties;
 import com.uniovi.pageobjects.PO_RegisterView;
+import com.uniovi.pageobjects.PO_SearchTextView;
 import com.uniovi.pageobjects.PO_View;
-import com.uniovi.utils.SeleniumUtils;
 
 //Ordenamos las pruebas por el nombre del método
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -125,70 +116,38 @@ public class RedSocial1ApplicationTests{
 		PO_View.checkElement(driver, "text", "Usuario o contraseña inválidos");
 	}
 		
-	//PR04. OPción de navegación. Cambio de idioma de Español a Ingles y vuelta a Español
-	/*@Test
-	public void PR04() {
-		PO_HomeView.checkChangeIdiom(driver, "btnSpanish", "btnEnglish",
-				PO_Properties.getSPANISH(), PO_Properties.getENGLISH());
-		//SeleniumUtils.esperarSegundos(driver, 2);
-	}*/
-	
-	//PR06. Prueba del formulario de registro. DNI repetido en la BD, Nombre corto, .... pagination
-	//pagination-centered, Error.signup.dni.length
-	/*@Test
-	public void PR06() {
-		//Vamos al formulario de registro
-		PO_NavView.clickOption(driver, "signup", "class", "btn btn-primary");
-		//Rellenamos el formulario.
-		PO_RegisterView.fillForm(driver, "99999990A", "Josefo", "Perez", "77777",
-				"77777");
-		PO_View.getP();
-		//COmprobamos el error de DNI repetido.
-		PO_RegisterView.checkKey(driver, "Error.signup.dni.duplicate",
-				PO_Properties.getSPANISH() );
-		//Rellenamos el formulario.
-		PO_RegisterView.fillForm(driver, "99999990B", "Jose", "Perez", "77777",
-				"77777");
-		//COmprobamos el error de Nombre corto .
-		PO_RegisterView.checkKey(driver, "Error.signup.name.length",
-				PO_Properties.getSPANISH() );
-		//Rellenamos el formulario.
-		PO_RegisterView.fillForm(driver, "99999990B", "Josefo", "Per", "77777",
-				"77777");
-		
-		////////////////////
-		
-		//COmprobamos el error de Apellido corto .
-		PO_RegisterView.checkKey(driver, "Error.signup.lastName.length",
-				PO_Properties.getSPANISH() );
-		
-		//Rellenamos el formulario.
-		PO_RegisterView.fillForm(driver, "99999990B", "Josefo", "Perez", "77",
-				"77");
-		
-		//COmprobamos el error de password corta .
-		PO_RegisterView.checkKey(driver, "Error.signup.password.length",
-				PO_Properties.getSPANISH() );
-		
-		//Rellenamos el formulario.
-		PO_RegisterView.fillForm(driver, "99999990B", "Josefo", "Perez", "7777",
-				"7778");
-				
-		//COmprobamos el error de password no coincidente .
-		PO_RegisterView.checkKey(driver, "Error.signup.passwordConfirm.coincidence",
-				PO_Properties.getSPANISH() );
-	}*/
-	
-	//PRN. Loguearse con exito desde el ROl de Usuario, 99999990D, 123456
-	/*@Test
-	public void PR07() {
+	//Acceso al listado de usuarios desde un usuario en sesión.
+	@Test
+	public void PR03_1() {
 		//Vamos al formulario de logueo.
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		//Rellenamos el formulario
-		PO_LoginView.fillForm(driver, "99999990A" , "123456" );
-		//COmprobamos que entramos en la pagina privada de Alumno
-		PO_View.checkElement(driver, "text", "Notas del usuario");
-	}*/
+		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
+		//COmprobamos que no entramos en la pagina privada del Usuario
+		PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes:");
+	}
+	
+	//Intento  de  acceso  con  URL  desde  un  usuario  no  identificado  al  listado  de  usuarios desde un usuario en sesión.  Debe producirse un acceso no permitido a vistas privadas.
+	@Test
+	public void PR03_2() {
+		driver.navigate().to(URL + "/user/list");
+		
+		PO_View.checkElement(driver, "text", "Login");
+		
+	}
+	
+	// Realizar una búsqueda valida en el listado de usuarios desde un usuario en sesión. 
+	@Test
+	public void PR04_01() {
+		//Vamos al formulario de logueo.
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		//Rellenamos el formulario
+		PO_LoginView.fillForm(driver, "adripc@live.com" , "123456" );
+		//Rellenamos el formulario de busqueda
+		PO_SearchTextView.fillForm(driver, "ran");
+		//Comprobamos que aparece el usuario filtrado
+		PO_View.checkElement(driver, "text", "francisco12@live.com");
+	}
 	
 	//Identificación válida con usuario de ROL profesor,  99999993D/123456
 	/*@Test
