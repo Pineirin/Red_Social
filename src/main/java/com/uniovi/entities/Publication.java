@@ -1,5 +1,7 @@
 package com.uniovi.entities;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -22,19 +24,25 @@ public class Publication {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	private Date date;
+	private String date;
 	
 	public Publication() {
-		this.date = new Date();
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date currentDate = new Date();
+		this.date = formatter.format(currentDate);
 	}
 	
 	public Publication(User user, String title, String description) {
 		
 		super();
+		
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date currentDate = new Date();
+		this.date = formatter.format(currentDate); 
+		
 		this.user=user;
 		this.title=title;
 		this.description=description;
-		this.date=new Date();
 	}
 
 	public long getId() {
@@ -69,11 +77,11 @@ public class Publication {
 		this.user = user;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
