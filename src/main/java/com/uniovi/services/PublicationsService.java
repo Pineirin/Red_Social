@@ -13,14 +13,14 @@ import com.uniovi.repositories.PublicationsRepository;
 
 @Service
 public class PublicationsService {
-	
+
 	@Autowired
 	private PublicationsRepository publicationsRepository;
-	
+
 	public void savePublication(Publication publication) {
 		publicationsRepository.save(publication);
 	}
-	
+
 	public Page<Publication> getPublications(Pageable pageable) {
 		Page<Publication> publications = new PageImpl<Publication>(new LinkedList<Publication>());
 		publications = publicationsRepository.findAll(pageable);
@@ -29,7 +29,7 @@ public class PublicationsService {
 
 	public Page<Publication> searchPublicationsByUserTitleDescription(Pageable pageable, String searchText) {
 		Page<Publication> publications = new PageImpl<Publication>(new LinkedList<Publication>());
-		searchText= "%"+searchText+"%";
+		searchText = "%" + searchText + "%";
 		publications = publicationsRepository.searchPublicationsByUserTitleDescription(pageable, searchText);
 		return publications;
 	}

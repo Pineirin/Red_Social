@@ -9,32 +9,30 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(
-		uniqueConstraints = {
-				@UniqueConstraint(columnNames = {"userOrigen_id", "userDestino_id"})
-		})
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "userOrigen_id", "userDestino_id" }) })
 public class Petition {
-	
+
 	@Id
 	@GeneratedValue
 	private long id;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "userDestino_id")
 	private User userDestino;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "userOrigen_id")
 	private User userOrigen;
-	
-	private String status=PetitionStatus.EN_PROCESO;
-	
-	public Petition() {}
-	
+
+	private String status = PetitionStatus.EN_PROCESO;
+
+	public Petition() {
+	}
+
 	public Petition(User userOrigen, User userDestino) {
 		super();
-		this.userOrigen=userOrigen;
-		this.userDestino=userDestino;
+		this.userOrigen = userOrigen;
+		this.userDestino = userDestino;
 	}
 
 	public User getUserOrigen() {
@@ -105,11 +103,5 @@ public class Petition {
 			return false;
 		return true;
 	}
-
-	
-
-	
-	
-	
 
 }

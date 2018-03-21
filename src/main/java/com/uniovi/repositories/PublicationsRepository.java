@@ -7,10 +7,10 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.uniovi.entities.Publication;
 
-public interface PublicationsRepository extends CrudRepository<Publication, Long>{
+public interface PublicationsRepository extends CrudRepository<Publication, Long> {
 
 	Page<Publication> findAll(Pageable pageable);
 
 	@Query("SELECT r FROM Publication r WHERE (LOWER(r.user.email) LIKE LOWER(?1) OR LOWER(r.description) LIKE LOWER(?1) OR LOWER (r.title) LIKE LOWER(?1))")
-	Page<Publication> searchPublicationsByUserTitleDescription(Pageable pageable, String searchText); 
+	Page<Publication> searchPublicationsByUserTitleDescription(Pageable pageable, String searchText);
 }

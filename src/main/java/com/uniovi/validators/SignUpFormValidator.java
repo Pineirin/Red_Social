@@ -8,22 +8,22 @@ import org.springframework.validation.*;
 
 @Component
 public class SignUpFormValidator implements Validator {
-	
+
 	@Autowired
 	private UsersService usersService;
-	
+
 	@Override
 	public boolean supports(Class<?> aClass) {
 		return User.class.equals(aClass);
 	}
-	
+
 	@Override
 	public void validate(Object target, Errors errors) {
 		User user = (User) target;
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "Error.empty");
-		
-		User userEnBD=usersService.getUserByEmail(user.getEmail());
-		
+
+		User userEnBD = usersService.getUserByEmail(user.getEmail());
+
 		if (userEnBD != null) {
 			errors.rejectValue("email", "Error.signup.email.duplicate");
 		}
@@ -37,9 +37,7 @@ public class SignUpFormValidator implements Validator {
 			errors.rejectValue("password", "Error.signup.password.length");
 		}
 		if (!user.getPasswordConfirm().equals(user.getPassword())) {
-			errors.rejectValue("passwordConfirm",
-					"Error.signup.passwordConfirm.coincidence");
+			errors.rejectValue("passwordConfirm", "Error.signup.passwordConfirm.coincidence");
 		}
 	}
 }
-

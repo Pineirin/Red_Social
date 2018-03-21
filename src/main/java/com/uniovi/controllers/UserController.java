@@ -29,43 +29,43 @@ import com.uniovi.validators.SignUpFormValidator;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired
 	private UsersService usersService;
-	
+
 	@Autowired
 	private PetitionsService petitionsService;
-	
+
 	@Autowired
 	private SecurityService securityService;
-	
+
 	@Autowired
 	private SignUpFormValidator signUpFormValidator;
-	
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("user", new User());
 		return "login";
 	}
-	
+
 	@RequestMapping(value = "/logoutFromLogin", method = RequestMethod.GET)
 	public String logout(Model model) {
-		
+
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if(auth.isAuthenticated()) {
-			String name=auth.getName();
+		if (auth.isAuthenticated()) {
+			String name = auth.getName();
 			usersService.actualizarEnLineaDelUsuario(name, false);
 		}
-		
+
 		return "redirect:login";
 	}
-	
+
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(Model model) {
 		model.addAttribute("user", new User());
 		return "signup";
 	}
-	
+
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String setUser(@Validated User user, BindingResult result, Model model) {
 		signUpFormValidator.validate(user, result);
@@ -74,167 +74,166 @@ public class UserController {
 		}
 		usersService.addUser(user);
 		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());
-		
+
 		usersService.actualizarEnLineaDelUsuario(user.getEmail(), true);
-		
+
 		return "redirect:user/list";
 	}
-	
+
 	@RequestMapping("/user/list")
-	public String getList(Model model, Pageable pageable, Principal principal, @RequestParam(defaultValue = "", required=false) String searchText){
-		
-		//poner al usuario en linea
+	public String getList(Model model, Pageable pageable, Principal principal,
+			@RequestParam(defaultValue = "", required = false) String searchText) {
+
+		// poner al usuario en linea
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
 		usersService.actualizarEnLineaDelUsuario(email, true);
 		//
-		
+
 		User currentUser = usersService.getUserByEmail(email);
-		
+
 		Page<User> users;
-		if (searchText != null && !searchText.isEmpty()) {   
-			users=usersService.searchUsersByEmailAndName (pageable, searchText);  
+		if (searchText != null && !searchText.isEmpty()) {
+			users = usersService.searchUsersByEmailAndName(pageable, searchText);
+		} else {
+			users = usersService.getUsers(pageable);
 		}
-		else {
-			users=usersService.getUsers(pageable);
-		}
-		
-		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
-		Page<User> amigosPage=usersService.searchFriendsForUser(pageable,currentUser);
-		List<User> amigos=amigosPage.getContent();
-		
-		model.addAttribute("usersList",users);
+
+		List<User> usuariosDestinos = usersService.searchUsersDestinosForUser(currentUser);
+		Page<User> amigosPage = usersService.searchFriendsForUser(pageable, currentUser);
+		List<User> amigos = amigosPage.getContent();
+
+		model.addAttribute("usersList", users);
 		model.addAttribute("currentUser", currentUser);
-		model.addAttribute("usuariosDestinos",usuariosDestinos);
-		model.addAttribute("amigos",amigos);
+		model.addAttribute("usuariosDestinos", usuariosDestinos);
+		model.addAttribute("amigos", amigos);
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", searchText);
 		return "user/list";
 	}
-	
+
 	@RequestMapping("/user/petitions")
-	public String getPetitions(Model model, Principal principal){
-			
+	public String getPetitions(Model model, Principal principal) {
+
 		List<User> users = new LinkedList<User>();
-		
+
 		String email = principal.getName();
 		User userDestino = usersService.getUserByEmail(email);
-		
+
 		List<Petition> petitions = petitionsService.searchPetitionByDestinationUser(userDestino);
-		
-		
+
 		for (Petition petition : petitions)
-			if(petition.getStatus().equals(PetitionStatus.EN_PROCESO))
+			if (petition.getStatus().equals(PetitionStatus.EN_PROCESO))
 				users.add(petition.getUserOrigen());
-		
+
 		Page<User> filteredUsers = new PageImpl<User>(users);
-		
-		model.addAttribute("usersList",filteredUsers);
-		model.addAttribute("page",filteredUsers);
+
+		model.addAttribute("usersList", filteredUsers);
+		model.addAttribute("page", filteredUsers);
 		return "user/petitions";
 	}
-	
+
 	@RequestMapping("/user/friends")
-	public String getFriends(Model model, Pageable pageable, Principal principal){
-		
+	public String getFriends(Model model, Pageable pageable, Principal principal) {
+
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
-		
-		List<User> amigos=usersService.searchFriendsForUser(currentUser);
-		Page<User> amigosEnSesion=usersService.amigosEnSesion(pageable,amigos);
-				
-		model.addAttribute("amigos",amigosEnSesion);
+
+		List<User> amigos = usersService.searchFriendsForUser(currentUser);
+		Page<User> amigosEnSesion = usersService.amigosEnSesion(pageable, amigos);
+
+		model.addAttribute("amigos", amigosEnSesion);
 		model.addAttribute("page", amigosEnSesion);
 
 		return "user/friends";
 	}
-	
-	@RequestMapping(value="/user/{id}/sendPetition", method=RequestMethod.GET)
-	public String sendPetition(Model model, @PathVariable Long id){
-		long idOrigin=usersService.getIdOriginUser();
-		User userOrigin=usersService.getUser(idOrigin);	
-		
-		long idDestino=id;
-		User userDestino=usersService.getUser(idDestino);
-		
-		//CREAMOS LA PETICIÓN
-		Petition peticion=new Petition(userOrigin,userDestino);
-		
-		//se mete en la tabla de peticiones
-		petitionsService.addPetition(peticion);//añadimos la petición al repositorio
-		
-		return "redirect:/user/list"; 
+
+	@RequestMapping(value = "/user/{id}/sendPetition", method = RequestMethod.GET)
+	public String sendPetition(Model model, @PathVariable Long id) {
+		long idOrigin = usersService.getIdOriginUser();
+		User userOrigin = usersService.getUser(idOrigin);
+
+		long idDestino = id;
+		User userDestino = usersService.getUser(idDestino);
+
+		// CREAMOS LA PETICIÓN
+		Petition peticion = new Petition(userOrigin, userDestino);
+
+		// se mete en la tabla de peticiones
+		petitionsService.addPetition(peticion);// añadimos la petición al repositorio
+
+		return "redirect:/user/list";
 	}
-	
-	@RequestMapping(value="/user/{id}/cancelPetition", method=RequestMethod.GET)
-	public String cancelPetition(Model model, @PathVariable Long id){
-		long idOrigin=usersService.getIdOriginUser();
-		User userOrigin=usersService.getUser(idOrigin);
-		
-		long idDestino=id;
-		User userDestino=usersService.getUser(idDestino);
-				
+
+	@RequestMapping(value = "/user/{id}/cancelPetition", method = RequestMethod.GET)
+	public String cancelPetition(Model model, @PathVariable Long id) {
+		long idOrigin = usersService.getIdOriginUser();
+		User userOrigin = usersService.getUser(idOrigin);
+
+		long idDestino = id;
+		User userDestino = usersService.getUser(idDestino);
+
 		petitionsService.cancelarPetition(userOrigin, userDestino);
 		return "redirect:/user/list";
 	}
-	
-	@RequestMapping(value="/user/{id}/acceptPetition", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/user/{id}/acceptPetition", method = RequestMethod.GET)
 	public String acceptPetition(Model model, @PathVariable Long id) {
-		long idDestination=usersService.getIdOriginUser();
-		User userDestination=usersService.getUser(idDestination);
-		
-		long idOrigin=id;
-		User userOrigin=usersService.getUser(idOrigin);
-		
-		List<Petition> petitions = petitionsService.searchPetitionByOriginUserAndDestinationUser(userOrigin, userDestination);
-		
+		long idDestination = usersService.getIdOriginUser();
+		User userDestination = usersService.getUser(idDestination);
+
+		long idOrigin = id;
+		User userOrigin = usersService.getUser(idOrigin);
+
+		List<Petition> petitions = petitionsService.searchPetitionByOriginUserAndDestinationUser(userOrigin,
+				userDestination);
+
 		long idPetition = petitions.get(0).getId();
-				
+
 		petitionsService.updateStatus(PetitionStatus.TERMINADA, idPetition);
 		return "redirect:/user/petitions";
 	}
-	
+
 	@RequestMapping("/user/list/update")
-	public String updateList(Model model, Pageable pageable, Principal principal){
-		
+	public String updateList(Model model, Pageable pageable, Principal principal) {
+
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
-		
-		List<User> usuariosDestinos=usersService.searchUsersDestinosForUser(currentUser);
-		Page<User> amigosPage=usersService.searchFriendsForUser(pageable,currentUser);
-		List<User> amigos=amigosPage.getContent();
-		
+
+		List<User> usuariosDestinos = usersService.searchUsersDestinosForUser(currentUser);
+		Page<User> amigosPage = usersService.searchFriendsForUser(pageable, currentUser);
+		List<User> amigos = amigosPage.getContent();
+
 		Page<User> users = usersService.getUsers(pageable);
 		model.addAttribute("usersList", users);
-		model.addAttribute("usuariosDestinos",usuariosDestinos);
-		model.addAttribute("amigos",amigos);
+		model.addAttribute("usuariosDestinos", usuariosDestinos);
+		model.addAttribute("amigos", amigos);
 		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", "");
-		
+
 		return "user/list :: tableUsers";
 	}
-	
+
 	@RequestMapping("/user/petitions/update")
-	public String updatePetitions(Model model, Pageable pageable, Principal principal){
-		
+	public String updatePetitions(Model model, Pageable pageable, Principal principal) {
+
 		List<User> users = new LinkedList<User>();
-		
+
 		String email = principal.getName();
 		User userDestino = usersService.getUserByEmail(email);
-		
+
 		List<Petition> petitions = petitionsService.searchPetitionByDestinationUser(userDestino);
-		
-		
+
 		for (Petition petition : petitions)
-			if(petition.getStatus().equals(PetitionStatus.EN_PROCESO))
+			if (petition.getStatus().equals(PetitionStatus.EN_PROCESO))
 				users.add(petition.getUserOrigen());
-		
+
 		Page<User> filteredUsers = new PageImpl<User>(users);
-		
-		model.addAttribute("usersList",filteredUsers);
-		
+
+		model.addAttribute("usersList", filteredUsers);
+
 		return "user/petitions :: tablePetitions";
 	}
-	
+
 }

@@ -18,48 +18,47 @@ import com.uniovi.services.UsersService;
 
 @Controller
 public class PublicationController {
-	
+
 	@Autowired
 	private UsersService usersService;
-	
+
 	@Autowired
 	private PublicationsService publicationsService;
-	
+
 	@RequestMapping("/publication/create")
 	public String createPublication(Model model) {
 		model.addAttribute("publication", new Publication());
 		return "publication/create";
 	}
-	
-	@RequestMapping(value="/publication/create",method=RequestMethod.POST)
+
+	@RequestMapping(value = "/publication/create", method = RequestMethod.POST)
 	public String createPublication(Model model, Principal principal, @ModelAttribute Publication publication) {
-		
-		String email=principal.getName();
-		User currentUser=usersService.getUserByEmail(email);
-		
+
+		String email = principal.getName();
+		User currentUser = usersService.getUserByEmail(email);
+
 		publication.setUser(currentUser);
-		
+
 		publicationsService.savePublication(publication);
-		
+
 		return "redirect:/publication/list";
 	}
-	
+
 	@RequestMapping("/publication/list")
 	public String listPublications(Model model, Pageable pageable, String searchText) {
-		
-		Page<Publication> publications=publicationsService.getPublications(pageable);
-		
-		if (searchText != null && !searchText.isEmpty()) {   
-			publications=publicationsService.searchPublicationsByUserTitleDescription (pageable, searchText);  
+
+		Page<Publication> publications = publicationsService.getPublications(pageable);
+
+		if (searchText != null && !searchText.isEmpty()) {
+			publications = publicationsService.searchPublicationsByUserTitleDescription(pageable, searchText);
+		} else {
+			publications = publicationsService.getPublications(pageable);
 		}
-		else {
-			publications=publicationsService.getPublications(pageable);
-		}
-		
+
 		model.addAttribute("publicationsList", publications);
 		model.addAttribute("page", publications);
 		model.addAttribute("searchText", searchText);
-		
+
 		return "publication/list";
 	}
 }
