@@ -54,7 +54,9 @@
  		<div th:if="${!user.equals(currentUser)}">
  			<div th:if="${#lists.contains(usuariosDestinos, user)}">
 	    		<div th:if="${#lists.contains(amigos, user)}">
-	    			Amigo añadido
+	    		
+	    			<button type="button" th:id="${'friendButton' + user.id}"
+ 					class="btn btn-default">Amigo añadido</button>
 	    		</div>
 	    		
 	    		<div th:unless="${#lists.contains(amigos, user)}">
