@@ -88,7 +88,6 @@ public class UserController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
 		usersService.actualizarEnLineaDelUsuario(email, true);
-		//
 
 		User currentUser = usersService.getUserByEmail(email);
 

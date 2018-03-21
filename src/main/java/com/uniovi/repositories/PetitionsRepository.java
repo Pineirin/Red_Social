@@ -22,6 +22,8 @@ public interface PetitionsRepository extends CrudRepository<Petition, Long> {
 	@Query("SELECT p FROM Petition p WHERE p.userDestino = ?1 ORDER BY p.id ASC")
 	List<Petition> searchPetitionsForDestinationUser(User user);
 
+	Petition findById(long id);
+
 	Page<Petition> findAll(Pageable pageable);
 
 	@Query("SELECT p " + "FROM User u join u.petitions p " + "where u = ?1 and p.userDestino = ?2")

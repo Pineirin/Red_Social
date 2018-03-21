@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -21,6 +23,8 @@ import com.uniovi.repositories.UsersRepository;
 @Service
 public class UsersService {
 
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	private UsersRepository usersRepository;
 
@@ -45,13 +49,14 @@ public class UsersService {
 	}
 
 	public User getUser(Long id) {
-		User u = usersRepository.findOne(id);
-		return u;
+		User user = usersRepository.findOne(id);
+		return user;
 	}
 
 	public void addUser(User user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		usersRepository.save(user);
+		log.info("User: " + user.getEmail() + "registered in the application");
 	}
 
 	public User getUserByEmail(String email) {
@@ -72,16 +77,19 @@ public class UsersService {
 		return bCryptPasswordEncoder.matches(password, passwordEncriptada);
 	}
 
+	/*
 	public void setSendPetition(boolean sendPetition, Long id) {
-		/*
+		
 		 * Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		 * String email = auth.getName();
-		 */
+		 
 		User user = usersRepository.findOne(id);
 		if (user != null) {// ¿el propietario de la nota es el mismo que el autenticado?
 			usersRepository.updateResend(sendPetition, id);
 		}
+		
 	}
+	*/
 
 	public Page<User> searchUsersByEmailAndName(Pageable pageable, String searchText) {
 		Page<User> users = new PageImpl<User>(new LinkedList<User>());
