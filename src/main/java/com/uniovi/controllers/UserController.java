@@ -94,7 +94,12 @@ public class UserController {
 		// poner al usuario en linea
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
-		usersService.actualizarEnLineaDelUsuario(email, true);
+		
+		if (!usersService.userEnLinea(email)) {
+			log.info("User: " + email +" logged in the application");
+			usersService.actualizarEnLineaDelUsuario(email, true);
+		}
+		
 
 		User currentUser = usersService.getUserByEmail(email);
 

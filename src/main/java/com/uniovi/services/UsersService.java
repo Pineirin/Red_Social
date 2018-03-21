@@ -24,7 +24,7 @@ import com.uniovi.repositories.UsersRepository;
 public class UsersService {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
-	
+
 	@Autowired
 	private UsersRepository usersRepository;
 
@@ -32,9 +32,7 @@ public class UsersService {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@PostConstruct
-	public void init() {
-
-	}
+	public void init() {}
 
 	public List<User> getUsers() {
 		List<User> users = new ArrayList<User>();
@@ -77,20 +75,6 @@ public class UsersService {
 		return bCryptPasswordEncoder.matches(password, passwordEncriptada);
 	}
 
-	/*
-	public void setSendPetition(boolean sendPetition, Long id) {
-		
-		 * Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		 * String email = auth.getName();
-		 
-		User user = usersRepository.findOne(id);
-		if (user != null) {// ¿el propietario de la nota es el mismo que el autenticado?
-			usersRepository.updateResend(sendPetition, id);
-		}
-		
-	}
-	*/
-
 	public Page<User> searchUsersByEmailAndName(Pageable pageable, String searchText) {
 		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		searchText = "%" + searchText + "%";
@@ -132,8 +116,12 @@ public class UsersService {
 	}
 
 	public void actualizarEnLineaDelUsuario(String email, boolean enLinea) {
-
 		usersRepository.actualizarEnLineaDelUsuario(email, enLinea);
+	}
+	
+	public boolean userEnLinea(String email) {
+		User user = getUserByEmail(email);
+		return user.getEnLinea();	
 	}
 
 }
