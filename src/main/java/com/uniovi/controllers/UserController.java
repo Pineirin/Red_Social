@@ -154,7 +154,6 @@ public class UserController {
 		User currentUser = usersService.getUserByEmail(email);
 
 		Page<User> amigos = usersService.searchFriendsForUser(pageable, currentUser);
-		//Page<User> amigosEnSesion = usersService.amigosEnSesion(pageable, amigos);
 
 		model.addAttribute("amigos", amigos);
 		model.addAttribute("page", amigos);

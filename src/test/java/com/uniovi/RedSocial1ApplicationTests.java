@@ -1,5 +1,7 @@
 package com.uniovi;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 
 import org.junit.After;
@@ -312,7 +314,35 @@ public class RedSocial1ApplicationTests {
 			PO_View.checkElement(driver, "text", "Que tal");
 			
 	}
+	
+	// Acceso al listado de publicaciones desde un usuario en sesión
+	@Test
+	public void PR010_01() {
 
+		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
+		
+		// adripc2live.com entra en Publicaciones
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
+		elementos.get(0).click();
+					
+		// Sacamos la pestaña para ver las publicaciónes
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/list')]");
+		// Pinchamos en la pestaña para ver las publicaciones
+		elementos.get(0).click();
+
+		// Aparece la lista de publicciones
+		PO_View.checkElement(driver, "text", "adripc@live.com");
+		
+		PO_View.checkElement(driver, "text", "Hola");
+		PO_View.checkElement(driver, "text", "Que tal");
+		
+		//Se mira que exista una publicacion
+		List<WebElement> publicaciones =SeleniumUtils.EsperaCargaPagina(driver, "free", "//tbody/tr",PO_View.getTimeout()); 
+		assertTrue(publicaciones.size() == 1); 
+
+	}
 
 	// Identificación inválida con usuario de ROL alumno, 99999990A/123456
 	/*
