@@ -201,3 +201,9 @@
 2018-03-21 17:40:57.757  INFO 3992 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
 2018-03-21 17:41:00.382  INFO 3992 --- [http-nio-8090-exec-3] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com accepted the petition of the user: adripc@live.com
 2018-03-21 17:41:24.745  INFO 3992 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-21 17:47:11.760  INFO 3992 --- [http-nio-8090-exec-5] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: zadfvda
+2018-03-21 17:57:14.274  INFO 3992 --- [http-nio-8090-exec-3] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-21 17:58:05.891  INFO 3992 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-03-21 17:58:05.891  INFO 3992 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64c87930: startup date [Wed Mar 21 17:39:54 CET 2018]; root of context hierarchy
+2018-03-21 17:58:05.896  INFO 3992 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-03-21 17:58:05.897  INFO 3992 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
