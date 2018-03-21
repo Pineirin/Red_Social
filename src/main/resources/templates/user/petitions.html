@@ -5,14 +5,14 @@
 <nav th:replace="fragments/nav"/>
 
 <div class="container">
-  <h2>Usuarios que te han mandado peticiones</h2>
-  <p>Usted a recibido las siguientes solicitudes de amistad:</p>                                                                                      
+  <h2 th:text = "#{petitions.texto1}">Usuarios que te han mandado peticiones</h2>
+  <p th:text = "#{petitions.texto2}">Usted a recibido las siguientes solicitudes de amistad:</p>                                                                                      
   <div class="table-responsive">          
   <table class="table table-hover" th:fragment="tablePetitions" id="tablePetitions">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Email</th>
+        <th th:text = "#{name}">Nombre</th>
+        <th th:text = "#{email}">Email</th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
@@ -25,7 +25,7 @@
 	    <td th:text="${user.email}">c@hotmail.com</td>
 	    <td>   		
 	    		<button type="button" th:id="${'acceptPetitionButton' + user.id}"
- 				class="btn btn-default">Aceptar petición</button>
+ 				class="btn btn-default" th:text = "#{petition.accept}">Aceptar petición</button>
  				<script th:inline="javascript">
  				/*<![CDATA[*/
  		 		$( "#acceptPetitionButton[[${user.id}]]" ).click(function() {

@@ -5,8 +5,8 @@
 <nav th:replace="fragments/nav"/>
 
 <div class="container">
-  <h2>Amigos en sesión</h2>
-  <p>Usted tiene los siguientes amigos en sesión:</p>                                                                                      
+  <h2 th:text = "#{friends.text1}">Amigos en sesión</h2>
+  <p th:text = "#{friends.text2}">Usted tiene los siguientes amigos en sesión:</p>                                                                                      
   <div class="table-responsive">          
   <table class="table table-hover" th:fragment="tableFriends" id="tableFriends">
     <thead>
