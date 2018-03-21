@@ -4,6 +4,8 @@ import java.security.Principal;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -30,6 +32,8 @@ import com.uniovi.validators.SignUpFormValidator;
 @Controller
 public class UserController {
 
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	private UsersService usersService;
 
@@ -50,10 +54,13 @@ public class UserController {
 
 	@RequestMapping(value = "/logoutFromLogin", method = RequestMethod.GET)
 	public String logout(Model model) {
-
+		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+
 		if (auth.isAuthenticated()) {
 			String name = auth.getName();
+			log.info("User: " + auth.getName() + " logged out from the application");
 			usersService.actualizarEnLineaDelUsuario(name, false);
 		}
 

@@ -23,7 +23,7 @@ public class PublicationsService {
 
 	public void savePublication(Publication publication) {
 		publicationsRepository.save(publication);
-		log.info("User: " + publication.getUser().getEmail() + "created the publication: " + publication.getTitle());
+		log.info("User: " + publication.getUser().getEmail() + " created the publication: " + publication.getTitle());
 	}
 
 	public Page<Publication> getPublications(Pageable pageable) {

@@ -46,7 +46,7 @@ public class PetitionsService {
 
 	public void addPetition(Petition petition) {
 		petitionsRepository.save(petition);
-		log.info("User: " + petition.getUserOrigen().getEmail() + "sent a petition to user: " + petition.getUserDestino().getEmail());
+		log.info("User: " + petition.getUserOrigen().getEmail() + " sent a petition to user: " + petition.getUserDestino().getEmail());
 	}
 
 	public void deletePetition(Long id) {
@@ -56,7 +56,7 @@ public class PetitionsService {
 	public void updateStatus(String status, Long id) {
 		petitionsRepository.updateStatus(status, id);
 		Petition petition = petitionsRepository.findById(id);
-		log.info("User: " + petition.getUserDestino().getEmail() + "accepted the petition of the user: " + petition.getUserOrigen().getEmail());
+		log.info("User: " + petition.getUserDestino().getEmail() + " accepted the petition of the user: " + petition.getUserOrigen().getEmail());
 	}
 
 	// +++++++++++++++++
@@ -73,7 +73,7 @@ public class PetitionsService {
 
 		deletePetition(petition.getId());
 		
-		log.info("User: " + petition.getUserOrigen().getEmail() + "canceled the petition to user: " + petition.getUserDestino().getEmail());
+		log.info("User: " + petition.getUserOrigen().getEmail() + " canceled the petition to user: " + petition.getUserDestino().getEmail());
 	}
 
 	public List<Petition> searchPetitionByDestinationUser(User userDestino) {
