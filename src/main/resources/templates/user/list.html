@@ -5,16 +5,16 @@
 <nav th:replace="fragments/nav"/>
 
 <div class="container">
-  <h2>Usuarios</h2>
+  <h2 th:text= "#{users}"> Usuarios</h2>
   <form class="navbar-form" action="/user/list">         
   	<div class="form-group">             
   	<input name="searchText" type="text" class="form-control" size="50"                 
-  	placeholder="Buscar por email o nombre"/>         
+  	placeholder="tengo que mirar como se internacionaliza esto.	"/>         
   	</div>         
-  	<button type="submit" class="btn btn-default">Buscar</button>  
+  	<button type="submit" class="btn btn-default" th:text = "#{search}">Buscar</button>  
   </form> 
   
-    <button type="button" id="updateButton" class="btn btn-default">Actualizar</button>
+    <button type="button" id="updateButton" class="btn btn-default" th:text = "#{update}">Actualizar</button>
  
  <script th:inline="javascript">
  /*<![CDATA[*/
@@ -29,14 +29,14 @@
  /*]]>*/
  </script> 
  
-  <p>Los usuarios de la aplicación son los siguientes:</p>                                                                                      
+  <p th:text ="#{users.show.text}">Los usuarios de la aplicación son los siguientes:</p>                                                                                      
   <div th:fragment="tableUsers" id="tableUsers">
   <div class="table-responsive">     
   <table class="table table-hover" >
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Email</th>
+        <th th:text = "#{name}">Nombre</th>
+        <th  th:text = "#{email}">Email</th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
@@ -53,13 +53,13 @@
  		
  		<div th:if="${!user.equals(currentUser)}">
  			<div th:if="${#lists.contains(usuariosDestinos, user)}">
-	    		<div th:if="${#lists.contains(amigos, user)}">
+	    		<div th:if="${#lists.contains(amigos, user)}"  th:text="#{friend.added}">
 	    			Amigo añadido
 	    		</div>
 	    		
 	    		<div th:unless="${#lists.contains(amigos, user)}">
 	    			<button type="button" th:id="${'cancelPetitionButton' + user.id}"
- 					class="btn btn-default">Cancelar petición</button>
+ 					class="btn btn-default" th:text="#{petition.cancel}">Cancelar petición</button>
  					<script th:inline="javascript">
  					/*<![CDATA[*/
  		 			$( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
@@ -82,7 +82,7 @@
  		
  				<button type="button" th:id="${'sendPetitionButton' + user.id}"
  				id="sendPetitionButton[[${user.id}]]"
- 				class="btn btn-info">Agregar amigo</button>
+ 				class="btn btn-info" th:text="#{friend.add}">Agregar amigo</button>
  				<script th:inline="javascript">
  				/*<![CDATA[*/
  		 		$("#sendPetitionButton[[${user.id}]]" ).click(function() {
