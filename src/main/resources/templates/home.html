@@ -5,8 +5,8 @@
 <nav th:replace="fragments/nav"/>
 
 <div class="container" style="text-align: center">
-<h2>Bienvenidos a la página principal</h2>
-<p>El proyecto sobre la red social</p>
+<h2 th:text="#{welcome.message}"></h2>
+<p th:text="#{welcome.message}">El proyecto sobre la red social</p>
 </div>
 
 <footer th:replace="fragments/footer"/>
