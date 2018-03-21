@@ -264,14 +264,28 @@ public class RedSocial1ApplicationTests {
 		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Aceptar petición", PO_View.getTimeout());
 	}
 
-	// Identificación válida con usuario de ROL Administrador, 99999988F/123456
-	/*
-	 * @Test public void PR09() { //Vamos al formulario de logueo.
-	 * PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
-	 * //Rellenamos el formulario PO_LoginView.fillForm(driver, "99999988F" ,
-	 * "123456" ); //COmprobamos que entramos en la pagina privada del administrador
-	 * PO_View.checkElement(driver, "text", "Notas del usuario"); }
-	 */
+	// Listar los amigos de un usuario, realizar la comprobación con una lista que
+	// al menos tenga un amigo
+	@Test
+	public void PR08_01() {
+		
+		//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
+		
+		// adripc2live.com entra en gestión de usuarios
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
+		elementos.get(0).click();
+		// Sacamos la pestaña para ver los amigos
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/friends')]");
+		// Pinchamos en la pestaña para ver los amigos
+		elementos.get(0).click();
+		
+		PO_View.checkElement(driver, "text", "Usted tiene los siguientes amigos en sesión");
+		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
+		
+	}
+
 
 	// Identificación inválida con usuario de ROL alumno, 99999990A/123456
 	/*
