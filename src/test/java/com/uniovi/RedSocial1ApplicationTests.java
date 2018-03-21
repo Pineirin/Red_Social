@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.uniovi.pageobjects.PO_LoginView;
 import com.uniovi.pageobjects.PO_NavView;
+import com.uniovi.pageobjects.PO_PublicationView;
 import com.uniovi.pageobjects.PO_RegisterView;
 import com.uniovi.pageobjects.PO_SearchTextView;
 import com.uniovi.pageobjects.PO_View;
@@ -264,14 +265,54 @@ public class RedSocial1ApplicationTests {
 		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Aceptar petición", PO_View.getTimeout());
 	}
 
-	// Identificación válida con usuario de ROL Administrador, 99999988F/123456
-	/*
-	 * @Test public void PR09() { //Vamos al formulario de logueo.
-	 * PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
-	 * //Rellenamos el formulario PO_LoginView.fillForm(driver, "99999988F" ,
-	 * "123456" ); //COmprobamos que entramos en la pagina privada del administrador
-	 * PO_View.checkElement(driver, "text", "Notas del usuario"); }
-	 */
+	// Listar los amigos de un usuario, realizar la comprobación con una lista que
+	// al menos tenga un amigo
+	@Test
+	public void PR08_01() {
+		
+		//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
+		
+		// adripc2live.com entra en gestión de usuarios
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
+		elementos.get(0).click();
+		// Sacamos la pestaña para ver los amigos
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/friends')]");
+		// Pinchamos en la pestaña para ver los amigos
+		elementos.get(0).click();
+		
+		PO_View.checkElement(driver, "text", "Usted tiene los siguientes amigos en sesión");
+		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
+		
+	}
+	
+		// Crear una publicación con datos válidos
+		@Test
+		public void PR09_01() {
+			
+			//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+			PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+			PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
+			
+			// adripc2live.com entra en Publicaciones
+			List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
+			elementos.get(0).click();
+			// Sacamos la pestaña para crear una publicación
+			elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/create')]");
+			// Pinchamos en la pestaña para crear una punlicación
+			elementos.get(0).click();
+			
+			//Relleno la publicación
+			PO_PublicationView.fillForm(driver, "Hola", "Que tal");
+			
+			//Aparece la lista de publicciones
+			PO_View.checkElement(driver, "text", "adripc@live.com");
+			PO_View.checkElement(driver, "text", "Hola");
+			PO_View.checkElement(driver, "text", "Que tal");
+			
+	}
+
 
 	// Identificación inválida con usuario de ROL alumno, 99999990A/123456
 	/*
