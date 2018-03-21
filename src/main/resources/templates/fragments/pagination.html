@@ -2,7 +2,7 @@
  <ul class="pagination pagination-centered">
  <!-- Primera -->
  <li class="page-item" >
- <a class="page-link" th:href="@{'?page=0&searchText='+${searchText}}">Primera</a>
+ <a class="page-link" th:href="@{'?page=0&searchText='+${searchText}}" th:text ="#{first}">Primera</a>
 
  </li>
 
@@ -27,7 +27,7 @@
  <!-- Última -->
  <li class="page-item" >
  <a class="page-link"
- th:href="@{'?page='+${page.getTotalPages()-1}+'&searchText='+${searchText}}"> Última</a>
+ th:href="@{'?page='+${page.getTotalPages()-1}+'&searchText='+${searchText}}" th:text ="#{last}"> Última</a>
  </li>
  </ul>
 </div>

@@ -12,26 +12,26 @@
 				<li><a href="/">HOME</a></li>
 
 				<li id="users-menu" class="dropdown"
-					sec:authorize="isAuthenticated()"><a class="dropdown-toggle"
+					sec:authorize="isAuthenticated()"><a th:text ="#{users}" class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Gestión de usuarios <span
 						class="caret"></span>
 				</a>
 
 					<ul class="dropdown-menu">
-						<li><a href="/user/list">Ver usuarios</a></li>
-						<li><a href="/user/petitions">Ver solicitudes de amistad</a></li>
-						<li><a href="/user/friends">Ver amigos</a></li>
+						<li><a href="/user/list" th:text ="#{users.show}">Ver usuarios</a></li>
+						<li><a href="/user/petitions" th:text ="#{users.petitions.show}">Ver solicitudes de amistad</a></li>
+						<li><a href="/user/friends" th:text ="#{users.friends.show}">Ver amigos</a></li>
 					</ul></li>
 
 				<li id="publications-menu" class="dropdown"
 					sec:authorize="isAuthenticated()"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Publicaciones <span
+					data-toggle="dropdown" href="#" th:text ="#{publications}">Publicaciones <span
 						class="caret"></span>
 				</a>
 
 					<ul class="dropdown-menu">
-						<li><a href="/publication/create">Crear publicación</a></li>
-						<li><a href="/publication/list">Ver publicaciones</a></li>
+						<li><a href="/publication/create" th:text ="#{publications.create}">Crear publicación</a></li>
+						<li><a href="/publication/list" th:text ="#{publications.show}">Ver publicaciones</a></li>
 					</ul></li>
 
 			</ul>

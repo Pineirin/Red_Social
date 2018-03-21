@@ -734,3 +734,4 @@ java.sql.SQLIntegrityConstraintViolationException: violación del restricción d
 2018-03-21 19:21:13.816  INFO 12680 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
 2018-03-21 19:21:13.826  INFO 12680 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 7.62 seconds (JVM running for 8.0)
 2018-03-21 19:21:23.514  INFO 12680 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-21 19:24:18.306  INFO 12680 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
