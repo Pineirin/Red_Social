@@ -110,6 +110,7 @@ public class UserController {
 			users = usersService.getUsers(pageable);
 		}
 
+        List<Petition> petitionsReceived = petitionsService.searchPetitionByDestinationUser(currentUser);
 		List<User> usuariosDestinos = usersService.searchUsersDestinosForUser(currentUser);
 		Page<User> amigosPage = usersService.searchFriendsForUser(pageable, currentUser);
 		List<User> amigos = amigosPage.getContent();
@@ -117,6 +118,8 @@ public class UserController {
 		model.addAttribute("usersList", users);
 		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("usuariosDestinos", usuariosDestinos);
+        model.addAttribute("amigos", amigos);
+        model.addAttribute("petitionsReceived", petitionsReceived);
 		model.addAttribute("amigos", amigos);
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", searchText);

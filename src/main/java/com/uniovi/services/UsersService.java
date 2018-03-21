@@ -97,22 +97,13 @@ public class UsersService {
 		return usersRepository.searchUsersDestinosForUser(userOrigen);
 	}
 
-	public Page<User> searchFriendsForUser(Pageable pageable, User currentUser) {
-
-		return usersRepository.searchPetitionsForUser(pageable, currentUser)
-				.map(peticion -> {
-					if (peticion.getUserOrigen().equals(currentUser)) {
-						return peticion.getUserDestino();
-					}
-					else {
-						return peticion.getUserOrigen();
-					}
-				});
+    public Page<User> searchFriendsForUser(Pageable pageable, User user) {
+        return usersRepository.searchFriendsForUser(pageable, user);
 	}
 
-	public List<User> searchFriendsForUser(User currentUser) {
+	public List<User> searchFriendsForUser(User user) {
 
-		return usersRepository.searchFriendsForUser(currentUser);
+		return usersRepository.searchFriendsForUser(user);
 	}
 
 	public Page<User> amigosEnSesion(Pageable pageable, List<User> amigos) {
