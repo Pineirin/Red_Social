@@ -17,6 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.uniovi.entities.Petition;
 import com.uniovi.entities.User;
 import com.uniovi.repositories.UsersRepository;
 
@@ -98,7 +99,15 @@ public class UsersService {
 
 	public Page<User> searchFriendsForUser(Pageable pageable, User currentUser) {
 
-		return usersRepository.searchFriendsForUser(pageable, currentUser);
+		return usersRepository.searchPetitionsForUser(pageable, currentUser)
+				.map(peticion -> {
+					if (peticion.getUserOrigen().equals(currentUser)) {
+						return peticion.getUserDestino();
+					}
+					else {
+						return peticion.getUserOrigen();
+					}
+				});
 	}
 
 	public List<User> searchFriendsForUser(User currentUser) {

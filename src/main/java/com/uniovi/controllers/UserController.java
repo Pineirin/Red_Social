@@ -150,11 +150,11 @@ public class UserController {
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
 
-		List<User> amigos = usersService.searchFriendsForUser(currentUser);
-		Page<User> amigosEnSesion = usersService.amigosEnSesion(pageable, amigos);
+		Page<User> amigos = usersService.searchFriendsForUser(pageable, currentUser);
+		//Page<User> amigosEnSesion = usersService.amigosEnSesion(pageable, amigos);
 
-		model.addAttribute("amigos", amigosEnSesion);
-		model.addAttribute("page", amigosEnSesion);
+		model.addAttribute("amigos", amigos);
+		model.addAttribute("page", amigos);
 
 		return "user/friends";
 	}
@@ -169,7 +169,7 @@ public class UserController {
 
 		// CREAMOS LA PETICIÓN
 		Petition peticion = new Petition(userOrigin, userDestino);
-
+		
 		// se mete en la tabla de peticiones
 		petitionsService.addPetition(peticion);// añadimos la petición al repositorio
 
@@ -195,7 +195,7 @@ public class UserController {
 
 		long idOrigin = id;
 		User userOrigin = usersService.getUser(idOrigin);
-
+		
 		List<Petition> petitions = petitionsService.searchPetitionByOriginUserAndDestinationUser(userOrigin,
 				userDestination);
 
