@@ -96,14 +96,14 @@ public class UsersService {
 		return usersRepository.searchUsersDestinosForUser(userOrigen);
 	}
 
-	public Page<User> searchFriendsForUser(Pageable pageable, User currentUser) {
+	public Page<User> searchFriendsForUser(Pageable pageable, User user) {
 
-		return usersRepository.searchFriendsForUser(pageable, currentUser);
+		return usersRepository.searchFriendsForUser(pageable, user);
 	}
 
-	public List<User> searchFriendsForUser(User currentUser) {
+	public List<User> searchFriendsForUser(User user) {
 
-		return usersRepository.searchFriendsForUser(currentUser);
+		return usersRepository.searchFriendsForUser(user);
 	}
 
 	public Page<User> amigosEnSesion(Pageable pageable, List<User> amigos) {
