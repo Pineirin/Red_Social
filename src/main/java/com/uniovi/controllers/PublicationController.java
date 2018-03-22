@@ -44,10 +44,10 @@ public class PublicationController {
 
 		publicationsService.savePublication(publication);
 
-		return "redirect:/publication/myList";
+		return "redirect:/publication/list";
 	}
 
-	@RequestMapping("/publications/list/{id}")
+	@RequestMapping("/publication/list/{id}")
 	public String listPublications(Model model, Pageable pageable, String searchText, @PathVariable Long id) {	
 		
 		User user = usersService.getUser(id);
@@ -58,10 +58,10 @@ public class PublicationController {
 		model.addAttribute("page", publications);
 		model.addAttribute("searchText", "");
 
-		return "publication/list";
+		return "publication/list/{id}";
 	}
 	
-	@RequestMapping("/publications/list")
+	@RequestMapping("/publication/list")
 	public String listMyPublications(Model model, Pageable pageable, String searchText) {	
 		
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
