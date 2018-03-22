@@ -68,9 +68,10 @@ public class PublicationController {
         String userEmail=auth.getName();
 	
 		User user = usersService.getUserByEmail(userEmail);
-	
-		Page<Publication> publications = publicationsService.getUserPublications(pageable, user);
+		
 
+		Page<Publication> publications = publicationsService.getUserPublications(pageable, user);
+		
 		model.addAttribute("publicationsList", publications);
 		model.addAttribute("page", publications);
 		model.addAttribute("searchText", "");

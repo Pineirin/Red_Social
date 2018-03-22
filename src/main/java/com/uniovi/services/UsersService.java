@@ -97,6 +97,7 @@ public class UsersService {
 		return usersRepository.searchUsersDestinosForUser(userOrigen);
 	}
 
+	/*
 	public Page<User> searchFriendsForUser(Pageable pageable, User user) {
 		return usersRepository.searchFriendsForUser(pageable, user);
 	}
@@ -105,6 +106,24 @@ public class UsersService {
 
 		return usersRepository.searchFriendsForUser(user);
 	}
+	*/
+	
+	public Page<User> searchFriendsForUser(Pageable pageable, User currentUser) {
+        return usersRepository.searchPetitionsForUser(pageable, currentUser)
+                .map(peticion -> {
+                    if (peticion.getUserOrigen().equals(currentUser)) {
+                        return peticion.getUserDestino();
+                    }
+                    else {
+                        return peticion.getUserOrigen();
+                    }
 
+                });
+	}
+
+	public Page<User> searchSentPetitionsForUser(Pageable pageable, User currentUser) {
+		return usersRepository.searchSentPetitionsForUser(pageable, currentUser).map(peticion -> {return peticion.getUserOrigen();});
+	}
+	
 
 }

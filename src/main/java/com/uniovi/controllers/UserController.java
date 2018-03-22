@@ -211,12 +211,16 @@ public class UserController {
 
 		List<User> usuariosDestinos = usersService.searchUsersDestinosForUser(currentUser);
 		Page<User> amigosPage = usersService.searchFriendsForUser(pageable, currentUser);
-		List<User> amigos = amigosPage.getContent();
+		
+		Page<User> peticionesSolicitadas = usersService.searchSentPetitionsForUser(pageable,currentUser);
 
 		Page<User> users = usersService.getUsers(pageable);
+		
+		
 		model.addAttribute("usersList", users);
 		model.addAttribute("usuariosDestinos", usuariosDestinos);
-		model.addAttribute("amigos", amigos);
+		model.addAttribute("amigos", amigosPage.getContent());
+		model.addAttribute("peticionesSolicitadas", peticionesSolicitadas);
 		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", "");
