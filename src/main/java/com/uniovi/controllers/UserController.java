@@ -88,14 +88,12 @@ public class UserController {
 	}
 
 	@RequestMapping("/user/list")
-	public String getList(Model model, Pageable pageable, Principal principal,
+	public String getList(Model model, Pageable pageable,
 			@RequestParam(defaultValue = "", required = false) String searchText) {
 
 		// poner al usuario en linea
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
-		
-		
 		
 		User currentUser = usersService.getUserByEmail(email);
 
@@ -106,17 +104,15 @@ public class UserController {
 			users = usersService.getUsers(pageable);
 		}
 
-        List<Petition> petitionsReceived = petitionsService.searchPetitionByDestinationUser(currentUser);
 		List<User> usuariosDestinos = usersService.searchUsersDestinosForUser(currentUser);
+		Page<User> peticionesSolicitadas = usersService.searchSentPetitionsForUser(pageable,currentUser);
 		Page<User> amigosPage = usersService.searchFriendsForUser(pageable, currentUser);
-		List<User> amigos = amigosPage.getContent();
 
 		model.addAttribute("usersList", users);
 		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("usuariosDestinos", usuariosDestinos);
-        model.addAttribute("amigos", amigos);
-        model.addAttribute("petitionsReceived", petitionsReceived);
-		model.addAttribute("amigos", amigos);
+		model.addAttribute("peticionesSolicitadas", peticionesSolicitadas.getContent());
+        model.addAttribute("amigos", amigosPage.getContent());
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", searchText);
 		return "user/list";
@@ -204,26 +200,25 @@ public class UserController {
 	}
 
 	@RequestMapping("/user/list/update")
-	public String updateList(Model model, Pageable pageable, Principal principal) {
-
-		String email = principal.getName();
+	public String updateList(Model model, Pageable pageable) {		
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();
+		
 		User currentUser = usersService.getUserByEmail(email);
 
-		List<User> usuariosDestinos = usersService.searchUsersDestinosForUser(currentUser);
-		Page<User> amigosPage = usersService.searchFriendsForUser(pageable, currentUser);
-		
-		Page<User> peticionesSolicitadas = usersService.searchSentPetitionsForUser(pageable,currentUser);
-
 		Page<User> users = usersService.getUsers(pageable);
-		
-		
+
+		List<User> usuariosDestinos = usersService.searchUsersDestinosForUser(currentUser);
+		Page<User> peticionesSolicitadas = usersService.searchSentPetitionsForUser(pageable,currentUser);
+		Page<User> amigosPage = usersService.searchFriendsForUser(pageable, currentUser);
+
 		model.addAttribute("usersList", users);
-		model.addAttribute("usuariosDestinos", usuariosDestinos);
-		model.addAttribute("amigos", amigosPage.getContent());
-		model.addAttribute("peticionesSolicitadas", peticionesSolicitadas);
 		model.addAttribute("currentUser", currentUser);
+		model.addAttribute("usuariosDestinos", usuariosDestinos);
+		model.addAttribute("peticionesSolicitadas", peticionesSolicitadas.getContent());
+        model.addAttribute("amigos", amigosPage.getContent());
 		model.addAttribute("page", users);
-		model.addAttribute("searchText", "");
 
 		return "user/list :: tableUsers";
 	}
