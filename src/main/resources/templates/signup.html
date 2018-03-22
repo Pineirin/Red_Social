@@ -5,13 +5,13 @@
 <!-- Barra de Navegación superior -->
 <nav th:replace="fragments/nav"/>
 <div class="container">
-<h2>Regístrate como usuario</h2>
+<h2 th:text = "#{signup.message}">Regístrate como usuario</h2>
 <form class="form-horizontal" method="post" action="/signup" th:object="${user}">
  <div class="form-group" >
- <label class="control-label col-sm-2" for="email">Email:</label>
+ <label class="control-label col-sm-2" for="email" th:text = "#{email}">Email:</label>
  <div class="col-sm-10">
  <input type="text" class="form-control" name="email"
- placeholder="Ejemplo: Juan@hotmail.com" required="true" />
+ th:placeholder="#{email}" required="true" />
  
  <span class="text-danger" th:if="${#fields.hasErrors('email')}"
  th:errors="*{email}"/>
@@ -20,10 +20,10 @@
  </div>
  <div class="form-group">
  
-  <label class="control-label col-sm-2" for="name">Nombre:</label>
+  <label class="control-label col-sm-2" for="name" th:text = "#{name}">Nombre:</label>
  <div class="col-sm-10">
  <input type="text" class="form-control" name="name"
- placeholder="Juan" required="true" />
+ th:placeholder="#{name}" required="true" />
  
  <span class="text-danger" th:if="${#fields.hasErrors('name')}"
  th:errors="*{name}">
@@ -31,21 +31,21 @@
  </div>
  </div>
  <div class="form-group">
- <label class="control-label col-sm-2" for="password">Password:</label>
+ <label class="control-label col-sm-2" for="password" th:text = "#{password}">Password:</label>
  <div class="col-sm-10">
  <input type="password" class="form-control" name="password"
- placeholder="Entre el Password" required="true"/>
+ th:placeholder="#{password}" required="true"/>
  <span class="text-danger" th:if="${#fields.hasErrors('password')}"
  th:errors="*{password}"/>
  
  </div>
  </div>
  <div class="form-group" >
- <label class="control-label col-sm-2" for="passwordConfirm">Repita
+ <label class="control-label col-sm-2" for="passwordConfirm" th:text = "#{password.repeat}">Repita
  el Password:</label>
  <div class="col-sm-10">
  <input type="password" class="form-control" name="passwordConfirm"
- placeholder="Repita el Password" required="true"/>
+ th:placeholder="#{password.repeat}" required="true"/>
  
  <span class="text-danger" th:if="${#fields.hasErrors('passwordConfirm')}"
  th:errors="*{passwordConfirm}"/>
@@ -54,7 +54,7 @@
  </div>
  <div class="form-group">
  <div class="col-sm-offset-2 col-sm-10">
- <button type="submit" class="btn btn-primary">Enviar</button>
+ <button type="submit" class="btn btn-primary" th:text= "#{send}">Enviar</button>
  </div>
  </div>
 </form>

@@ -17,7 +17,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.uniovi.entities.Petition;
 import com.uniovi.entities.User;
 import com.uniovi.repositories.UsersRepository;
 
@@ -33,7 +32,8 @@ public class UsersService {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@PostConstruct
-	public void init() {}
+	public void init() {
+	}
 
 	public List<User> getUsers() {
 		List<User> users = new ArrayList<User>();
@@ -97,8 +97,8 @@ public class UsersService {
 		return usersRepository.searchUsersDestinosForUser(userOrigen);
 	}
 
-    public Page<User> searchFriendsForUser(Pageable pageable, User user) {
-        return usersRepository.searchFriendsForUser(pageable, user);
+	public Page<User> searchFriendsForUser(Pageable pageable, User user) {
+		return usersRepository.searchFriendsForUser(pageable, user);
 	}
 
 	public List<User> searchFriendsForUser(User user) {
@@ -118,10 +118,10 @@ public class UsersService {
 	public void actualizarEnLineaDelUsuario(String email, boolean enLinea) {
 		usersRepository.actualizarEnLineaDelUsuario(email, enLinea);
 	}
-	
+
 	public boolean userEnLinea(String email) {
 		User user = getUserByEmail(email);
-		return user.getEnLinea();	
+		return user.getEnLinea();
 	}
 
 }
