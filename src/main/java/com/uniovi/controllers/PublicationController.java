@@ -5,6 +5,8 @@ import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -41,23 +43,20 @@ public class PublicationController {
 
 		publicationsService.savePublication(publication);
 
-		return "redirect:/publication/list";
+		return "redirect:/publication/myList";
 	}
 
-	@RequestMapping("/publication/list")
+	@RequestMapping("/publication/myList")
 	public String listPublications(Model model, Pageable pageable, String searchText) {
-
-		Page<Publication> publications = publicationsService.getPublications(pageable);
-
-		if (searchText != null && !searchText.isEmpty()) {
-			publications = publicationsService.searchPublicationsByUserTitleDescription(pageable, searchText);
-		} else {
-			publications = publicationsService.getPublications(pageable);
-		}
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String userEmail=auth.getName();
+		
+		Page<Publication> publications = publicationsService.getUserPublications(pageable, userEmail);
 
 		model.addAttribute("publicationsList", publications);
 		model.addAttribute("page", publications);
-		model.addAttribute("searchText", searchText);
+		model.addAttribute("searchText", "");
 
 		return "publication/list";
 	}
