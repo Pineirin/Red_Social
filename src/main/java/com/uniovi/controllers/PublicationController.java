@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -46,13 +47,29 @@ public class PublicationController {
 		return "redirect:/publication/myList";
 	}
 
-	@RequestMapping("/publication/myList")
-	public String listPublications(Model model, Pageable pageable, String searchText) {
+	@RequestMapping("/publications/list/{id}")
+	public String listPublications(Model model, Pageable pageable, String searchText, @PathVariable Long id) {	
 		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String userEmail=auth.getName();
+		User user = usersService.getUser(id);
+	
+		Page<Publication> publications = publicationsService.getUserPublications(pageable, user);
+
+		model.addAttribute("publicationsList", publications);
+		model.addAttribute("page", publications);
+		model.addAttribute("searchText", "");
+
+		return "publication/list";
+	}
+	
+	@RequestMapping("/publications/list")
+	public String listMyPublications(Model model, Pageable pageable, String searchText) {	
 		
-		Page<Publication> publications = publicationsService.getUserPublications(pageable, userEmail);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail=auth.getName();
+	
+		User user = usersService.getUserByEmail(userEmail);
+	
+		Page<Publication> publications = publicationsService.getUserPublications(pageable, user);
 
 		model.addAttribute("publicationsList", publications);
 		model.addAttribute("page", publications);

@@ -11,8 +11,9 @@
   <table class="table table-hover" th:fragment="tableFriends" id="tableFriends">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Email</th>
+        <th th:text = "#{name}">Nombre</th>
+        <th th:text = "#{email}">Email</th>
+        <th th:text = "#{publications}">publicaciones</th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
@@ -23,6 +24,7 @@
 	  <tr th:each="user : ${amigos}">
 	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
+	    <td><a th:href="${'/publications/list/' + user.id}">publications</a></td>
 	  </tr>
 	</tbody>
   </table>

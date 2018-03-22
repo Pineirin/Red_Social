@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Publication;
+import com.uniovi.entities.User;
 import com.uniovi.repositories.PublicationsRepository;
 
 @Service
@@ -32,9 +33,9 @@ public class PublicationsService {
 		return publications;
 	}
 	
-	public Page<Publication> getUserPublications(Pageable pageable, String email) {
+	public Page<Publication> getUserPublications(Pageable pageable, User user) {
 		Page<Publication> publications = new PageImpl<Publication>(new LinkedList<Publication>());
-		publications = publicationsRepository.searchUserPublications(pageable,email);
+		publications = publicationsRepository.searchUserPublications(pageable,user);
 		return publications;
 	}
 
