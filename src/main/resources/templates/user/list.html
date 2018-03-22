@@ -57,19 +57,22 @@
 										th:text="#{friend.added}">Amigo añadido</div>
 
 									<div th:unless="${#lists.contains(amigos, user)}">
-									
+
 										<div th:if="${#lists.contains(peticionesSolicitadas, user)}"
-										th:text="#{friend.added}">Amigo añadido</div>
-										<div th:if="${!user.equals(currentUser)}">
-											<div th:if="${#lists.contains(usuariosDestinos, user)}">
+											th:text="#{petition.received}">Petición recibida</div>
+
+										<div
+											th:unless="${#lists.contains(peticionesSolicitadas, user)}">
+											<div th:if="${!user.equals(currentUser)}">
+												<div th:if="${#lists.contains(usuariosDestinos, user)}">
 
 
-												<div th:unless="${#lists.contains(amigos, user)}">
-													<button type="button"
-														th:id="${'cancelPetitionButton' + user.id}"
-														class="btn btn-default" th:text="#{petition.cancel}">Cancelar
-														petición</button>
-													<script th:inline="javascript">
+													<div th:unless="${#lists.contains(amigos, user)}">
+														<button type="button"
+															th:id="${'cancelPetitionButton' + user.id}"
+															class="btn btn-default" th:text="#{petition.cancel}">Cancelar
+															petición</button>
+														<script th:inline="javascript">
 									 					/*<![CDATA[*/
 									 		 			$( "#cancelPetitionButton[[${user.id}]]" ).click(function() {
 									 		 			$.get( "/user/[[${user.id}]]/cancelPetition", function( data ) {
@@ -83,17 +86,17 @@
 									 		 			});
 									 		 		/*]]>*/
 									 				</script>
+													</div>
+
 												</div>
 
-											</div>
+												<div th:unless="${#lists.contains(usuariosDestinos, user)}">
 
-											<div th:unless="${#lists.contains(usuariosDestinos, user)}">
-
-												<button type="button"
-													th:id="${'sendPetitionButton' + user.id}"
-													id="sendPetitionButton[[${user.id}]]" class="btn btn-info"
-													th:text="#{friend.add}">Agregar amigo</button>
-												<script th:inline="javascript">
+													<button type="button"
+														th:id="${'sendPetitionButton' + user.id}"
+														id="sendPetitionButton[[${user.id}]]" class="btn btn-info"
+														th:text="#{friend.add}">Agregar amigo</button>
+													<script th:inline="javascript">
 								 				/*<![CDATA[*/
 									 		 		$("#sendPetitionButton[[${user.id}]]" ).click(function() {
 									 		 		$.get( "/user/[[${user.id}]]/sendPetition", function( data ) {
@@ -108,6 +111,7 @@
  		 										/*]]>*/
  												</script>
 
+												</div>
 											</div>
 										</div>
 									</div>
