@@ -58,7 +58,7 @@ public class PublicationController {
 		model.addAttribute("page", publications);
 		model.addAttribute("searchText", "");
 
-		return "publication/list/{id}";
+		return "publication/list";
 	}
 	
 	@RequestMapping("/publication/list")
