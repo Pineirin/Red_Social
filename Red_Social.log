@@ -36,3 +36,157 @@
 2018-03-22 14:28:11.028  INFO 12408 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
 2018-03-22 14:28:13.203  INFO 12408 --- [http-nio-8090-exec-5] com.uniovi.controllers.UserController    : User: anonymousUser logged out from the application
 2018-03-22 14:28:27.443  INFO 12408 --- [http-nio-8090-exec-4] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-22 15:46:46.801  INFO 536 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on ENFIS-AA-14 with PID 536 (C:\Users\Becario\Desktop\SDI\Red_Social\target\classes started by Becario in C:\Users\Becario\Desktop\SDI\Red_Social)
+2018-03-22 15:46:46.801  INFO 536 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-22 15:46:46.942  INFO 536 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6ab7a896: startup date [Thu Mar 22 15:46:46 CET 2018]; root of context hierarchy
+2018-03-22 15:46:47.598  INFO 536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a20fb414] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-22 15:46:47.838  INFO 536 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-22 15:46:47.853  INFO 536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-22 15:46:47.853  INFO 536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-22 15:46:47.916  INFO 536 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-22 15:46:48.041  INFO 536 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-22 15:46:48.041  INFO 536 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-22 15:46:48.041  INFO 536 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-22 15:46:48.041  INFO 536 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-22 15:46:48.041  INFO 536 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-22 15:46:48.041  INFO 536 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-22 15:46:49.385  INFO 536 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-22 15:46:49.892  INFO 536 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-22 15:46:50.439  INFO 536 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-22 15:46:50.533  INFO 536 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-22 15:46:50.626  INFO 536 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-22 15:46:50.720  INFO 536 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-22 15:46:50.814  INFO 536 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-22 15:46:50.908  INFO 536 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-22 15:46:51.001  INFO 536 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-22 15:46:51.095  INFO 536 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-22 15:46:51.189  INFO 536 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-22 15:46:51.283  INFO 536 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-22 15:46:51.376  INFO 536 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-22 15:46:51.501  INFO 536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cf01c2e, org.springframework.security.web.context.SecurityContextPersistenceFilter@774d8276, org.springframework.security.web.header.HeaderWriterFilter@2d237460, org.springframework.security.web.authentication.logout.LogoutFilter@2a99ca99, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@73bb573d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bf2d6eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5866731, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f15f52a, org.springframework.security.web.session.SessionManagementFilter@4b3a01d8, org.springframework.security.web.access.ExceptionTranslationFilter@7761e342, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49491770]
+2018-03-22 15:46:52.053  INFO 536 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-22 15:46:52.100  INFO 536 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-22 15:46:52.100  INFO 536 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 5.455 seconds (JVM running for 5.86)
+2018-03-22 15:46:57.088  INFO 536 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-22 15:47:03.629  INFO 536 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-22 15:47:13.557  INFO 536 --- [http-nio-8090-exec-7] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-22 15:47:28.784  INFO 536 --- [http-nio-8090-exec-1] com.uniovi.controllers.UserController    : User: anonymousUser logged out from the application
+2018-03-22 15:47:32.878  INFO 536 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-22 16:02:04.181  INFO 536 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-03-22 16:02:04.194  INFO 536 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6ab7a896: startup date [Thu Mar 22 15:46:46 CET 2018]; root of context hierarchy
+2018-03-22 16:02:04.195  INFO 536 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-03-22 16:02:04.195  INFO 536 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:02:07.447  INFO 11096 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on ENFIS-AA-14 with PID 11096 (C:\Users\Becario\Desktop\SDI\Red_Social\target\classes started by Becario in C:\Users\Becario\Desktop\SDI\Red_Social)
+2018-03-22 16:02:07.447  INFO 11096 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-22 16:02:07.587  INFO 11096 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6ab7a896: startup date [Thu Mar 22 16:02:07 CET 2018]; root of context hierarchy
+2018-03-22 16:02:08.228  INFO 11096 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5ef4a3f8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-22 16:02:08.479  INFO 11096 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-22 16:02:08.495  INFO 11096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-22 16:02:08.495  INFO 11096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-22 16:02:08.557  INFO 11096 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-22 16:02:08.667  INFO 11096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-22 16:02:08.667  INFO 11096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-22 16:02:08.667  INFO 11096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-22 16:02:08.667  INFO 11096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-22 16:02:08.682  INFO 11096 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-22 16:02:08.682  INFO 11096 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-22 16:02:10.011  INFO 11096 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:02:10.498  INFO 11096 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:02:11.061  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-22 16:02:11.144  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-22 16:02:11.238  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-22 16:02:11.331  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-22 16:02:11.425  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-22 16:02:11.519  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-22 16:02:11.613  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-22 16:02:11.707  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-22 16:02:11.800  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-22 16:02:11.894  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-22 16:02:11.988  INFO 11096 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-22 16:02:12.097  INFO 11096 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60deefed, org.springframework.security.web.context.SecurityContextPersistenceFilter@48f2054d, org.springframework.security.web.header.HeaderWriterFilter@7761e342, org.springframework.security.web.authentication.logout.LogoutFilter@56cfe6be, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4b93dd6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19fbc594, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f68a7f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49754e74, org.springframework.security.web.session.SessionManagementFilter@4eb9ae4d, org.springframework.security.web.access.ExceptionTranslationFilter@ad3f70a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62cf6a84]
+2018-03-22 16:02:12.643  INFO 11096 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-22 16:02:12.690  INFO 11096 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-22 16:02:12.690  INFO 11096 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 5.4 seconds (JVM running for 5.823)
+2018-03-22 16:02:26.962  INFO 11096 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-22 16:02:44.393  INFO 11096 --- [http-nio-8090-exec-7] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-22 16:02:57.194  INFO 11096 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: anonymousUser logged out from the application
+2018-03-22 16:03:02.020  INFO 11096 --- [http-nio-8090-exec-7] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-22 16:03:08.403  INFO 11096 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: anonymousUser logged out from the application
+2018-03-22 16:03:11.860  INFO 11096 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-03-22 16:03:11.875  INFO 11096 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6ab7a896: startup date [Thu Mar 22 16:02:07 CET 2018]; root of context hierarchy
+2018-03-22 16:03:11.875  INFO 11096 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-03-22 16:03:11.875  INFO 11096 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:06:39.493  INFO 9360 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on ENFIS-AA-14 with PID 9360 (C:\Users\Becario\Desktop\SDI\Red_Social\target\classes started by Becario in C:\Users\Becario\Desktop\SDI\Red_Social)
+2018-03-22 16:06:39.493  INFO 9360 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-22 16:06:39.634  INFO 9360 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6ab7a896: startup date [Thu Mar 22 16:06:39 CET 2018]; root of context hierarchy
+2018-03-22 16:06:40.274  INFO 9360 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5ef4a3f8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-22 16:06:40.511  INFO 9360 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-22 16:06:40.526  INFO 9360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-22 16:06:40.526  INFO 9360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-22 16:06:40.589  INFO 9360 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-22 16:06:40.698  INFO 9360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-22 16:06:40.698  INFO 9360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-22 16:06:40.698  INFO 9360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-22 16:06:40.698  INFO 9360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-22 16:06:40.714  INFO 9360 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-22 16:06:40.714  INFO 9360 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-22 16:06:42.042  INFO 9360 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:06:42.530  INFO 9360 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:06:43.092  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-22 16:06:43.176  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-22 16:06:43.270  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-22 16:06:43.363  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-22 16:06:43.457  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-22 16:06:43.567  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-22 16:06:43.660  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-22 16:06:43.754  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-22 16:06:43.848  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-22 16:06:43.942  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-22 16:06:44.035  INFO 9360 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-22 16:06:44.145  INFO 9360 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60deefed, org.springframework.security.web.context.SecurityContextPersistenceFilter@48f2054d, org.springframework.security.web.header.HeaderWriterFilter@7761e342, org.springframework.security.web.authentication.logout.LogoutFilter@56cfe6be, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4b93dd6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19fbc594, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f68a7f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49754e74, org.springframework.security.web.session.SessionManagementFilter@4eb9ae4d, org.springframework.security.web.access.ExceptionTranslationFilter@ad3f70a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62cf6a84]
+2018-03-22 16:06:44.688  INFO 9360 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-22 16:06:44.734  INFO 9360 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-22 16:06:44.734  INFO 9360 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 5.428 seconds (JVM running for 5.885)
+2018-03-22 16:06:48.832  INFO 9360 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-22 16:06:53.431  INFO 9360 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-22 16:07:07.340  INFO 9360 --- [http-nio-8090-exec-10] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-22 16:07:12.397  INFO 9360 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-03-22 16:07:12.405  INFO 9360 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6ab7a896: startup date [Thu Mar 22 16:06:39 CET 2018]; root of context hierarchy
+2018-03-22 16:07:12.405  INFO 9360 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-03-22 16:07:12.405  INFO 9360 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:07:37.581  INFO 7964 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on ENFIS-AA-14 with PID 7964 (C:\Users\Becario\Desktop\SDI\Red_Social\target\classes started by Becario in C:\Users\Becario\Desktop\SDI\Red_Social)
+2018-03-22 16:07:37.581  INFO 7964 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-22 16:07:37.722  INFO 7964 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6ab7a896: startup date [Thu Mar 22 16:07:37 CET 2018]; root of context hierarchy
+2018-03-22 16:07:38.363  INFO 7964 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c87340e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-22 16:07:38.604  INFO 7964 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-22 16:07:38.620  INFO 7964 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-22 16:07:38.620  INFO 7964 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-22 16:07:38.682  INFO 7964 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-22 16:07:38.792  INFO 7964 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-22 16:07:38.792  INFO 7964 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-22 16:07:38.792  INFO 7964 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-22 16:07:38.792  INFO 7964 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-22 16:07:38.839  INFO 7964 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-22 16:07:38.839  INFO 7964 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-22 16:07:40.167  INFO 7964 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:07:40.654  INFO 7964 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-22 16:07:41.201  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-22 16:07:41.290  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-22 16:07:41.383  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-22 16:07:41.477  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-22 16:07:41.571  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-22 16:07:41.665  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-22 16:07:41.758  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-22 16:07:41.837  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-22 16:07:41.930  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-22 16:07:42.024  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-22 16:07:42.118  INFO 7964 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-22 16:07:42.243  INFO 7964 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@736b21ee, org.springframework.security.web.context.SecurityContextPersistenceFilter@2d237460, org.springframework.security.web.header.HeaderWriterFilter@9b2dc56, org.springframework.security.web.authentication.logout.LogoutFilter@222acad, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@42d9e8d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b3a01d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34009349, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60deefed, org.springframework.security.web.session.SessionManagementFilter@51f68849, org.springframework.security.web.access.ExceptionTranslationFilter@1693ff90, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7cf8f45a]
+2018-03-22 16:07:42.776  INFO 7964 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-22 16:07:42.823  INFO 7964 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-22 16:07:42.838  INFO 7964 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 5.413 seconds (JVM running for 5.827)
+2018-03-22 16:07:48.894  INFO 7964 --- [http-nio-8090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-22 16:08:05.595  INFO 7964 --- [http-nio-8090-exec-4] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-22 16:08:13.338  INFO 7964 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: anonymousUser logged out from the application
+2018-03-22 16:08:24.336  INFO 7964 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-22 16:08:31.115  INFO 7964 --- [http-nio-8090-exec-5] com.uniovi.controllers.UserController    : User: anonymousUser logged out from the application

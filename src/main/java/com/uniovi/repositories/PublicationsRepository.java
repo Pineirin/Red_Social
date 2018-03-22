@@ -13,4 +13,7 @@ public interface PublicationsRepository extends CrudRepository<Publication, Long
 
 	@Query("SELECT r FROM Publication r WHERE (LOWER(r.user.email) LIKE LOWER(?1) OR LOWER(r.description) LIKE LOWER(?1) OR LOWER (r.title) LIKE LOWER(?1))")
 	Page<Publication> searchPublicationsByUserTitleDescription(Pageable pageable, String searchText);
+	
+	@Query("SELECT p FROM Publication p WHERE p.user.email = ?1")
+	Page<Publication> searchUserPublications(Pageable pageable, String userEmail);
 }

@@ -31,6 +31,12 @@ public class PublicationsService {
 		publications = publicationsRepository.findAll(pageable);
 		return publications;
 	}
+	
+	public Page<Publication> getUserPublications(Pageable pageable, String email) {
+		Page<Publication> publications = new PageImpl<Publication>(new LinkedList<Publication>());
+		publications = publicationsRepository.searchUserPublications(pageable,email);
+		return publications;
+	}
 
 	public Page<Publication> searchPublicationsByUserTitleDescription(Pageable pageable, String searchText) {
 		Page<Publication> publications = new PageImpl<Publication>(new LinkedList<Publication>());

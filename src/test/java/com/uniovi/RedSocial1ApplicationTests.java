@@ -311,7 +311,7 @@ public class RedSocial1ApplicationTests {
 		elementos.get(0).click();
 					
 		// Sacamos la pestaña para ver las publicaciónes
-		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/list')]");
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/myList')]");
 		// Pinchamos en la pestaña para ver las publicaciones
 		elementos.get(0).click();
 
