@@ -57,6 +57,9 @@
 										th:text="#{friend.added}">Amigo añadido</div>
 
 									<div th:unless="${#lists.contains(amigos, user)}">
+									
+										<div th:if="${#lists.contains(peticionesSolicitadas, user)}"
+										th:text="#{friend.added}">Amigo añadido</div>
 										<div th:if="${!user.equals(currentUser)}">
 											<div th:if="${#lists.contains(usuariosDestinos, user)}">
 
