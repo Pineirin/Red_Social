@@ -57,12 +57,7 @@ public class UserController {
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
-
-		if (auth.isAuthenticated()) {
-			String name = auth.getName();
-			log.info("User: " + auth.getName() + " logged out from the application");
-			usersService.actualizarEnLineaDelUsuario(name, false);
-		}
+		log.info("User: " + auth.getName() + " logged out from the application");
 
 		return "redirect:login";
 	}
@@ -82,8 +77,13 @@ public class UserController {
 		usersService.addUser(user);
 		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());
 
-		usersService.actualizarEnLineaDelUsuario(user.getEmail(), true);
-
+		return "redirect:user/list";
+	}
+	
+	@RequestMapping("/log")
+	public String log() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		log.info("User: " + auth.getName()  +" logged in the application");
 		return "redirect:user/list";
 	}
 
@@ -95,12 +95,8 @@ public class UserController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
 		
-		if (!usersService.userEnLinea(email)) {
-			log.info("User: " + email +" logged in the application");
-			usersService.actualizarEnLineaDelUsuario(email, true);
-		}
 		
-
+		
 		User currentUser = usersService.getUserByEmail(email);
 
 		Page<User> users;

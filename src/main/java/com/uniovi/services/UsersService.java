@@ -106,22 +106,5 @@ public class UsersService {
 		return usersRepository.searchFriendsForUser(user);
 	}
 
-	public Page<User> amigosEnSesion(Pageable pageable, List<User> amigos) {
-
-		if (amigos.size() > 0) {
-			return usersRepository.searchFriendsOnLine(pageable, amigos);
-		}
-		return new PageImpl<User>(new LinkedList<User>());
-
-	}
-
-	public void actualizarEnLineaDelUsuario(String email, boolean enLinea) {
-		usersRepository.actualizarEnLineaDelUsuario(email, enLinea);
-	}
-
-	public boolean userEnLinea(String email) {
-		User user = getUserByEmail(email);
-		return user.getEnLinea();
-	}
 
 }

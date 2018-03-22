@@ -26,8 +26,6 @@ public class User {
 	@Transient //propiedad que no se almacena e la tabla.
 	private String passwordConfirm;
 	
-	private boolean enLinea=false;
-	
 	private Boolean sendPetition = false;
 	
 	@OneToMany(mappedBy = "userOrigen", cascade = CascadeType.ALL)
@@ -123,14 +121,6 @@ public class User {
 
 	public void setPetitions(Set<Petition> petitions) {
 		this.petitions = petitions;
-	}
-
-	public boolean getEnLinea() {
-		return enLinea;
-	}
-
-	public void setEnLinea(boolean enLinea) {
-		this.enLinea = enLinea;
 	}
 	
 	public Set<Publication> getPublications() {
