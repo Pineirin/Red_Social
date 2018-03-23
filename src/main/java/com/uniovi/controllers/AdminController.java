@@ -1,20 +1,18 @@
 package com.uniovi.controllers;
 
-import java.security.Principal;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.uniovi.entities.User;
 import com.uniovi.services.SecurityService;
@@ -63,25 +61,41 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/admin/list")
-	public String getAdminList(Model model, Pageable pageable, Principal principal,
-			@RequestParam(defaultValue = "", required = false) String searchText) {
+	public String getAdminList(Model model) {
 
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
 		
 		User currentUser = usersService.getUserByEmail(email);
 
-		Page<User> users;
-		if (searchText != null && !searchText.isEmpty()) {
-			users = usersService.searchUsersByEmailAndName(pageable, searchText);
-		} else {
-			users = usersService.getUsers(pageable);
-		}
+		List<User> users = usersService.getUsers();
 
 		model.addAttribute("usersList", users);
 		model.addAttribute("currentUser", currentUser);
-		model.addAttribute("page", users);
-		model.addAttribute("searchText", searchText);
 		return "admin/list";
+	}
+	
+	@RequestMapping("/admin/delete/{id}")
+	public String deleteUser(Model model, @PathVariable Long id) {
+		
+		usersService.deleteUser(id);
+		
+		return "redirect:/admin/list/update";
+	}
+	
+	@RequestMapping("/admin/list/update")
+	public String updateAdminList(Model model) {
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();
+		
+		User currentUser = usersService.getUserByEmail(email);
+
+		List<User> users = usersService.getUsers();
+		
+		model.addAttribute("usersList", users);
+		model.addAttribute("currentUser", currentUser);
+		
+		return "admin/list :: tableUsers";
 	}
 }

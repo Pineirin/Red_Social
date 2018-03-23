@@ -18,6 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.uniovi.pageobjects.PO_LoginView;
 import com.uniovi.pageobjects.PO_NavView;
+import com.uniovi.pageobjects.PO_Properties;
 import com.uniovi.pageobjects.PO_PublicationView;
 import com.uniovi.pageobjects.PO_RegisterView;
 import com.uniovi.pageobjects.PO_SearchTextView;
@@ -325,6 +326,70 @@ public class RedSocial1ApplicationTests {
 		List<WebElement> publicaciones =SeleniumUtils.EsperaCargaPagina(driver, "free", "//tbody/tr",PO_View.getTimeout()); 
 		assertTrue(publicaciones.size() == 1); 
 
+	}
+	
+	//11.1 [LisPubAmiVal] Listar las publicaciones de un usuario amigo
+	@Test
+	public void PR16() {
+		
+	}
+	
+	//11.2 [LisPubAmiInVal] Utilizando un acceso vía URL tratar de listar las publicaciones de un usuario que
+	//no sea amigo del usuario identificado en sesión.
+	@Test
+	public void PR17() {
+		
+	}
+	
+	//12.1 [PubFot1Val] Crear una publicación con datos válidos y una foto adjunta. 
+	@Test
+	public void PR18() {
+		
+	}
+	
+	//12.1 [PubFot2Val] Crear una publicación con datos válidos y sin una foto adjunta
+	@Test
+	public void PR19() {
+		
+	}
+	
+	//13.1 [AdInVal] Inicio de sesión como administrador con datos válidos.
+	@Test
+	public void PR21() {
+		driver.navigate().to(URL+"/admin/login");
+		PO_LoginView.esperaCargaForm(driver);
+		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
+		
+		PO_RegisterView.checkKey(driver, "users.show.text",
+		PO_Properties.getSPANISH());
+	}
+	
+	//13.2 [AdInInVal] Inicio de sesión como administrador con datos inválidos (usar los datos de un usuario
+	//que no tenga perfil administrador).
+	@Test
+	public void PR22() {
+		
+	}
+	
+	//14.1 [AdLisUsrVal] Desde un usuario identificado en sesión como administrador listar a todos los
+	//usuarios de la aplicación
+	@Test
+	public void PR23() {
+		
+	}
+	
+	//15.1 [AdBorUsrVal] Desde un usuario identificado en sesión como administrador eliminar un usuario
+	//existente en la aplicación.
+	@Test
+	public void PR24() {
+		
+	}
+	
+	//15.2 [AdBorUsrInVal] Intento de acceso vía URL al borrado de un usuario existente en la aplicación.
+	//Debe utilizarse un usuario identificado en sesión pero que no tenga perfil de administrador.
+	@Test
+	public void PR25() {
+		
 	}
 
 	// Identificación inválida con usuario de ROL alumno, 99999990A/123456
