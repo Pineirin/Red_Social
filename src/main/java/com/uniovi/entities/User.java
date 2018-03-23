@@ -33,6 +33,8 @@ public class User {
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<Publication> publications;
+	
+	private String role;
 
 	public User() {
 		
@@ -129,6 +131,14 @@ public class User {
 
 	public void setPublications(Set<Publication> publications) {
 		this.publications = publications;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	
