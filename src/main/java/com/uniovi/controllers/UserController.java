@@ -25,6 +25,7 @@ import com.uniovi.entities.Petition;
 import com.uniovi.entities.PetitionStatus;
 import com.uniovi.entities.User;
 import com.uniovi.services.PetitionsService;
+import com.uniovi.services.RolesService;
 import com.uniovi.services.SecurityService;
 import com.uniovi.services.UsersService;
 import com.uniovi.validators.SignUpFormValidator;
@@ -45,11 +46,18 @@ public class UserController {
 
 	@Autowired
 	private SignUpFormValidator signUpFormValidator;
+	
+	@Autowired
+	private RolesService rolesService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
-		model.addAttribute("user", new User());
 		return "login";
+	}
+	
+	@RequestMapping(value = "/admin/login", method = RequestMethod.GET)
+	public String adminLogin(Model model) {
+		return "admin_login";
 	}
 
 	@RequestMapping(value = "/logoutFromLogin", method = RequestMethod.GET)
@@ -59,7 +67,7 @@ public class UserController {
 		
 		log.info("User: " + auth.getName() + " logged out from the application");
 
-		return "redirect:login";
+		return "redirect:/";
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
@@ -74,6 +82,8 @@ public class UserController {
 		if (result.hasErrors()) {
 			return "signup";
 		}
+		
+		user.setRole(rolesService.getRoles()[0]);
 		usersService.addUser(user);
 		securityService.autoLogin(user.getEmail(), user.getPasswordConfirm());
 
@@ -86,6 +96,13 @@ public class UserController {
 		log.info("User: " + auth.getName()  +" logged in the application");
 		return "redirect:user/list";
 	}
+	
+	@RequestMapping("/admin/log")
+	public String adminLog() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		log.info("User: " + auth.getName()  +" logged in the application");
+		return "redirect:admin/list";
+	}
 
 	@RequestMapping("/user/list")
 	public String getList(Model model, Pageable pageable, Principal principal,
@@ -94,8 +111,6 @@ public class UserController {
 		// poner al usuario en linea
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
-		
-		
 		
 		User currentUser = usersService.getUserByEmail(email);
 
@@ -120,6 +135,29 @@ public class UserController {
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", searchText);
 		return "user/list";
+	}
+	
+	@RequestMapping("/admin/list")
+	public String getAdminList(Model model, Pageable pageable, Principal principal,
+			@RequestParam(defaultValue = "", required = false) String searchText) {
+
+		// poner al usuario en linea
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();
+		
+		User currentUser = usersService.getUserByEmail(email);
+
+		Page<User> users;
+		if (searchText != null && !searchText.isEmpty()) {
+			users = usersService.searchUsersByEmailAndName(pageable, searchText);
+		} else {
+			users = usersService.getUsers(pageable);
+		}
+
+		model.addAttribute("usersList", users);
+		model.addAttribute("page", users);
+		model.addAttribute("searchText", searchText);
+		return "admin/list";
 	}
 
 	@RequestMapping("/user/petitions")

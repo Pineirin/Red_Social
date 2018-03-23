@@ -61,9 +61,27 @@
 				<li><a href="/signup" th:text ="#{signup.message}" sec:authorize="!isAuthenticated()"> <span
 						class="glyphicon glyphicon-user"></span> Registrate
 				</a></li>
-				<li><a href="/login" th:text ="#{login.message}" sec:authorize="!isAuthenticated()"> <span
-						class="glyphicon glyphicon-log-in"></span> Identifícate
-				</a></li>
+				
+				<li class="dropdown"><a id="btnInicioSesion"
+				    sec:authorize="!isAuthenticated()"
+					href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false"> <span th:text="#{login.message}"></span>
+						<span class="caret"></span>
+				</a>
+				<ul id="inicioSesionMenuButton" class="dropdown-menu">
+				
+						<li><a href="/login" th:text="#{login_as_user.message}"> <span
+								class="glyphicon glyphicon-log-in"></span> Identifícate
+						</a></li>
+						
+						<li><a href="/admin/login" th:text="#{login_as_admin.message}"> <span
+								class="glyphicon glyphicon-log-in"></span> Login como
+								administrador
+						</a></li>
+						
+					</ul>
+				</li>
 
 				<li sec:authorize="isAuthenticated()"><a
 					th:text = #{disconnect.message} href="/logout"> <span
