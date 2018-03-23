@@ -17,6 +17,7 @@
         <th th:text="#{title}">Titulo </th>
         <th th:text="#{text}">Texto</th>
         <th th:text="#{date}">Fecha</th>
+        <th></th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
@@ -31,6 +32,7 @@
 	    <td th:text="${publication.title}">titulo</td>
 	    <td th:text="${publication.description}">texto</td>
 	    <td th:text="${publication.date}">Fecha</td>
+	    <td><a th:href="${'/fotossubidas/' + publication.id + '.png'}" th:text="#{picture}">publications</a></td>
 	  </tr>
 	</tbody>
   </table>

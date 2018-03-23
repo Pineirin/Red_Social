@@ -1,7 +1,10 @@
 package com.uniovi.controllers;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +34,7 @@ public class PublicationController {
 
 	@Autowired
 	private PublicationsService publicationsService;
+	
 
 	@RequestMapping("/publication/create")
 	public String createPublication(Model model) {
@@ -39,25 +43,28 @@ public class PublicationController {
 	}
 
 	@RequestMapping(value = "/publication/create", method = RequestMethod.POST)
-	public String createPublication(Model model, Principal principal, @ModelAttribute Publication publication, @RequestParam("file") MultipartFile myFile) {	
+	public String createPublication(Model model, Principal principal, @ModelAttribute Publication publication, @RequestParam("file") MultipartFile file) {	
 		
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
-
-
-        File destination = new File("file.txt");
-        try {
-            myFile.transferTo(destination);
-        } catch (IllegalStateException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-		
+	
 		publication.setUser(currentUser);
+		
+		
+		InputStream is = null;
+		try {
+			is = file.getInputStream();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			Files.copy(is, Paths.get("src/main/resources/static/fotossubidas/" + publication.getId() + ".png"),StandardCopyOption.REPLACE_EXISTING );
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		publicationsService.savePublication(publication);
 
