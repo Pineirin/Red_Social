@@ -1,5 +1,7 @@
 package com.uniovi.controllers;
 
+import java.io.File;
+import java.io.IOException;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.uniovi.entities.Publication;
 import com.uniovi.entities.User;
@@ -35,11 +38,24 @@ public class PublicationController {
 	}
 
 	@RequestMapping(value = "/publication/create", method = RequestMethod.POST)
-	public String createPublication(Model model, Principal principal, @ModelAttribute Publication publication) {
+	public String createPublication(Model model, Principal principal, @ModelAttribute Publication publication, MultipartFile photo) {
 
+		File destination = new File("C:/DSpace-Installed");
+		try {
+			photo.transferTo(destination);
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
 
+
+		
 		publication.setUser(currentUser);
 
 		publicationsService.savePublication(publication);
