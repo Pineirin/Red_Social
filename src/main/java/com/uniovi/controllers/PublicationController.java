@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.uniovi.entities.Publication;
@@ -38,22 +39,22 @@ public class PublicationController {
 	}
 
 	@RequestMapping(value = "/publication/create", method = RequestMethod.POST)
-	public String createPublication(Model model, Principal principal, @ModelAttribute Publication publication, MultipartFile photo) {
-
-		File destination = new File("C:/DSpace-Installed");
-		try {
-			photo.transferTo(destination);
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public String createPublication(Model model, Principal principal, @ModelAttribute Publication publication, @RequestParam("file") MultipartFile myFile) {	
 		
 		String email = principal.getName();
 		User currentUser = usersService.getUserByEmail(email);
 
+
+        File destination = new File("file.txt");
+        try {
+            myFile.transferTo(destination);
+        } catch (IllegalStateException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
 		
 		publication.setUser(currentUser);

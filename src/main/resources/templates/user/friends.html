@@ -13,7 +13,7 @@
       <tr>
         <th th:text = "#{name}">Nombre</th>
         <th th:text = "#{email}">Email</th>
-        <th th:text = "#{publications}">publicaciones</th>
+        <th></th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
 		<th class="col-md-1"> </th>
@@ -24,7 +24,7 @@
 	  <tr th:each="user : ${amigos}">
 	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
-	    <td><a th:href="${'/publication/list/' + user.id}">publications</a></td>
+	    <td><a th:href="${'/publication/list/' + user.id}" th:text="#{publications}">publications</a></td>
 	  </tr>
 	</tbody>
   </table>
