@@ -50,25 +50,25 @@ public class PublicationController {
 	
 		publication.setUser(currentUser);
 		
-		
-		InputStream is = null;
-		try {
-			is = file.getInputStream();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 
 		publicationsService.savePublication(publication);
 		
-		try {
-			Files.copy(is, Paths.get("src/main/resources/static/fotossubidas/" + publication.getId() + ".png"),StandardCopyOption.REPLACE_EXISTING );
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (file.getContentType().contains("image")) {
+			InputStream is = null;
+			try {
+				is = file.getInputStream();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				Files.copy(is, Paths.get("src/main/resources/static/fotossubidas/" + publication.getId() + ".png"),StandardCopyOption.REPLACE_EXISTING );
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		
 
 		return "redirect:/publication/list";
 	}
