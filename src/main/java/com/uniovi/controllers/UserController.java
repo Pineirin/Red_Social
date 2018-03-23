@@ -155,26 +155,17 @@ public class UserController {
 
 	@RequestMapping(value = "/user/{id}/sendPetition", method = RequestMethod.GET)
 	public String sendPetition(Model model, @PathVariable Long id) {
-		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String email = auth.getName();
-		
-		List<Petition> petitions = petitionsService.searchPetitions(email);
-		
-		if(petitions.isEmpty()) {
-			long idOrigin = usersService.getIdOriginUser();
-			User userOrigin = usersService.getUser(idOrigin);
+		long idOrigin = usersService.getIdOriginUser();
+		User userOrigin = usersService.getUser(idOrigin);
 
-			long idDestino = id;
-			User userDestino = usersService.getUser(idDestino);
+		long idDestino = id;
+		User userDestino = usersService.getUser(idDestino);
 
-			// CREAMOS LA PETICIÓN
-			Petition peticion = new Petition(userOrigin, userDestino);
-			
-			// se mete en la tabla de peticiones
-			petitionsService.addPetition(peticion);// añadimos la petición al repositorio
-		}
+		// CREAMOS LA PETICIÓN
+		Petition peticion = new Petition(userOrigin, userDestino);
 		
+		// se mete en la tabla de peticiones
+		petitionsService.addPetition(peticion);// añadimos la petición al repositorio
 
 		return "redirect:/user/list";
 	}

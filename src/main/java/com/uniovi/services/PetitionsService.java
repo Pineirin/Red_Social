@@ -85,10 +85,6 @@ public class PetitionsService {
 		return petitionsRepository.searchPetitionByOriginUserAndDestinationUser(userOrigin, userDestination);
 	}
 
-	public List<Petition> searchPetitions(String email) {
-		return petitionsRepository.searchPetition(email);
-	}
-
 	/*
 	 * public Page<Petition> searchPetitionsForOriginUser(Pageable pageable, User
 	 * userOrigen) {

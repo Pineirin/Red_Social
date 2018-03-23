@@ -34,9 +34,6 @@ public interface PetitionsRepository extends CrudRepository<Petition, Long> {
 	@Query("SELECT p FROM Petition p WHERE p.userOrigen = ?1 and p.userDestino = ?2 ORDER BY p.id ASC")
 	List<Petition> searchPetitionByOriginUserAndDestinationUser(User userOrigin, User userDestination);
 
-	@Query("SELECT p FROM petition p WHERE p.userOrigen.email = ?1 or p.userDestino.email = ?1")
-	List<Petition> searchPetition(String email);
-
 	// @Query("SELECT p FROM Petition p WHERE p.userOrigen = ?1")
 	// Page<Petition> searchPetitionsForOriginUser(Pageable pageable,User user);
 
