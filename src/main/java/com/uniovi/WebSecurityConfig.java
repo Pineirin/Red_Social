@@ -28,59 +28,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 	
-	@Configuration
-	@Order(1)
-	public static class WebSecurityConfig1 extends WebSecurityConfigurerAdapter {
-
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			
-			http.csrf().disable().antMatcher("/login/**")
-	          .authorizeRequests()
-	          //.antMatchers("/css/**", "/img/**", "/script/**", "/", "/signup").permitAll()
-	          .anyRequest()
-	          .hasRole("USER")
-
+			http.csrf().disable().
+			authorizeRequests()
+			.antMatchers("/css/**", "/img/**", "/script/**", "/", "/signup", "/login/**", "/admin/login")
+			.permitAll()
+				.antMatchers("/admin/**")
+				.hasAuthority("ROLE_ADMIN")
+			.anyRequest()
+			.authenticated()
 			.and()
 			.formLogin()
-			.loginPage("/login")
-			.permitAll()
-			.defaultSuccessUrl("/log")
-			.failureUrl("/login?error")
-
-			.and()
-			.logout()
-			.logoutSuccessUrl("/logoutFromLogin")
-			.permitAll();
+				.loginPage("/login")
+				.permitAll()
+				.defaultSuccessUrl("/log")
+				.failureUrl("/login?error");
 		}
-
-	}
-
-	@Configuration
-	@Order(2)
-	public class WebSecurityConfig2 extends WebSecurityConfigurerAdapter {
-
-		@Override
-		protected void configure(HttpSecurity http) throws Exception {
-			
-			http.csrf().disable().antMatcher("/admin/login/**")
-	          .authorizeRequests()
-	          .anyRequest()
-	          .hasRole("ADMIN")
-
-			.and()
-			.formLogin()
-			.loginPage("/admin/login")
-			.permitAll()
-			.defaultSuccessUrl("/admin/log")
-			.failureUrl("/admin/login?error")
-
-			.and()
-			.logout()
-			.logoutSuccessUrl("/logoutFromLogin")
-			.permitAll();
-		}
-	}
 
 }
 
