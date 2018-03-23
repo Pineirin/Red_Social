@@ -66,11 +66,10 @@ public class AdminController {
 	public String getAdminList(Model model, Pageable pageable, Principal principal,
 			@RequestParam(defaultValue = "", required = false) String searchText) {
 
-		// poner al usuario en linea
-		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		//String email = auth.getName();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String email = auth.getName();
 		
-		//User currentUser = usersService.getUserByEmail(email);
+		User currentUser = usersService.getUserByEmail(email);
 
 		Page<User> users;
 		if (searchText != null && !searchText.isEmpty()) {
@@ -80,6 +79,7 @@ public class AdminController {
 		}
 
 		model.addAttribute("usersList", users);
+		model.addAttribute("currentUser", currentUser);
 		model.addAttribute("page", users);
 		model.addAttribute("searchText", searchText);
 		return "admin/list";

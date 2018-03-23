@@ -47,6 +47,16 @@
 	  <tr th:each="user : ${usersList}">
 	    <td th:text="${user.name}"> Carlos</td>
 	    <td th:text="${user.email}">c@hotmail.com</td>
+	    <td>
+	    		<div th:if="${!user.equals(currentUser)}">
+				
+	    			<button type="button"
+					th:id="${'deleteButton' + user.id}"
+					id="deleteButton[[${user.id}]]" class="btn btn-info"
+					th:text="#{user.delete}">Borrar usuario</button>
+				
+				</div>
+		</td>
 	  </tr>
 	</tbody>
   </table>
