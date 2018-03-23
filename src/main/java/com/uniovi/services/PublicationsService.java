@@ -46,4 +46,9 @@ public class PublicationsService {
 		return publications;
 	}
 
+	public void updateImage(Publication publication) {
+		publicationsRepository.updateImage(publication.getId());
+		
+	}
+
 }

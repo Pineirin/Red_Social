@@ -68,6 +68,7 @@ public class PublicationController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			publicationsService.updateImage(publication);
 		}
 
 		return "redirect:/publication/list";

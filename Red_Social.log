@@ -9577,3 +9577,160 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: violación del res
 2018-03-23 21:24:56.149  INFO 9408 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
 2018-03-23 21:25:13.997  INFO 9408 --- [http-nio-8090-exec-2] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: ASD
 2018-03-23 21:25:41.390  INFO 9408 --- [http-nio-8090-exec-10] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: asd
+2018-03-23 21:38:51.374  INFO 15212 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on DESKTOP-V9D9FB7 with PID 15212 (C:\Users\Pineirin\Documents\Red_Social\target\classes started by Pineirin in C:\Users\Pineirin\Documents\Red_Social)
+2018-03-23 21:38:51.377  INFO 15212 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-23 21:38:51.706  INFO 15212 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Fri Mar 23 21:38:51 CET 2018]; root of context hierarchy
+2018-03-23 21:38:52.948  INFO 15212 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f2ab5327] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-23 21:38:53.486  INFO 15212 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-23 21:38:53.498  INFO 15212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-23 21:38:53.499  INFO 15212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-23 21:38:53.621  INFO 15212 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-23 21:38:53.799  INFO 15212 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-23 21:38:53.799  INFO 15212 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-23 21:38:53.799  INFO 15212 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-23 21:38:53.800  INFO 15212 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-23 21:38:53.805  INFO 15212 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-23 21:38:53.805  INFO 15212 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-23 21:38:55.188  INFO 15212 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-23 21:38:56.066  INFO 15212 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-23 21:38:57.018  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-23 21:38:57.123  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-23 21:38:57.225  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-23 21:38:57.325  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-23 21:38:57.426  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-23 21:38:57.523  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-23 21:38:57.621  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-23 21:38:57.711  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-23 21:38:57.813  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-23 21:38:57.907  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-23 21:38:58.007  INFO 15212 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-23 21:38:58.194  INFO 15212 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e94669c, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c17bd0b, org.springframework.security.web.header.HeaderWriterFilter@7babed9e, org.springframework.security.web.authentication.logout.LogoutFilter@74f4a2ba, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2475fba3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b098563, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c7f6e96, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41bb1f09, org.springframework.security.web.session.SessionManagementFilter@7c7ed72a, org.springframework.security.web.access.ExceptionTranslationFilter@69ffdaa8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56e5c8fb]
+2018-03-23 21:38:59.139  INFO 15212 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-23 21:38:59.215  INFO 15212 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-23 21:38:59.225  INFO 15212 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 8.191 seconds (JVM running for 8.628)
+2018-03-23 21:39:06.163  INFO 15212 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-23 21:39:17.731  INFO 15212 --- [http-nio-8090-exec-8] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: asd
+2018-03-23 21:39:30.693 ERROR 15212 --- [http-nio-8090-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Could not parse multipart servlet request; nested exception is java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.FileUploadBase$FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.] with root cause
+
+org.apache.tomcat.util.http.fileupload.FileUploadBase$FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase$FileItemIteratorImpl$FileItemStreamImpl$1.raiseError(FileUploadBase.java:630) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:76) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:135) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.io.FilterInputStream.read(Unknown Source) ~[na:1.8.0_161]
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:98) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:68) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:293) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2869) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.Request.parseParameters(Request.java:3216) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.Request.getParameter(Request.java:1137) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.RequestFacade.getParameter(RequestFacade.java:381) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:75) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
+
+2018-03-23 21:44:03.849  INFO 6832 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on DESKTOP-V9D9FB7 with PID 6832 (C:\Users\Pineirin\Documents\Red_Social\target\classes started by Pineirin in C:\Users\Pineirin\Documents\Red_Social)
+2018-03-23 21:44:03.852  INFO 6832 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-23 21:44:04.176  INFO 6832 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Fri Mar 23 21:44:04 CET 2018]; root of context hierarchy
+2018-03-23 21:44:08.512  INFO 8100 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on DESKTOP-V9D9FB7 with PID 8100 (C:\Users\Pineirin\Documents\Red_Social\target\classes started by Pineirin in C:\Users\Pineirin\Documents\Red_Social)
+2018-03-23 21:44:08.515  INFO 8100 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-23 21:44:08.799  INFO 8100 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Fri Mar 23 21:44:08 CET 2018]; root of context hierarchy
+2018-03-23 21:44:09.955  INFO 8100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$be4bf604] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-23 21:44:10.536  INFO 8100 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-23 21:44:10.547  INFO 8100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-23 21:44:10.548  INFO 8100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-23 21:44:10.661  INFO 8100 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-23 21:44:10.849  INFO 8100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-23 21:44:10.850  INFO 8100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-23 21:44:10.850  INFO 8100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-23 21:44:10.850  INFO 8100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-23 21:44:10.856  INFO 8100 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-23 21:44:10.857  INFO 8100 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-23 21:44:12.232  INFO 8100 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-23 21:44:13.054 ERROR 8100 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table petition drop constraint FKh5y47t2lyj1bhuwebgexy7huu
+2018-03-23 21:44:13.062 ERROR 8100 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PETITION
+2018-03-23 21:44:13.067 ERROR 8100 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table petition drop constraint FKop2ku0hn9rrrq8o8pegkfkffn
+2018-03-23 21:44:13.071 ERROR 8100 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PETITION
+2018-03-23 21:44:13.072 ERROR 8100 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table publication drop constraint FKq2ei3a07e3ln96uel4alss2u7
+2018-03-23 21:44:13.076 ERROR 8100 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-03-23 21:44:13.122  INFO 8100 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-23 21:44:14.125  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-23 21:44:14.238  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-23 21:44:14.339  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-23 21:44:14.448  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-23 21:44:14.548  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-23 21:44:14.645  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-23 21:44:14.744  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-23 21:44:14.841  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-23 21:44:14.939  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-23 21:44:15.036  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-23 21:44:15.141  INFO 8100 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-23 21:44:15.354  INFO 8100 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ed31735, org.springframework.security.web.context.SecurityContextPersistenceFilter@ba4f370, org.springframework.security.web.header.HeaderWriterFilter@36dafa24, org.springframework.security.web.authentication.logout.LogoutFilter@446c8c72, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@507049f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7af0d91b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cecc15a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fb082ff, org.springframework.security.web.session.SessionManagementFilter@c758a2d, org.springframework.security.web.access.ExceptionTranslationFilter@7c7ed72a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d67d5a4]
+2018-03-23 21:44:16.239  INFO 8100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-23 21:44:16.315  INFO 8100 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-23 21:44:16.327  INFO 8100 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 8.103 seconds (JVM running for 8.498)
+2018-03-23 22:19:21.522  INFO 8100 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-23 22:19:32.628  INFO 8100 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-23 22:19:44.880 ERROR 8100 --- [http-nio-8090-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Could not parse multipart servlet request; nested exception is java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.FileUploadBase$FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.] with root cause
+
+org.apache.tomcat.util.http.fileupload.FileUploadBase$FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase$FileItemIteratorImpl$FileItemStreamImpl$1.raiseError(FileUploadBase.java:630) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:76) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:135) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.io.FilterInputStream.read(Unknown Source) ~[na:1.8.0_161]
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:98) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:68) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:293) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2869) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.Request.parseParameters(Request.java:3216) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.Request.getParameter(Request.java:1137) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.RequestFacade.getParameter(RequestFacade.java:381) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:75) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
+
+2018-03-23 22:20:26.964  INFO 8100 --- [http-nio-8090-exec-9] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: a
+2018-03-23 22:20:47.709  INFO 8100 --- [http-nio-8090-exec-6] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: asd
+2018-03-23 22:20:56.317  INFO 8100 --- [http-nio-8090-exec-2] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: asd
+2018-03-23 22:21:07.254  INFO 8100 --- [http-nio-8090-exec-4] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: asd

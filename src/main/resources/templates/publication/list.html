@@ -32,7 +32,13 @@
 	    <td th:text="${publication.title}">titulo</td>
 	    <td th:text="${publication.description}">texto</td>
 	    <td th:text="${publication.date}">Fecha</td>
-	    <td><a th:href="${'/fotossubidas/' + publication.id + '.png'}" th:text="#{picture}">publications</a></td>
+	    <div th:if="${publication.image == true}">
+	    	<td><a th:href="${'/fotossubidas/' + publication.id + '.png'}" th:text="#{picture}">publications</a></td>
+	    </div>
+	    <div th:unless="${publication.image == true}">
+	    	<td></td>
+	    </div>
+	    
 	  </tr>
 	</tbody>
   </table>

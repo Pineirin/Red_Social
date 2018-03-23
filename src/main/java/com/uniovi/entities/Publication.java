@@ -26,6 +26,8 @@ public class Publication {
 	
 	private String date;
 	
+	private boolean image = false;
+	
 	public Publication() {
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date currentDate = new Date();
@@ -84,6 +86,16 @@ public class Publication {
 	public void setDate(String date) {
 		this.date = date;
 	}
+
+	public boolean isImage() {
+		return image;
+	}
+
+	public void setImage(boolean image) {
+		this.image = image;
+	}
+	
+	
 
 	
 }
