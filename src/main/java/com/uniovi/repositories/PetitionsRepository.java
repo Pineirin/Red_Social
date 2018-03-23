@@ -40,4 +40,13 @@ public interface PetitionsRepository extends CrudRepository<Petition, Long> {
 	// @Query("SELECT p.userDestino FROM Petition p WHERE p.userOrigen = ?1")
 	// Page<User> searchUsuariosDestinosForUser(Pageable pageable,User user);
 
+    @Query("SELECT p FROM Petition p where (p.userOrigen = ?1 or p.userDestino = ?1) and p.status = 'TERMINADA'")
+    Page<Petition> searchPetitionsForUser(Pageable pageable, User currentUser);
+	
+	@Query("SELECT p FROM Petition p where (p.userOrigen = ?1 or p.userDestino = ?1) and p.status = 'TERMINADA'")
+    List<Petition> searchPetitionsForUser(User currentUser);
+
+	@Query("SELECT p FROM Petition p where p.userDestino = ?1 and p.status = 'EN_PROCESO'")
+	Page<Petition> searchSentPetitionsForUser(Pageable pageable, User currentUser);
+	
 }

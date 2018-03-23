@@ -18,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.User;
+import com.uniovi.repositories.PetitionsRepository;
 import com.uniovi.repositories.UsersRepository;
 
 @Service
@@ -27,6 +28,9 @@ public class UsersService {
 
 	@Autowired
 	private UsersRepository usersRepository;
+
+	@Autowired
+	private PetitionsRepository petitionsRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -98,32 +102,29 @@ public class UsersService {
 	}
 
 	/*
-	public Page<User> searchFriendsForUser(Pageable pageable, User user) {
-		return usersRepository.searchFriendsForUser(pageable, user);
-	}
+	 * public Page<User> searchFriendsForUser(Pageable pageable, User user) { return
+	 * usersRepository.searchFriendsForUser(pageable, user); }
+	 * 
+	 * public List<User> searchFriendsForUser(User user) {
+	 * 
+	 * return usersRepository.searchFriendsForUser(user); }
+	 */
 
-	public List<User> searchFriendsForUser(User user) {
-
-		return usersRepository.searchFriendsForUser(user);
-	}
-	*/
-	
 	public Page<User> searchFriendsForUser(Pageable pageable, User currentUser) {
-        return usersRepository.searchPetitionsForUser(pageable, currentUser)
-                .map(peticion -> {
-                    if (peticion.getUserOrigen().equals(currentUser)) {
-                        return peticion.getUserDestino();
-                    }
-                    else {
-                        return peticion.getUserOrigen();
-                    }
+		return petitionsRepository.searchPetitionsForUser(pageable, currentUser).map(peticion -> {
+			if (peticion.getUserOrigen().equals(currentUser)) {
+				return peticion.getUserDestino();
+			} else {
+				return peticion.getUserOrigen();
+			}
 
-                });
+		});
 	}
 
 	public Page<User> searchSentPetitionsForUser(Pageable pageable, User currentUser) {
-		return usersRepository.searchSentPetitionsForUser(pageable, currentUser).map(peticion -> {return peticion.getUserOrigen();});
+		return petitionsRepository.searchSentPetitionsForUser(pageable, currentUser).map(peticion -> {
+			return peticion.getUserOrigen();
+		});
 	}
-	
 
 }
