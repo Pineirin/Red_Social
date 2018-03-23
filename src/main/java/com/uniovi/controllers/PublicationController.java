@@ -59,14 +59,16 @@ public class PublicationController {
 			e.printStackTrace();
 		}
 		
+
+		publicationsService.savePublication(publication);
+		
 		try {
 			Files.copy(is, Paths.get("src/main/resources/static/fotossubidas/" + publication.getId() + ".png"),StandardCopyOption.REPLACE_EXISTING );
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		publicationsService.savePublication(publication);
+		
 
 		return "redirect:/publication/list";
 	}
