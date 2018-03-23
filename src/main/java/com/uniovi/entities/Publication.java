@@ -18,7 +18,6 @@ public class Publication {
 	@GeneratedValue
 	private long id;
 	
-	@Column(unique=true)
 	private String title;
 	private String description;
 	

@@ -161,14 +161,13 @@ public class UserController {
 	@RequestMapping(value = "/user/{id}/sendPetition", method = RequestMethod.GET)
 	public String sendPetition(Model model, @PathVariable Long id) {
 		
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String email = auth.getName();
+		long idOrigin = usersService.getIdOriginUser();
+		User userOrigin = usersService.getUser(idOrigin);
 
-        List<Petition> petitions = petitionsService.searchPetitions(email);
+        List<Petition> petitions = petitionsService.searchPetitions(userOrigin);
 
         if(petitions.isEmpty()) {
-        	long idOrigin = usersService.getIdOriginUser();
-    		User userOrigin = usersService.getUser(idOrigin);
+        	
 
     		long idDestino = id;
     		User userDestino = usersService.getUser(idDestino);
@@ -187,11 +186,14 @@ public class UserController {
 	public String cancelPetition(Model model, @PathVariable Long id) {
 		long idOrigin = usersService.getIdOriginUser();
 		User userOrigin = usersService.getUser(idOrigin);
-
-		long idDestino = id;
-		User userDestino = usersService.getUser(idDestino);
-
-		petitionsService.cancelarPetition(userOrigin, userDestino);
+		
+		long idDestination = id;
+		User userDestination = usersService.getUser(idDestination);
+		
+		List<Petition> petitions = petitionsService.searchSentPetitionsUserOriginUserDestination(userOrigin, userDestination);
+		
+		if (!petitions.isEmpty())
+			petitionsService.cancelarPetition(userOrigin, userDestination);
 		return "redirect:/user/list";
 	}
 
@@ -206,9 +208,10 @@ public class UserController {
 		List<Petition> petitions = petitionsService.searchPetitionByOriginUserAndDestinationUser(userOrigin,
 				userDestination);
 
-		long idPetition = petitions.get(0).getId();
-
-		petitionsService.updateStatus(PetitionStatus.TERMINADA, idPetition);
+		if (!petitions.isEmpty()) {
+			long idPetition = petitions.get(0).getId();
+			petitionsService.updateStatus(PetitionStatus.TERMINADA, idPetition);
+		}
 		return "redirect:/user/petitions";
 	}
 
