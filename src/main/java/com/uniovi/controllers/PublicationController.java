@@ -79,13 +79,26 @@ public class PublicationController {
 		
 		User user = usersService.getUser(id);
 	
-		Page<Publication> publications = publicationsService.getUserPublications(pageable, user);
+		Page<User> friends = usersService.searchFriendsForUser(pageable, user);
+		
+		boolean friend = false;
+	
+		for (User u : friends.getContent())
+			if (u.getId() == id)
+				friend = true;
+		
+		if (user.getId() == id || friend) {
+			Page<Publication> publications = publicationsService.getUserPublications(pageable, user);
 
-		model.addAttribute("publicationsList", publications);
-		model.addAttribute("page", publications);
-		model.addAttribute("searchText", "");
+			model.addAttribute("publicationsList", publications);
+			model.addAttribute("page", publications);
+			model.addAttribute("searchText", "");
 
-		return "publication/list";
+			return "publication/list";
+		}
+		
+		return "redirect:/user/list";
+		
 	}
 	
 	@RequestMapping("/publication/list")
