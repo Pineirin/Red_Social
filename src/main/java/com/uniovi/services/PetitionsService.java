@@ -85,8 +85,8 @@ public class PetitionsService {
 		return petitionsRepository.searchPetitionByOriginUserAndDestinationUser(userOrigin, userDestination);
 	}
 
-	public List<Petition> searchPetitions(User user) {
-        return petitionsRepository.searchPetition(user);
+	public List<Petition> searchPetitions(User userOrigen, User userDestino) {
+        return petitionsRepository.searchPetition(userOrigen, userDestino);
 	}
 
 	public List<Petition> searchSentPetitionsUserOriginUserDestination(User userOrigin, User userDestination) {

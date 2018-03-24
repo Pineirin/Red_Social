@@ -166,14 +166,13 @@ public class UserController {
 		
 		long idOrigin = usersService.getIdOriginUser();
 		User userOrigin = usersService.getUser(idOrigin);
+		
+		long idDestino = id;
+		User userDestino = usersService.getUser(idDestino);
 
-        List<Petition> petitions = petitionsService.searchPetitions(userOrigin);
+        List<Petition> petitions = petitionsService.searchPetitions(userOrigin, userDestino);
 
         if(petitions.isEmpty()) {
-        	
-
-    		long idDestino = id;
-    		User userDestino = usersService.getUser(idDestino);
 
     		// CREAMOS LA PETICIÓN
     		Petition peticion = new Petition(userOrigin, userDestino);

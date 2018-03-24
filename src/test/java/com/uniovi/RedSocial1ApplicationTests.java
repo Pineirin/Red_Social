@@ -351,7 +351,18 @@ public class RedSocial1ApplicationTests {
 	//11.1 [LisPubAmiVal] Listar las publicaciones de un usuario amigo
 	@Test
 	public void PR16() {
-		
+		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
+				
+		// adripc2live.com entra en Publicaciones
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
+		elementos.get(0).click();
+							
+		// Sacamos la pestaña para ver las publicaciónes
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/friends')]");
+		// Pinchamos en la pestaña para ver las publicaciones
+		elementos.get(0).click();		
 	}
 	
 	//11.2 [LisPubAmiInVal] Utilizando un acceso vía URL tratar de listar las publicaciones de un usuario que
