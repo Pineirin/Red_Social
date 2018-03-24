@@ -81,7 +81,9 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario.
 		PO_RegisterView.fillForm(driver, "77777778A@uniovi.es", "Josefo", "77777", "77777");
 		// Comprobamos que entramos en la sección privada
-		PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes");
+		PO_RegisterView.checkKey(driver, "users.show.text",
+				PO_Properties.getSPANISH());
+		//PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes");
 	}
 
 	// PR01_2.Registro de Usuario con datos inválidos (repetición de contraseña
@@ -96,9 +98,9 @@ public class RedSocial1ApplicationTests {
 		PO_RegisterView.fillForm(driver, "99999990B@uniovi.es", "Josefo", "7777", "7778");
 
 		// COmprobamos el error de password no coincidente .
-		// PO_RegisterView.checkKey(driver, "Error.signup.passwordConfirm.coincidence",
-		// PO_Properties.getSPANISH() );
-		PO_RegisterView.checkElement(driver, "text", "Las contraseñas no coinciden");
+		 PO_RegisterView.checkKey(driver, "Error.signup.passwordConfirm.coincidence",
+		 PO_Properties.getSPANISH() );
+		//PO_RegisterView.checkElement(driver, "text", "Las contraseñas no coinciden");
 	}
 
 	// PR02_1 Inicio de sesión con datos válidos
@@ -109,7 +111,9 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "77777778A@uniovi.es", "77777");
 		// COmprobamos que entramos en la pagina privada de Alumno
-		PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes");
+		//PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes");
+		PO_RegisterView.checkKey(driver, "users.show.text",
+				PO_Properties.getSPANISH());
 	}
 
 	// PR02_2 Inicio de sesión con datos inválidos (usuario no existente en la aplicación).
@@ -120,7 +124,9 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "ZZZZZZZZA@uniovi.es", "123456");
 		// COmprobamos que no entramos en la pagina privada del Usuario
-		PO_View.checkElement(driver, "text", "Usuario o contraseña inválidos");
+		//PO_View.checkElement(driver, "text", "Usuario o contraseña inválidos");
+		PO_RegisterView.checkKey(driver, "Error.login",
+				PO_Properties.getSPANISH());
 	}
 
 	// PR03_1 Acceso al listado de usuarios desde un usuario en sesión.
@@ -131,7 +137,9 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario.
 		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
 		// Comprobamos que estamos en la vista lista usuarios.
-		PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes:");
+		//PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes:");
+		PO_RegisterView.checkKey(driver, "users.show.text",
+				PO_Properties.getSPANISH());
 	}
 
 	// PR03_2 Intento de acceso con URL desde un usuario no identificado al listado de
@@ -142,7 +150,9 @@ public class RedSocial1ApplicationTests {
 		// Tratamos de acceder a la vista lista usuarios.
 		driver.navigate().to(URL + "/user/list");
 		// Comprobamos que nos redirige al login.
-		PO_View.checkElement(driver, "text", "Login");
+		//PO_View.checkElement(driver, "text", "Login");
+		PO_RegisterView.checkKey(driver, "login.message",
+				PO_Properties.getSPANISH());
 
 	}
 
@@ -195,7 +205,9 @@ public class RedSocial1ApplicationTests {
 		driver.findElement(By.id("cancelPetitionButton2")).click();
 		// Comprobamos que ahora la finalidad del boton es cancelar petición.
 		//driver.findElement(By.id("sendPetitionButton2")).getText();
-		PO_View.checkElement(driver, "text", "Cancelar petición");
+		//PO_View.checkElement(driver, "text", "Cancelar petición");
+		PO_RegisterView.checkKey(driver, "petition.cancel",
+				PO_Properties.getSPANISH());
 	}
 
 	// PR06_1 Listar las invitaciones recibidas por un usuario, realizar la comprobación
@@ -222,7 +234,9 @@ public class RedSocial1ApplicationTests {
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/petitions')]");
 		// Pinchamos en la pestaña para ver las peticiones
 		elementos.get(0).click();
-		PO_View.checkElement(driver, "text", "Aceptar petición");
+		//PO_View.checkElement(driver, "text", "Aceptar petición");
+		PO_RegisterView.checkKey(driver, "petition.accept",
+				PO_Properties.getSPANISH());
 
 	}
 
@@ -242,13 +256,17 @@ public class RedSocial1ApplicationTests {
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/petitions')]");
 		// Pinchamos en la pestaña para ver las peticiones
 		elementos.get(0).click();
-		PO_View.checkElement(driver, "text", "Aceptar petición");
+		//PO_View.checkElement(driver, "text", "Aceptar petición");
+		PO_RegisterView.checkKey(driver, "petition.accept",
+				PO_Properties.getSPANISH());
 
 		// Damos a aceptar la petición
 		driver.findElement(By.id("acceptPetitionButton1")).click();
 
 		// Miramos que ha desparecido la invitación
-		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Aceptar petición", PO_View.getTimeout());
+		//SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Aceptar petición", PO_View.getTimeout());
+		PO_RegisterView.checkNoKey(driver, "petition.accept",
+				PO_Properties.getSPANISH());
 	}
 
 	// PR08_1 Listar los amigos de un usuario, realizar la comprobación con una lista que
@@ -268,7 +286,9 @@ public class RedSocial1ApplicationTests {
 		// Pinchamos en la pestaña para ver los amigos
 		elementos.get(0).click();
 		
-		PO_View.checkElement(driver, "text", "Usted tiene los siguientes amigos");
+		//PO_View.checkElement(driver, "text", "Usted tiene los siguientes amigos");
+		PO_RegisterView.checkKey(driver, "friends.text",
+				PO_Properties.getSPANISH());
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
 		
 	}
@@ -357,7 +377,6 @@ public class RedSocial1ApplicationTests {
 	@Test
 	public void PR21() {
 		driver.navigate().to(URL+"/admin/login");
-		PO_LoginView.esperaCargaForm(driver);
 		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
 		
 		PO_RegisterView.checkKey(driver, "users.show.text",
