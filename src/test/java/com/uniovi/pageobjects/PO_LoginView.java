@@ -1,12 +1,8 @@
 package com.uniovi.pageobjects;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import com.uniovi.utils.SeleniumUtils;
 
 public class PO_LoginView extends PO_NavView {
 	

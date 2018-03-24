@@ -310,6 +310,7 @@ public class RedSocial1ApplicationTests {
 			// Pinchamos en la pestaña para crear una punlicación
 			elementos.get(0).click();
 			
+			SeleniumUtils.esperarSegundos(driver, 1);
 			//Relleno la publicación
 			PO_PublicationView.fillForm(driver, "Hola", "Que tal");
 			
@@ -354,23 +355,44 @@ public class RedSocial1ApplicationTests {
 	public void PR16() {
 		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
-		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
+		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
 				
-		// adripc2live.com entra en Publicaciones
-		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
+		
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
 		elementos.get(0).click();
 							
-		// Sacamos la pestaña para ver las publicaciónes
-		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/friends')]");
-		// Pinchamos en la pestaña para ver las publicaciones
+		// Sacamos la pestaña para ver los amigos
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, '/user/friends')]");
+		// Pinchamos en la pestaña para ver los amigos
 		elementos.get(0).click();		
+		
+		// Consultamos las publiaciones con el id del amigo de Juan
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, '/publication/list/1')]"); 
+		elementos.get(0).click(); 
+		
+		// Comprobamos que nos encontramos con el texto de la aplicación que ha creado
+		PO_View.checkElement(driver, "text", "adripc@live.com");
+		PO_View.checkElement(driver, "text", "Hola");
+		PO_View.checkElement(driver, "text", "Que tal");
+		
+		
 	}
 	
 	//11.2 [LisPubAmiInVal] Utilizando un acceso vía URL tratar de listar las publicaciones de un usuario que
 	//no sea amigo del usuario identificado en sesión.
 	@Test
 	public void PR17() {
+		// Iniciamos sesión, con Juan@hotmail.com el cual no es amigo del usuario con id 5
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
 		
+		// Navegamos a la lista de peticiones del usuario que no es amigo suyo 
+		driver.navigate().to(URL + "/publication/list/5");
+		
+		SeleniumUtils.esperarSegundos(driver, 1);
+		// Comprobamos que nos ha redirigido a la lista de usuarios en vez de a la lista de peticiones de ese usuario
+		PO_RegisterView.checkKey(driver, "users.show.text",
+				PO_Properties.getSPANISH());
 	}
 	
 	//12.1 [PubFot1Val] Crear una publicación con datos válidos y una foto adjunta. 
@@ -382,7 +404,26 @@ public class RedSocial1ApplicationTests {
 	//12.1 [PubFot2Val] Crear una publicación con datos válidos y sin una foto adjunta
 	@Test
 	public void PR19() {
+		//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
 		
+		// adripc2live.com entra en Publicaciones
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
+		elementos.get(0).click();
+		// Sacamos la pestaña para crear una publicación
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/create')]");
+		// Pinchamos en la pestaña para crear una punlicación
+		elementos.get(0).click();
+		
+		SeleniumUtils.esperarSegundos(driver, 1);
+		//Relleno la publicación
+		PO_PublicationView.fillForm(driver, "Me llamo Juan", "¿Han pensado alguna vez en ese tipo...");
+		
+		//Aparece la lista de publicciones
+		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
+		PO_View.checkElement(driver, "text", "Me llamo Juan");
+		PO_View.checkElement(driver, "text", "¿Han pensado alguna vez en ese tipo...");
 	}
 	
 	//13.1 [AdInVal] Inicio de sesión como administrador con datos válidos.
