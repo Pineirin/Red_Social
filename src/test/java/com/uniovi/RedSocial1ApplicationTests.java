@@ -221,6 +221,7 @@ public class RedSocial1ApplicationTests {
 		// Enviamos petición de amistad
 		//PO_NavView.clickOption(driver, "user/petitions", "class", "btn btn-primary");
 		driver.findElement(By.id("sendPetitionButton2")).click();
+		
 		// Cerramos sesión
 		PO_NavView.clickOption(driver, "logout", "class", "btn btn-primary");
 
@@ -438,6 +439,15 @@ public class RedSocial1ApplicationTests {
 	@Test
 	public void PR25() {
 		
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		//Inicio sesión con usuario no admin
+		PO_LoginView.fillForm(driver, "a1@live.com", "123456");
+		
+		//Intento borrar al segundo de la lista
+		driver.navigate().to(URL+"/admin/delete/2");
+		
+		//Comprobamos que el Access is denied
+		PO_View.checkElement(driver, "text", "Access is denied");
 	}
 
 	// Identificación inválida con usuario de ROL alumno, 99999990A/123456
