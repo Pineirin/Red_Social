@@ -77,9 +77,14 @@ public class PublicationController {
 	@RequestMapping("/publication/list/{id}")
 	public String listPublications(Model model, Pageable pageable, String searchText, @PathVariable Long id) {	
 		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail=auth.getName();
+	
+		User currentUser = usersService.getUserByEmail(userEmail);
+		
 		User user = usersService.getUser(id);
 	
-		Page<User> friends = usersService.searchFriendsForUser(pageable, user);
+		Page<User> friends = usersService.searchFriendsForUser(pageable, currentUser);
 		
 		boolean friend = false;
 	
@@ -87,7 +92,7 @@ public class PublicationController {
 			if (u.getId() == id)
 				friend = true;
 		
-		if (user.getId() == id || friend) {
+		if (currentUser.getId() == id || friend) {
 			Page<Publication> publications = publicationsService.getUserPublications(pageable, user);
 
 			model.addAttribute("publicationsList", publications);
@@ -96,9 +101,7 @@ public class PublicationController {
 
 			return "publication/list";
 		}
-		
 		return "redirect:/user/list";
-		
 	}
 	
 	@RequestMapping("/publication/list")
