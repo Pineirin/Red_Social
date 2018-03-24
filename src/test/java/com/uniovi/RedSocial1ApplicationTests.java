@@ -424,14 +424,14 @@ public class RedSocial1ApplicationTests {
 		driver.navigate().to(URL+"/admin/login");
 		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
 				
-		//Comprobamos que Juan@hotmail.com existe
-		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
+		//Comprobamos que francisco12@live.com existe
+		PO_View.checkElement(driver, "text", "francisco12@live.com");
 				
-		//Borramos el segundo usuario que es Juan@hotmail.com
-		driver.findElement(By.id("deleteButton2")).click();
+		//Borramos el segundo usuario que es francisco12@live.com
+		driver.findElement(By.id("deleteButton3")).click();
 				
-		//Comprobamos que Juan@hotmail.com ya no existe
-		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Juan@hotmail.com", PO_View.getTimeout());
+		//Comprobamos que francisco12@live.com ya no existe
+		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "francisco12@live.com", PO_View.getTimeout());
 	}
 	
 	//15.2 [AdBorUsrInVal] Intento de acceso vía URL al borrado de un usuario existente en la aplicación.

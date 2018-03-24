@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
@@ -15,7 +16,7 @@ import javax.persistence.Transient;
 public class User {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@Column(unique=true)
@@ -29,10 +30,10 @@ public class User {
 	
 	private Boolean sendPetition = false;
 	
-	@OneToMany(mappedBy = "userOrigen", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "userOrigen",cascade = { CascadeType.ALL }, orphanRemoval = true)
 	private Set<Petition> petitions;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = { CascadeType.ALL }, orphanRemoval = true)
 	private Set<Publication> publications;
 	
 	private String role;

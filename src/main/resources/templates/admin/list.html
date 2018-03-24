@@ -32,21 +32,31 @@
 	    <td th:text="${user.email}">c@hotmail.com</td>
 	    <td>
 	    		<div th:if="${!user.equals(currentUser)}">
-				
-	    			<button type="button"
-					th:id="${'deleteButton' + user.id}"
-					id="deleteButton[[${user.id}]]" class="btn btn-info"
-					th:text="#{user.delete}">Borrar usuario</button>
-					<script th:inline="javascript">
- 					/*<![CDATA[*/
- 		 			$( "#deleteButton[[${user.id}]]" ).click(function() {
- 		 			$.get( "/admin/delete/[[${user.id}]]", function( data ) {
- 		 			var urlUpdate = '/admin/list/update';
- 					$("#tableUsers").load(urlUpdate);
- 		 			});
- 		 			});
+					<div th:if="${user.role.equals('ROLE_ADMIN')}">
+						<button type="button"
+						th:id="${'adminButton' + user.id}"
+						id="adminButton[[${user.id}]]" class="btn btn-default"
+						th:text="#{administrator.message}">Administrador</button>
+					</div>
+					
+					<div th:unless="${user.role.equals('ROLE_ADMIN')}">
+						<button type="button"
+						th:id="${'deleteButton' + user.id}"
+						id="deleteButton[[${user.id}]]" class="btn btn-info"
+						th:text="#{user.delete}">Borrar usuario</button>
+						<script th:inline="javascript">
+ 						/*<![CDATA[*/
+ 		 				$( "#deleteButton[[${user.id}]]" ).click(function() {
+ 		 				$.get( "/admin/delete/[[${user.id}]]", function( data ) {
+ 		 				var urlUpdate = '/admin/list/update';
+ 						$("#tableUsers").load(urlUpdate);
+ 		 				});
+ 		 				});
  		 			/*]]>*/
  					</script>
+					
+					</div>
+	    			
 				</div>
 		</td>
 	  </tr>
