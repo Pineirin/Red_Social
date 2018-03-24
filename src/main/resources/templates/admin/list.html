@@ -5,12 +5,7 @@
 <nav th:replace="fragments/nav"/>
 
 <div class="container">
-  <h2 th:text= "#{users}"> Usuarios</h2>
-  <form class="navbar-form" action="/user/list">         
-  	<div class="form-group">             
-  	<input name="searchText" type="text" class="form-control" size="50"                 
-  	th:placeholder="#{users.search.criteria}"/>         
-  	</div>         
+  <h2 th:text= "#{users}"> Usuarios</h2>            
  
   <p th:text ="#{users.show.text}">Los usuarios de la aplicación son los siguientes:</p>                                                                                      
   <div th:fragment="tableUsers" id="tableUsers">
@@ -32,14 +27,7 @@
 	    <td th:text="${user.email}">c@hotmail.com</td>
 	    <td>
 	    		<div th:if="${!user.equals(currentUser)}">
-					<div th:if="${user.role.equals('ROLE_ADMIN')}">
-						<button type="button"
-						th:id="${'adminButton' + user.id}"
-						id="adminButton[[${user.id}]]" class="btn btn-default"
-						th:text="#{administrator.message}">Administrador</button>
-					</div>
-					
-					<div th:unless="${user.role.equals('ROLE_ADMIN')}">
+
 						<button type="button"
 						th:id="${'deleteButton' + user.id}"
 						id="deleteButton[[${user.id}]]" class="btn btn-info"
@@ -54,8 +42,6 @@
  		 				});
  		 			/*]]>*/
  					</script>
-					
-					</div>
 	    			
 				</div>
 		</td>
