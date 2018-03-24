@@ -1312,3 +1312,4 @@ java.sql.SQLIntegrityConstraintViolationException: violación del restricción d
 	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
 
 2018-03-24 15:55:49.985  INFO 14160 --- [http-nio-8090-exec-7] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 16:34:26.638  INFO 14160 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
