@@ -31,6 +31,9 @@ public class User {
 	@OneToMany(mappedBy = "userOrigen",cascade = { CascadeType.ALL }, orphanRemoval = true)
 	private Set<Petition> petitions;
 	
+	@OneToMany(mappedBy = "userDestino",cascade = { CascadeType.ALL }, orphanRemoval = true)
+	private Set<Petition> petitionsRecibidas;
+	
 	@OneToMany(mappedBy = "user", cascade = { CascadeType.ALL }, orphanRemoval = true)
 	private Set<Publication> publications;
 	
@@ -139,6 +142,14 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public Set<Petition> getPetitionsRecibidas() {
+		return petitionsRecibidas;
+	}
+
+	public void setPetitionsRecibidas(Set<Petition> petitionsRecibidas) {
+		this.petitionsRecibidas = petitionsRecibidas;
 	}
 
 	
