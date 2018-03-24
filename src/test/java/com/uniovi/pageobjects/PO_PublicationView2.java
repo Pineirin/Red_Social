@@ -17,7 +17,7 @@ public class PO_PublicationView2 extends PO_NavView {
 			description.clear();
 			description.sendKeys(descriptionp);
 			
-			driver.findElement(By.id("myUploadElement")).sendKeys("<absolutePathToMyFile>");
+			driver.findElement(By.id("file")).sendKeys(System.getProperty("user.dir") + "Artorias y Sif.jpg");
 			
 			//Pulsar el boton de Publicar.
 			By boton = By.className("btn");

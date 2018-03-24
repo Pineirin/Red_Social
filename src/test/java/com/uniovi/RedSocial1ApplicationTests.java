@@ -20,6 +20,7 @@ import com.uniovi.pageobjects.PO_LoginView;
 import com.uniovi.pageobjects.PO_NavView;
 import com.uniovi.pageobjects.PO_Properties;
 import com.uniovi.pageobjects.PO_PublicationView;
+import com.uniovi.pageobjects.PO_PublicationView2;
 import com.uniovi.pageobjects.PO_RegisterView;
 import com.uniovi.pageobjects.PO_SearchTextView;
 import com.uniovi.pageobjects.PO_View;
@@ -398,7 +399,27 @@ public class RedSocial1ApplicationTests {
 	//12.1 [PubFot1Val] Crear una publicación con datos válidos y una foto adjunta. 
 	@Test
 	public void PR18() {
-		
+		//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
+				
+		// adripc2live.com entra en Publicaciones
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
+		elementos.get(0).click();
+		// Sacamos la pestaña para crear una publicación
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/create')]");
+		// Pinchamos en la pestaña para crear una punlicación
+		elementos.get(0).click();
+				
+		SeleniumUtils.esperarSegundos(driver, 1);
+		//Relleno la publicación
+		PO_PublicationView2.fillForm(driver, "Buenas tardes", "buenas tardes, buenas tardes");
+				
+		//Aparece la lista de publicciones
+		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
+		PO_View.checkElement(driver, "text", "Buenas tardes");
+		PO_View.checkElement(driver, "text", "buenas tardes, buenas tardes");
+		PO_View.checkElement(driver, "text", "Imagen");
 	}
 	
 	//12.1 [PubFot2Val] Crear una publicación con datos válidos y sin una foto adjunta
