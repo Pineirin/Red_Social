@@ -62,7 +62,7 @@ public class UserController {
 		
 		log.info("User: " + auth.getName() + " logged out from the application");
 
-		return "redirect:/";
+		return "redirect:/logout";
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
