@@ -59,7 +59,7 @@ public class UsersService {
 	public void addUser(User user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		usersRepository.save(user);
-		log.info("User: " + user.getEmail() + " registered (and logged) in the application");
+		log.info("User: " + user.getEmail()  + " registered (and logged) in the application");
 	}
 
 	public User getUserByEmail(String email) {

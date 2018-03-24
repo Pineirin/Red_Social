@@ -20,6 +20,7 @@ import com.uniovi.pageobjects.PO_LoginView;
 import com.uniovi.pageobjects.PO_NavView;
 import com.uniovi.pageobjects.PO_Properties;
 import com.uniovi.pageobjects.PO_PublicationView;
+import com.uniovi.pageobjects.PO_PublicationView2;
 import com.uniovi.pageobjects.PO_RegisterView;
 import com.uniovi.pageobjects.PO_SearchTextView;
 import com.uniovi.pageobjects.PO_View;
@@ -412,7 +413,7 @@ public class RedSocial1ApplicationTests {
 				
 		SeleniumUtils.esperarSegundos(driver, 1);
 		//Relleno la publicación
-		PO_PublicationView.fillForm(driver, "Buenas tardes", "buenas tardes, buenas tardes");
+		PO_PublicationView2.fillForm(driver, "Buenas tardes", "buenas tardes, buenas tardes");
 				
 		//Aparece la lista de publicciones
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
