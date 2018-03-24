@@ -47,11 +47,7 @@
 					</thead>
 					<tbody>
 						<tr th:each="user : ${usersList}">
-							<td>
-								<a th:href="@{'/publication/list/' + ${user.id}}"
-								th:text="${user.name}">Carlos
-								</a>
-							</td>
+							<td th:text="${user.name}">Carlos</td>
 							<td th:text="${user.email}">c@hotmail.com</td>
 							<td>
 
