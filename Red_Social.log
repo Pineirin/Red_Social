@@ -10389,3 +10389,1077 @@ java.sql.SQLIntegrityConstraintViolationException: violación del restricción d
 2018-03-24 12:24:22.868  INFO 5628 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
 2018-03-24 12:24:22.884  INFO 5628 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.373 seconds (JVM running for 10.963)
 2018-03-24 12:24:30.192  INFO 5628 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:27:29.106  INFO 5628 --- [http-nio-8090-exec-10] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:31:57.226  INFO 5628 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 12:36:54.616  INFO 5628 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 12:37:07.678  INFO 7396 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 7396 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:37:07.678  INFO 7396 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:37:07.991  INFO 7396 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:37:07 CET 2018]; root of context hierarchy
+2018-03-24 12:37:09.520  INFO 7396 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4329fefa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:37:10.316  INFO 7396 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:37:10.332  INFO 7396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:37:10.347  INFO 7396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:37:10.519  INFO 7396 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:37:10.753  INFO 7396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:37:10.753  INFO 7396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:37:10.753  INFO 7396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:37:10.753  INFO 7396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:37:10.753  INFO 7396 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:37:10.753  INFO 7396 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:37:12.378  INFO 7396 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:37:13.596  INFO 7396 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:37:14.876  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:37:14.970  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:37:15.049  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:37:15.143  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:37:15.236  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:37:15.330  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:37:15.423  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:37:15.501  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:37:15.595  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:37:15.689  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:37:15.782  INFO 7396 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:37:16.079  INFO 7396 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a3b858f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1eab8437, org.springframework.security.web.header.HeaderWriterFilter@2fac80a8, org.springframework.security.web.authentication.logout.LogoutFilter@2ba024cb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@56e5c8fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69ffdaa8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22b7ef2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@600bbf9e, org.springframework.security.web.session.SessionManagementFilter@50778bde, org.springframework.security.web.access.ExceptionTranslationFilter@42aa1324, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c9e8a67]
+2018-03-24 12:37:17.359  INFO 7396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-24 12:37:17.453  INFO 7396 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-24 12:37:17.453  INFO 7396 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.228 seconds (JVM running for 10.846)
+2018-03-24 12:37:32.810  INFO 7396 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:37:35.824  INFO 7396 --- [http-nio-8090-exec-6] com.uniovi.services.UsersService         : User: 77777778A@uniovi.es registered (and logged) in the application
+2018-03-24 12:37:39.547  INFO 7396 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: 77777778A@uniovi.es logged in the application
+2018-03-24 12:37:41.084  WARN 7396 --- [http-nio-8090-exec-4] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2018-03-24 12:37:42.624  INFO 7396 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:37:44.936  INFO 7396 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:37:47.551  INFO 7396 --- [http-nio-8090-exec-4] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:37:47.974  INFO 7396 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:37:48.957  INFO 7396 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:37:49.617  INFO 7396 --- [http-nio-8090-exec-9] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:37:51.037  INFO 7396 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:37:51.381  INFO 7396 --- [http-nio-8090-exec-9] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:37:52.256  INFO 7396 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:37:54.083  INFO 7396 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:37:55.052  INFO 7396 --- [http-nio-8090-exec-4] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com accepted the petition of the user: adripc@live.com
+2018-03-24 12:37:57.254  INFO 7396 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:37:59.425  INFO 7396 --- [http-nio-8090-exec-1] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:38:00.519  INFO 7396 --- [http-nio-8090-exec-3] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-24 12:38:02.091  INFO 7396 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:38:05.859  INFO 7396 --- [http-nio-8090-exec-1] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:38:08.831  INFO 7396 --- [http-nio-8090-exec-4] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:38:09.551 ERROR 7396 --- [http-nio-8090-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+2018-03-24 12:38:09.566 ERROR 7396 --- [http-nio-8090-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [FKH5Y47T2LYJ1BHUWEBGEXY7HUU]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at sun.reflect.GeneratedMethodAccessor90.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.27.jar:na]
+	at com.sun.proxy.$Proxy94.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3261) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3498) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:98) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:518) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133) ~[spring-data-jpa-1.11.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at com.sun.proxy.$Proxy89.delete(Unknown Source) ~[na:na]
+	at com.uniovi.services.UsersService.deleteUser(UsersService.java:70) ~[classes/:na]
+	at com.uniovi.controllers.AdminController.deleteUser(AdminController.java:81) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
+
+2018-03-24 12:38:13.017  INFO 7396 --- [http-nio-8090-exec-1] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 12:39:59.433  INFO 7396 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:08.839  INFO 1348 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 1348 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:42:08.839  INFO 1348 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:42:09.168  INFO 1348 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:42:09 CET 2018]; root of context hierarchy
+2018-03-24 12:42:10.681  INFO 1348 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a7644e4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:42:11.478  INFO 1348 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:42:11.493  INFO 1348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:42:11.493  INFO 1348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:42:11.665  INFO 1348 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:42:11.899  INFO 1348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:42:11.899  INFO 1348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:42:11.899  INFO 1348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:42:11.899  INFO 1348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:42:11.899  INFO 1348 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:42:11.899  INFO 1348 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:42:13.538  INFO 1348 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:42:14.756  INFO 1348 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:42:16.036  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:42:16.193  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:42:16.349  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:42:16.458  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:42:16.552  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:42:16.645  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:42:16.739  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:42:16.832  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:42:16.926  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:42:17.020  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:42:17.098  INFO 1348 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:42:17.411  INFO 1348 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72b40f87, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a1e57c6, org.springframework.security.web.header.HeaderWriterFilter@1934339, org.springframework.security.web.authentication.logout.LogoutFilter@30ec211a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@c497a55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c96403e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36dafa24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2475fba3, org.springframework.security.web.session.SessionManagementFilter@1eab8437, org.springframework.security.web.access.ExceptionTranslationFilter@3d8d970e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59e082f8]
+2018-03-24 12:42:18.627  INFO 1348 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-24 12:42:18.709  INFO 1348 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-24 12:42:18.725  INFO 1348 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.325 seconds (JVM running for 10.869)
+2018-03-24 12:42:31.798  INFO 1348 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:42:35.791  INFO 1348 --- [http-nio-8090-exec-6] com.uniovi.services.UsersService         : User: 77777778A@uniovi.es registered (and logged) in the application
+2018-03-24 12:42:39.513  INFO 1348 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: 77777778A@uniovi.es logged in the application
+2018-03-24 12:42:41.045  WARN 1348 --- [http-nio-8090-exec-3] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2018-03-24 12:42:42.292  INFO 1348 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:44.210  INFO 1348 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:47.176  INFO 1348 --- [http-nio-8090-exec-5] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:47.489  INFO 1348 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:42:48.379  INFO 1348 --- [http-nio-8090-exec-5] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:49.052  INFO 1348 --- [http-nio-8090-exec-8] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:42:50.098  INFO 1348 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:50.380  INFO 1348 --- [http-nio-8090-exec-7] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:42:51.192  INFO 1348 --- [http-nio-8090-exec-7] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:42:52.896  INFO 1348 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:42:53.600  INFO 1348 --- [http-nio-8090-exec-2] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com accepted the petition of the user: adripc@live.com
+2018-03-24 12:42:55.140  INFO 1348 --- [http-nio-8090-exec-7] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:57.202  INFO 1348 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:42:58.250  INFO 1348 --- [http-nio-8090-exec-8] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-24 12:42:59.688  INFO 1348 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:43:01.765  INFO 1348 --- [http-nio-8090-exec-8] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:43:04.376  INFO 1348 --- [http-nio-8090-exec-8] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:43:04.720 ERROR 1348 --- [http-nio-8090-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+2018-03-24 12:43:04.736 ERROR 1348 --- [http-nio-8090-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [FKH5Y47T2LYJ1BHUWEBGEXY7HUU]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.27.jar:na]
+	at com.sun.proxy.$Proxy94.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3261) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3498) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:98) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:518) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133) ~[spring-data-jpa-1.11.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at com.sun.proxy.$Proxy89.delete(Unknown Source) ~[na:na]
+	at com.uniovi.services.UsersService.deleteUser(UsersService.java:70) ~[classes/:na]
+	at com.uniovi.controllers.AdminController.deleteUser(AdminController.java:81) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
+
+2018-03-24 12:43:08.063  INFO 1348 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 12:45:08.459  INFO 7932 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 7932 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:45:08.459  INFO 7932 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:45:08.787  INFO 7932 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:45:08 CET 2018]; root of context hierarchy
+2018-03-24 12:45:10.285  INFO 7932 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6626269f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:45:11.035  INFO 7932 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:45:11.050  INFO 7932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:45:11.050  INFO 7932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:45:11.237  INFO 7932 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:45:11.456  INFO 7932 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:45:11.456  INFO 7932 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:45:11.456  INFO 7932 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:45:11.456  INFO 7932 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:45:11.456  INFO 7932 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:45:11.456  INFO 7932 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:45:13.064  INFO 7932 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:45:14.328  INFO 7932 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:45:15.640  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:45:15.734  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:45:15.828  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:45:15.921  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:45:16.015  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:45:16.109  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:45:16.187  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:45:16.296  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:45:16.389  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:45:16.483  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:45:16.577  INFO 7932 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:45:16.826  INFO 7932 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@668a32a4, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c7f6e96, org.springframework.security.web.header.HeaderWriterFilter@d0b814d, org.springframework.security.web.authentication.logout.LogoutFilter@ca546a1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@349f0ca4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ac0cdb0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74f4a2ba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2026fbff, org.springframework.security.web.session.SessionManagementFilter@ba4f370, org.springframework.security.web.access.ExceptionTranslationFilter@3c17bd0b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18d30e7]
+2018-03-24 12:45:18.091  INFO 7932 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-24 12:45:18.185  INFO 7932 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-24 12:45:18.185  INFO 7932 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.163 seconds (JVM running for 10.726)
+2018-03-24 12:45:27.521  INFO 7932 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:45:30.554  INFO 7932 --- [http-nio-8090-exec-6] com.uniovi.services.UsersService         : User: 77777778A@uniovi.es registered (and logged) in the application
+2018-03-24 12:45:34.504  INFO 7932 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: 77777778A@uniovi.es logged in the application
+2018-03-24 12:45:36.111  WARN 7932 --- [http-nio-8090-exec-2] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2018-03-24 12:45:37.780  INFO 7932 --- [http-nio-8090-exec-1] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:40.411  INFO 7932 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:43.467  INFO 7932 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:43.889  INFO 7932 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:45:45.169  INFO 7932 --- [http-nio-8090-exec-4] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:45.641  INFO 7932 --- [http-nio-8090-exec-6] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:45:46.968  INFO 7932 --- [http-nio-8090-exec-4] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:48.577  INFO 7932 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:45:49.530  INFO 7932 --- [http-nio-8090-exec-4] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com accepted the petition of the user: adripc@live.com
+2018-03-24 12:45:51.498  INFO 7932 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:53.419  INFO 7932 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:54.608  INFO 7932 --- [http-nio-8090-exec-10] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-24 12:45:56.031  INFO 7932 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:45:59.421  INFO 7932 --- [http-nio-8090-exec-6] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:46:02.282  INFO 7932 --- [http-nio-8090-exec-4] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:46:02.845 ERROR 7932 --- [http-nio-8090-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+2018-03-24 12:46:02.860 ERROR 7932 --- [http-nio-8090-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [FKH5Y47T2LYJ1BHUWEBGEXY7HUU]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.27.jar:na]
+	at com.sun.proxy.$Proxy94.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3261) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3498) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:98) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:518) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133) ~[spring-data-jpa-1.11.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at com.sun.proxy.$Proxy89.delete(Unknown Source) ~[na:na]
+	at com.uniovi.services.UsersService.deleteUser(UsersService.java:70) ~[classes/:na]
+	at com.uniovi.controllers.AdminController.deleteUser(AdminController.java:81) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
+
+2018-03-24 12:46:06.719  INFO 7932 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 12:48:46.882  INFO 144 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 144 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:48:46.882  INFO 144 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:48:47.195  INFO 144 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:48:47 CET 2018]; root of context hierarchy
+2018-03-24 12:48:48.724  INFO 144 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6bbaa46f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:48:49.458  INFO 144 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:48:49.474  INFO 144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:48:49.474  INFO 144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:48:49.676  INFO 144 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:48:49.895  INFO 144 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:48:49.895  INFO 144 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:48:49.895  INFO 144 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:48:49.895  INFO 144 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:48:49.895  INFO 144 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:48:49.895  INFO 144 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:48:51.504  INFO 144 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:48:52.753  INFO 144 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:48:53.955  INFO 144 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:48:54.034  INFO 144 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:48:54.127  INFO 144 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:48:54.221  INFO 144 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:48:54.315  INFO 144 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:48:54.408  INFO 144 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:48:54.486  INFO 144 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:48:54.580  INFO 144 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:48:54.673  INFO 144 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:48:54.751  INFO 144 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:48:54.845  INFO 144 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:48:55.141  INFO 144 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12e5d3e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ce15112, org.springframework.security.web.header.HeaderWriterFilter@3c17bd0b, org.springframework.security.web.authentication.logout.LogoutFilter@892af0e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4b07cad0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ba024cb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@505d2bac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ed31735, org.springframework.security.web.session.SessionManagementFilter@2b098563, org.springframework.security.web.access.ExceptionTranslationFilter@2353354a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5dc7841c]
+2018-03-24 12:48:56.408  INFO 144 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-24 12:48:56.504  INFO 144 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-24 12:48:56.519  INFO 144 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.074 seconds (JVM running for 10.619)
+2018-03-24 12:49:07.462  INFO 144 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:49:10.525  INFO 144 --- [http-nio-8090-exec-6] com.uniovi.services.UsersService         : User: 77777778A@uniovi.es registered (and logged) in the application
+2018-03-24 12:49:14.201  INFO 144 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: 77777778A@uniovi.es logged in the application
+2018-03-24 12:49:15.751  WARN 144 --- [http-nio-8090-exec-2] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2018-03-24 12:49:17.338  INFO 144 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:19.714  INFO 144 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:22.353  INFO 144 --- [http-nio-8090-exec-5] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:22.776  INFO 144 --- [http-nio-8090-exec-8] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:49:23.869  INFO 144 --- [http-nio-8090-exec-4] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:24.604  INFO 144 --- [http-nio-8090-exec-3] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:49:25.877  INFO 144 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:29.594  INFO 144 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:49:30.610  INFO 144 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com accepted the petition of the user: adripc@live.com
+2018-03-24 12:49:32.844  INFO 144 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:34.845  INFO 144 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:36.157  INFO 144 --- [http-nio-8090-exec-2] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-24 12:49:37.719  INFO 144 --- [http-nio-8090-exec-10] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:49:41.118  INFO 144 --- [http-nio-8090-exec-8] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:49:44.039  INFO 144 --- [http-nio-8090-exec-2] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:49:44.462 ERROR 144 --- [http-nio-8090-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+2018-03-24 12:49:44.477 ERROR 144 --- [http-nio-8090-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [FKH5Y47T2LYJ1BHUWEBGEXY7HUU]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.27.jar:na]
+	at com.sun.proxy.$Proxy94.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3261) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3498) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:98) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:518) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133) ~[spring-data-jpa-1.11.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at com.sun.proxy.$Proxy89.delete(Unknown Source) ~[na:na]
+	at com.uniovi.services.UsersService.deleteUser(UsersService.java:70) ~[classes/:na]
+	at com.uniovi.controllers.AdminController.deleteUser(AdminController.java:81) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
+
+2018-03-24 12:49:48.071  INFO 144 --- [http-nio-8090-exec-1] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 12:50:07.571  INFO 7876 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 7876 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:50:07.586  INFO 7876 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:50:07.899  INFO 7876 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:50:07 CET 2018]; root of context hierarchy
+2018-03-24 12:50:09.429  INFO 7876 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$921b2971] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:50:10.165  INFO 7876 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:50:10.181  INFO 7876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:50:10.181  INFO 7876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:50:10.368  INFO 7876 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:50:10.590  INFO 7876 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:50:10.590  INFO 7876 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:50:10.590  INFO 7876 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:50:10.590  INFO 7876 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:50:10.590  INFO 7876 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:50:10.590  INFO 7876 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:50:12.200  INFO 7876 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:50:13.543  INFO 7876 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:50:14.762  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:50:14.856  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:50:14.950  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:50:15.043  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:50:15.137  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:50:15.231  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:50:15.324  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:50:15.402  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:50:15.496  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:50:15.589  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:50:15.683  INFO 7876 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:50:15.964  INFO 7876 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fbb1144, org.springframework.security.web.context.SecurityContextPersistenceFilter@4cecc15a, org.springframework.security.web.header.HeaderWriterFilter@30ec211a, org.springframework.security.web.authentication.logout.LogoutFilter@18e4551, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a4c98d7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d4df0f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@446c8c72, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e2b3026, org.springframework.security.web.session.SessionManagementFilter@6684f7f2, org.springframework.security.web.access.ExceptionTranslationFilter@ba4f370, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2864f887]
+2018-03-24 12:50:17.246  INFO 7876 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-24 12:50:17.341  INFO 7876 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-24 12:50:17.341  INFO 7876 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.192 seconds (JVM running for 10.781)
+2018-03-24 12:50:26.171  INFO 7876 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:50:29.644  INFO 7876 --- [http-nio-8090-exec-6] com.uniovi.services.UsersService         : User: 77777778A@uniovi.es registered (and logged) in the application
+2018-03-24 12:50:33.362  INFO 7876 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: 77777778A@uniovi.es logged in the application
+2018-03-24 12:50:35.048  WARN 7876 --- [http-nio-8090-exec-4] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2018-03-24 12:50:36.679  INFO 7876 --- [http-nio-8090-exec-1] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:38.968  INFO 7876 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:41.658  INFO 7876 --- [http-nio-8090-exec-5] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:42.080  INFO 7876 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:50:43.300  INFO 7876 --- [http-nio-8090-exec-3] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:43.942  INFO 7876 --- [http-nio-8090-exec-7] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:50:45.097  INFO 7876 --- [http-nio-8090-exec-2] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:47.114  INFO 7876 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:50:48.179  INFO 7876 --- [http-nio-8090-exec-2] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com accepted the petition of the user: adripc@live.com
+2018-03-24 12:50:50.165  INFO 7876 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:52.306  INFO 7876 --- [http-nio-8090-exec-9] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:53.587  INFO 7876 --- [http-nio-8090-exec-1] com.uniovi.services.PublicationsService  : User: adripc@live.com created the publication: Hola
+2018-03-24 12:50:54.946  INFO 7876 --- [http-nio-8090-exec-6] com.uniovi.controllers.UserController    : User: adripc@live.com logged in the application
+2018-03-24 12:50:58.556  INFO 7876 --- [http-nio-8090-exec-3] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:51:01.555  INFO 7876 --- [http-nio-8090-exec-1] com.uniovi.controllers.AdminController   : User Admin: adripc@live.com logged in the application
+2018-03-24 12:51:01.977 ERROR 7876 --- [http-nio-8090-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+2018-03-24 12:51:02.008 ERROR 7876 --- [http-nio-8090-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [FKH5Y47T2LYJ1BHUWEBGEXY7HUU]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: violación del restricción de integridad: sin acción para la clave foránea; FKH5Y47T2LYJ1BHUWEBGEXY7HUU table: PETITION
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source) ~[hsqldb-2.3.5.jar:2.3.5]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.27.jar:na]
+	at com.sun.proxy.$Proxy94.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3261) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3498) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:98) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:518) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133) ~[spring-data-jpa-1.11.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.10.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at com.sun.proxy.$Proxy89.delete(Unknown Source) ~[na:na]
+	at com.uniovi.services.UsersService.deleteUser(UsersService.java:70) ~[classes/:na]
+	at com.uniovi.controllers.AdminController.deleteUser(AdminController.java:81) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[selenium-server-standalone-2.53.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.27.jar:8.5.27]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_161]
+
+2018-03-24 12:51:05.553  INFO 7876 --- [http-nio-8090-exec-1] com.uniovi.controllers.UserController    : User: a1@live.com logged in the application
+2018-03-24 12:52:51.847  INFO 7244 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 7244 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:52:51.847  INFO 7244 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:52:52.175  INFO 7244 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:52:52 CET 2018]; root of context hierarchy
+2018-03-24 12:52:53.751  INFO 7244 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a7644e4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:52:54.485  INFO 7244 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:52:54.501  INFO 7244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:52:54.516  INFO 7244 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:52:54.704  INFO 7244 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:52:54.938  INFO 7244 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:52:54.938  INFO 7244 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:52:54.938  INFO 7244 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:52:54.938  INFO 7244 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:52:54.938  INFO 7244 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:52:54.938  INFO 7244 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:52:56.577  INFO 7244 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:52:57.861  INFO 7244 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:52:59.173  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:52:59.283  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:52:59.377  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:52:59.471  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:52:59.564  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:52:59.658  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:52:59.751  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:52:59.845  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:52:59.939  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:53:00.032  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:53:00.126  INFO 7244 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:53:00.391  INFO 7244 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e2b3026, org.springframework.security.web.context.SecurityContextPersistenceFilter@d969452, org.springframework.security.web.header.HeaderWriterFilter@1ac0cdb0, org.springframework.security.web.authentication.logout.LogoutFilter@3ea48c37, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@668a32a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74f4a2ba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e2eead5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38bc5ac0, org.springframework.security.web.session.SessionManagementFilter@1682e6a, org.springframework.security.web.access.ExceptionTranslationFilter@2ba024cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b07cad0]
+2018-03-24 12:53:14.086  INFO 3676 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 3676 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:53:14.102  INFO 3676 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:53:14.415  INFO 3676 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:53:14 CET 2018]; root of context hierarchy
+2018-03-24 12:53:15.975  INFO 3676 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4329fefa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:53:16.725  INFO 3676 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:53:16.740  INFO 3676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:53:16.740  INFO 3676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:53:16.912  INFO 3676 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:53:17.161  INFO 3676 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:53:17.161  INFO 3676 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:53:17.161  INFO 3676 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:53:17.161  INFO 3676 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:53:17.161  INFO 3676 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:53:17.161  INFO 3676 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:53:18.785  INFO 3676 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:53:20.034  INFO 3676 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:53:21.318  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:53:21.413  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:53:21.506  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:53:21.600  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:53:21.695  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:53:21.789  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:53:21.867  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:53:21.961  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:53:22.054  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:53:22.148  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:53:22.257  INFO 3676 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:53:22.569  INFO 3676 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a3b858f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1eab8437, org.springframework.security.web.header.HeaderWriterFilter@2fac80a8, org.springframework.security.web.authentication.logout.LogoutFilter@2ba024cb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@56e5c8fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69ffdaa8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22b7ef2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@600bbf9e, org.springframework.security.web.session.SessionManagementFilter@50778bde, org.springframework.security.web.access.ExceptionTranslationFilter@42aa1324, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c9e8a67]
+2018-03-24 12:53:23.818  INFO 3676 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-24 12:53:23.913  INFO 3676 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-24 12:53:23.913  INFO 3676 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.264 seconds (JVM running for 10.845)
+2018-03-24 12:53:27.944  INFO 3676 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:53:36.979  INFO 3676 --- [http-nio-8090-exec-2] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:53:39.421  INFO 3676 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:53:40.158  INFO 3676 --- [http-nio-8090-exec-4] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: francisco12@live.com
+2018-03-24 12:53:41.295  INFO 3676 --- [http-nio-8090-exec-7] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: francisco12@live.com
+2018-03-24 12:53:43.642  INFO 3676 --- [http-nio-8090-exec-10] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:53:44.250  INFO 3676 --- [http-nio-8090-exec-3] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:53:44.765  INFO 3676 --- [http-nio-8090-exec-6] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: francisco12@live.com
+2018-03-24 12:53:46.880  INFO 3676 --- [http-nio-8090-exec-8] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: francisco12@live.com
+2018-03-24 12:56:48.195  INFO 3676 --- [http-nio-8090-exec-8] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:56:50.630  INFO 3676 --- [http-nio-8090-exec-2] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:56:58.796  INFO 3676 --- [http-nio-8090-exec-6] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:57:00.438  INFO 3676 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:57:23.254  INFO 3676 --- [http-nio-8090-exec-4] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:57:26.165  INFO 3676 --- [http-nio-8090-exec-3] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:57:27.333  INFO 3676 --- [http-nio-8090-exec-5] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: francisco12@live.com
+2018-03-24 12:57:28.315  INFO 3676 --- [http-nio-8090-exec-8] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: francisco12@live.com
+2018-03-24 12:58:33.965  INFO 1820 --- [main] com.uniovi.RedSocialApplication          : Starting RedSocialApplication on Packard-PC with PID 1820 (C:\Users\Packard\Desktop\SDI\Red_Social\target\classes started by Packard in C:\Users\Packard\Desktop\SDI\Red_Social)
+2018-03-24 12:58:33.965  INFO 1820 --- [main] com.uniovi.RedSocialApplication          : No active profile set, falling back to default profiles: default
+2018-03-24 12:58:34.278  INFO 1820 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a38c59b: startup date [Sat Mar 24 12:58:34 CET 2018]; root of context hierarchy
+2018-03-24 12:58:35.807  INFO 1820 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9004dea7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-24 12:58:36.544  INFO 1820 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8090 (http)
+2018-03-24 12:58:36.560  INFO 1820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-24 12:58:36.560  INFO 1820 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-24 12:58:36.763  INFO 1820 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-24 12:58:36.981  INFO 1820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-24 12:58:36.997  INFO 1820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-24 12:58:36.997  INFO 1820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-24 12:58:36.997  INFO 1820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-24 12:58:36.997  INFO 1820 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-24 12:58:36.997  INFO 1820 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-24 12:58:38.605  INFO 1820 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:58:39.869  INFO 1820 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-24 12:58:41.146  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: adripc@live.com registered (and logged) in the application
+2018-03-24 12:58:41.224  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: Juan@hotmail.com registered (and logged) in the application
+2018-03-24 12:58:41.326  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: francisco12@live.com registered (and logged) in the application
+2018-03-24 12:58:41.404  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: rodrigo13@hotmail.com registered (and logged) in the application
+2018-03-24 12:58:41.498  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: pepe@live.com registered (and logged) in the application
+2018-03-24 12:58:41.592  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: berto@hotmail.com registered (and logged) in the application
+2018-03-24 12:58:41.685  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: a1@live.com registered (and logged) in the application
+2018-03-24 12:58:41.779  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: a2@live.com registered (and logged) in the application
+2018-03-24 12:58:41.857  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: a3@live.com registered (and logged) in the application
+2018-03-24 12:58:41.950  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: a4@live.com registered (and logged) in the application
+2018-03-24 12:58:42.044  INFO 1820 --- [main] com.uniovi.services.UsersService         : User: a5@live.com registered (and logged) in the application
+2018-03-24 12:58:42.325  INFO 1820 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71dd4624, org.springframework.security.web.context.SecurityContextPersistenceFilter@7babed9e, org.springframework.security.web.header.HeaderWriterFilter@72eed547, org.springframework.security.web.authentication.logout.LogoutFilter@1682e6a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4d67d5a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c7ed72a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d0b814d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2347b7af, org.springframework.security.web.session.SessionManagementFilter@2a1e57c6, org.springframework.security.web.access.ExceptionTranslationFilter@50778bde, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@384472bf]
+2018-03-24 12:58:43.636  INFO 1820 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-24 12:58:43.731  INFO 1820 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2018-03-24 12:58:43.731  INFO 1820 --- [main] com.uniovi.RedSocialApplication          : Started RedSocialApplication in 10.187 seconds (JVM running for 10.761)
+2018-03-24 12:58:48.566  INFO 1820 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-24 12:58:57.679  INFO 1820 --- [http-nio-8090-exec-3] com.uniovi.services.PetitionsService     : User: adripc@live.com sent a petition to user: Juan@hotmail.com
+2018-03-24 12:58:58.884  INFO 1820 --- [http-nio-8090-exec-8] com.uniovi.services.PetitionsService     : User: adripc@live.com canceled the petition to user: Juan@hotmail.com
+2018-03-24 12:59:07.581  INFO 1820 --- [http-nio-8090-exec-8] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
+2018-03-24 12:59:10.703  INFO 1820 --- [http-nio-8090-exec-4] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com sent a petition to user: francisco12@live.com
+2018-03-24 12:59:13.802  INFO 1820 --- [http-nio-8090-exec-10] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com canceled the petition to user: francisco12@live.com
+2018-03-24 12:59:24.992  INFO 1820 --- [http-nio-8090-exec-2] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com sent a petition to user: francisco12@live.com
+2018-03-24 12:59:29.874  INFO 1820 --- [http-nio-8090-exec-6] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com canceled the petition to user: francisco12@live.com
+2018-03-24 13:00:51.559  INFO 1820 --- [http-nio-8090-exec-1] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com sent a petition to user: francisco12@live.com
+2018-03-24 13:00:52.586  INFO 1820 --- [http-nio-8090-exec-4] com.uniovi.services.PetitionsService     : User: Juan@hotmail.com canceled the petition to user: francisco12@live.com
+2018-03-24 13:01:01.165  INFO 1820 --- [http-nio-8090-exec-4] com.uniovi.controllers.UserController    : User: Juan@hotmail.com logged in the application
