@@ -81,10 +81,9 @@ public class RedSocial1ApplicationTests {
 		PO_NavView.clickOption(driver, "signup", "class", "btn btn-primary");
 		// Rellenamos el formulario.
 		PO_RegisterView.fillForm(driver, "77777778A@uniovi.es", "Josefo", "77777", "77777");
+		SeleniumUtils.esperarSegundos(driver, 1);
 		// Comprobamos que entramos en la sección privada
-		PO_RegisterView.checkKey(driver, "users.show.text",
-				PO_Properties.getSPANISH());
-		//PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes");
+		PO_RegisterView.checkKey(driver, "users.show.text", PO_Properties.getSPANISH());
 	}
 
 	// PR01_2.Registro de Usuario con datos inválidos (repetición de contraseña
@@ -94,14 +93,11 @@ public class RedSocial1ApplicationTests {
 
 		// Vamos al formulario de registro
 		PO_NavView.clickOption(driver, "signup", "class", "btn btn-primary");
-
 		// Rellenamos el formulario.
 		PO_RegisterView.fillForm(driver, "99999990B@uniovi.es", "Josefo", "7777", "7778");
-
 		// COmprobamos el error de password no coincidente .
-		 PO_RegisterView.checkKey(driver, "Error.signup.passwordConfirm.coincidence",
-		 PO_Properties.getSPANISH() );
-		//PO_RegisterView.checkElement(driver, "text", "Las contraseñas no coinciden");
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "Error.signup.passwordConfirm.coincidence", PO_Properties.getSPANISH());
 	}
 
 	// PR02_1 Inicio de sesión con datos válidos
@@ -112,12 +108,12 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "77777778A@uniovi.es", "77777");
 		// COmprobamos que entramos en la pagina privada de Alumno
-		//PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes");
-		PO_RegisterView.checkKey(driver, "users.show.text",
-				PO_Properties.getSPANISH());
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "users.show.text", PO_Properties.getSPANISH());
 	}
 
-	// PR02_2 Inicio de sesión con datos inválidos (usuario no existente en la aplicación).
+	// PR02_2 Inicio de sesión con datos inválidos (usuario no existente en la
+	// aplicación).
 	@Test
 	public void PR04() {
 		// Vamos al formulario de logueo.
@@ -125,9 +121,8 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "ZZZZZZZZA@uniovi.es", "123456");
 		// COmprobamos que no entramos en la pagina privada del Usuario
-		//PO_View.checkElement(driver, "text", "Usuario o contraseña inválidos");
-		PO_RegisterView.checkKey(driver, "Error.login",
-				PO_Properties.getSPANISH());
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "Error.login", PO_Properties.getSPANISH());
 	}
 
 	// PR03_1 Acceso al listado de usuarios desde un usuario en sesión.
@@ -138,12 +133,12 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario.
 		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
 		// Comprobamos que estamos en la vista lista usuarios.
-		//PO_View.checkElement(driver, "text", "Los usuarios de la aplicación son los siguientes:");
-		PO_RegisterView.checkKey(driver, "users.show.text",
-				PO_Properties.getSPANISH());
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "users.show.text", PO_Properties.getSPANISH());
 	}
 
-	// PR03_2 Intento de acceso con URL desde un usuario no identificado al listado de
+	// PR03_2 Intento de acceso con URL desde un usuario no identificado al listado
+	// de
 	// usuarios desde un usuario en sesión. Debe producirse un acceso no permitido a
 	// vistas privadas.
 	@Test
@@ -151,13 +146,13 @@ public class RedSocial1ApplicationTests {
 		// Tratamos de acceder a la vista lista usuarios.
 		driver.navigate().to(URL + "/user/list");
 		// Comprobamos que nos redirige al login.
-		//PO_View.checkElement(driver, "text", "Login");
-		PO_RegisterView.checkKey(driver, "login.message",
-				PO_Properties.getSPANISH());
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "login.message", PO_Properties.getSPANISH());
 
 	}
 
-	// PR04_1 Realizar una búsqueda valida en el listado de usuarios desde un usuario en
+	// PR04_1 Realizar una búsqueda valida en el listado de usuarios desde un
+	// usuario en
 	// sesión.
 	@Test
 	public void PR07() {
@@ -167,16 +162,21 @@ public class RedSocial1ApplicationTests {
 		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
 		// Rellenamos el formulario de busqueda
 		PO_SearchTextView.fillForm(driver, "ran");
-		// Comprobamos que aparece el usuario filtrado
-		PO_View.checkElement(driver, "text", "francisco12@live.com");
+		SeleniumUtils.esperarSegundos(driver, 1);
+		// Contamos el número de filas de usuarios y comprobamos que solo hay una fila
+		List<WebElement> elementos = SeleniumUtils.EsperaCargaPagina(driver, "free", "//tbody/tr",
+				PO_View.getTimeout());
+		assertTrue(elementos.size() == 1);
 	}
 
-	// PR04_2 Intento de acceso con URL a la búsqueda de usuarios desde un usuario no
+	// PR04_2 Intento de acceso con URL a la búsqueda de usuarios desde un usuario
+	// no
 	// identificado. Debe producirse un acceso no permitido a vistas privadas.
 	@Test
 	public void PR08() {
 		// Tratamos de acceder a la vista lista usuarios.
 		driver.navigate().to(URL + "/user/list");
+		SeleniumUtils.esperarSegundos(driver, 1);
 		// Comprobamos que nos redirige al login.
 		PO_View.checkElement(driver, "text", "Login");
 	}
@@ -192,7 +192,8 @@ public class RedSocial1ApplicationTests {
 		driver.findElement(By.id("sendPetitionButton2")).click();
 	}
 
-	// PR05_2 Enviar una invitación de amistad a un usuario al que ya le habíamos invitado
+	// PR05_2 Enviar una invitación de amistad a un usuario al que ya le habíamos
+	// invitado
 	// la invitación previamente. No debería dejarnos enviar la invitación, se
 	// podría ocultar el botón de enviar invitación o notificar que ya había sido
 	// enviada previamente.
@@ -202,16 +203,15 @@ public class RedSocial1ApplicationTests {
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		// Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
-		// Enviamos petición de amistad
+		// Comprobamos que ahora disponemos de un botón que nos permite cancelar petición.
 		driver.findElement(By.id("cancelPetitionButton2")).click();
 		// Comprobamos que ahora la finalidad del boton es cancelar petición.
-		//driver.findElement(By.id("sendPetitionButton2")).getText();
-		//PO_View.checkElement(driver, "text", "Cancelar petición");
-		PO_RegisterView.checkKey(driver, "petition.cancel",
-				PO_Properties.getSPANISH());
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "petition.cancel", PO_Properties.getSPANISH());
 	}
 
-	// PR06_1 Listar las invitaciones recibidas por un usuario, realizar la comprobación
+	// PR06_1 Listar las invitaciones recibidas por un usuario, realizar la
+	// comprobación
 	// con una lista que al menos tenga una invitación recibida.
 	@Test
 	public void PR11() {
@@ -220,9 +220,8 @@ public class RedSocial1ApplicationTests {
 		// Rellenamos el formulario
 		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
 		// Enviamos petición de amistad
-		//PO_NavView.clickOption(driver, "user/petitions", "class", "btn btn-primary");
 		driver.findElement(By.id("sendPetitionButton2")).click();
-		
+
 		// Cerramos sesión
 		PO_NavView.clickOption(driver, "logout", "class", "btn btn-primary");
 
@@ -236,9 +235,9 @@ public class RedSocial1ApplicationTests {
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/petitions')]");
 		// Pinchamos en la pestaña para ver las peticiones
 		elementos.get(0).click();
-		//PO_View.checkElement(driver, "text", "Aceptar petición");
-		PO_RegisterView.checkKey(driver, "petition.accept",
-				PO_Properties.getSPANISH());
+		// PO_View.checkElement(driver, "text", "Aceptar petición");
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "petition.accept", PO_Properties.getSPANISH());
 
 	}
 
@@ -258,28 +257,30 @@ public class RedSocial1ApplicationTests {
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/petitions')]");
 		// Pinchamos en la pestaña para ver las peticiones
 		elementos.get(0).click();
-		//PO_View.checkElement(driver, "text", "Aceptar petición");
-		PO_RegisterView.checkKey(driver, "petition.accept",
-				PO_Properties.getSPANISH());
+		// PO_View.checkElement(driver, "text", "Aceptar petición");
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "petition.accept", PO_Properties.getSPANISH());
 
 		// Damos a aceptar la petición
 		driver.findElement(By.id("acceptPetitionButton1")).click();
 
 		// Miramos que ha desparecido la invitación
-		//SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Aceptar petición", PO_View.getTimeout());
-		PO_RegisterView.checkNoKey(driver, "petition.accept",
-				PO_Properties.getSPANISH());
+		// SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Aceptar petición",
+		// PO_View.getTimeout());
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkNoKey(driver, "petition.accept", PO_Properties.getSPANISH());
 	}
 
-	// PR08_1 Listar los amigos de un usuario, realizar la comprobación con una lista que
+	// PR08_1 Listar los amigos de un usuario, realizar la comprobación con una
+	// lista que
 	// al menos tenga un amigo
 	@Test
 	public void PR13() {
-		
-		//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+
+		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
-		
+
 		// adripc2live.com entra en gestión de usuarios
 		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
 		elementos.get(0).click();
@@ -287,41 +288,40 @@ public class RedSocial1ApplicationTests {
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'user/friends')]");
 		// Pinchamos en la pestaña para ver los amigos
 		elementos.get(0).click();
-		
-		//PO_View.checkElement(driver, "text", "Usted tiene los siguientes amigos");
-		PO_RegisterView.checkKey(driver, "friends.text",
-				PO_Properties.getSPANISH());
+
+		SeleniumUtils.esperarSegundos(driver, 1);
+		PO_RegisterView.checkKey(driver, "friends.text", PO_Properties.getSPANISH());
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
-		
+
 	}
-	
-		// PR09_1 Crear una publicación con datos válidos
-		@Test
-		public void PR14() {
-			
-			//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
-			PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
-			PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
-			
-			// adripc2live.com entra en Publicaciones
-			List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
-			elementos.get(0).click();
-			// Sacamos la pestaña para crear una publicación
-			elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/create')]");
-			// Pinchamos en la pestaña para crear una punlicación
-			elementos.get(0).click();
-			
-			SeleniumUtils.esperarSegundos(driver, 1);
-			//Relleno la publicación
-			PO_PublicationView.fillForm(driver, "Hola", "Que tal");
-			
-			//Aparece la lista de publicciones
-			PO_View.checkElement(driver, "text", "adripc@live.com");
-			PO_View.checkElement(driver, "text", "Hola");
-			PO_View.checkElement(driver, "text", "Que tal");
-			
+
+	// PR09_1 Crear una publicación con datos válidos
+	@Test
+	public void PR14() {
+
+		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
+		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
+
+		// adripc2live.com entra en Publicaciones
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
+		elementos.get(0).click();
+		// Sacamos la pestaña para crear una publicación
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/create')]");
+		// Pinchamos en la pestaña para crear una punlicación
+		elementos.get(0).click();
+
+		SeleniumUtils.esperarSegundos(driver, 1);
+		// Relleno la publicación
+		PO_PublicationView.fillForm(driver, "Hola", "Que tal");
+
+		// Aparece la lista de publicciones
+		PO_View.checkElement(driver, "text", "adripc@live.com");
+		PO_View.checkElement(driver, "text", "Hola");
+		PO_View.checkElement(driver, "text", "Que tal");
+
 	}
-	
+
 	// PR10_1 Acceso al listado de publicaciones desde un usuario en sesión
 	@Test
 	public void PR15() {
@@ -329,80 +329,85 @@ public class RedSocial1ApplicationTests {
 		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		PO_LoginView.fillForm(driver, "adripc@live.com", "123456");
-		
+
 		// adripc2live.com entra en Publicaciones
 		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
 		elementos.get(0).click();
-					
+
 		// Sacamos la pestaña para ver las publicaciónes
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/list')]");
 		// Pinchamos en la pestaña para ver las publicaciones
 		elementos.get(0).click();
 
+		SeleniumUtils.esperarSegundos(driver, 1);
+		
 		// Aparece la lista de publicciones
 		PO_View.checkElement(driver, "text", "adripc@live.com");
-		
+
 		PO_View.checkElement(driver, "text", "Hola");
 		PO_View.checkElement(driver, "text", "Que tal");
-		
-		//Se mira que exista una publicacion
-		List<WebElement> publicaciones =SeleniumUtils.EsperaCargaPagina(driver, "free", "//tbody/tr",PO_View.getTimeout()); 
-		assertTrue(publicaciones.size() == 1); 
+
+		// Se mira que exista una publicacion
+		List<WebElement> publicaciones = SeleniumUtils.EsperaCargaPagina(driver, "free", "//tbody/tr",
+				PO_View.getTimeout());
+		assertTrue(publicaciones.size() == 1);
 
 	}
-	
-	//11.1 [LisPubAmiVal] Listar las publicaciones de un usuario amigo
+
+	// 11.1 [LisPubAmiVal] Listar las publicaciones de un usuario amigo
 	@Test
 	public void PR16() {
 		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
-				
-		
+
 		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
 		elementos.get(0).click();
-							
+
 		// Sacamos la pestaña para ver los amigos
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, '/user/friends')]");
 		// Pinchamos en la pestaña para ver los amigos
-		elementos.get(0).click();		
-		
+		elementos.get(0).click();
+
 		// Consultamos las publiaciones con el id del amigo de Juan
-		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, '/publication/list/1')]"); 
-		elementos.get(0).click(); 
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, '/publication/list/1')]");
+		elementos.get(0).click();
+
+		SeleniumUtils.esperarSegundos(driver, 1);
 		
-		// Comprobamos que nos encontramos con el texto de la aplicación que ha creado
+		// Comprobamos que nos encontramos con el texto de la publicación que ha creado
 		PO_View.checkElement(driver, "text", "adripc@live.com");
 		PO_View.checkElement(driver, "text", "Hola");
 		PO_View.checkElement(driver, "text", "Que tal");
-		
-		
+
 	}
-	
-	//11.2 [LisPubAmiInVal] Utilizando un acceso vía URL tratar de listar las publicaciones de un usuario que
-	//no sea amigo del usuario identificado en sesión.
+
+	// 11.2 [LisPubAmiInVal] Utilizando un acceso vía URL tratar de listar las
+	// publicaciones de un usuario que
+	// no sea amigo del usuario identificado en sesión.
 	@Test
 	public void PR17() {
-		// Iniciamos sesión, con Juan@hotmail.com el cual no es amigo del usuario con id 5
+		// Iniciamos sesión, con Juan@hotmail.com el cual no es amigo del usuario con id
+		// 5
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
-		
-		// Navegamos a la lista de peticiones del usuario que no es amigo suyo 
+
+		// Navegamos a la lista de peticiones del usuario que no es amigo suyo
 		driver.navigate().to(URL + "/publication/list/5");
-		
+
 		SeleniumUtils.esperarSegundos(driver, 1);
-		// Comprobamos que nos ha redirigido a la lista de usuarios en vez de a la lista de peticiones de ese usuario
-		PO_RegisterView.checkKey(driver, "users.show.text",
-				PO_Properties.getSPANISH());
+		// Comprobamos que nos ha redirigido a la lista de usuarios en vez de a la lista
+		// de peticiones de ese usuario
+		PO_RegisterView.checkKey(driver, "users.show.text", PO_Properties.getSPANISH());
 	}
-	
-	//12.1 [PubFot1Val] Crear una publicación con datos válidos y una foto adjunta. 
+
+	// 12.1 [PubFot1Val] Crear una publicación con datos válidos y una foto adjunta.
 	@Test
 	public void PR18() {
-		//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
-				
+
 		// adripc2live.com entra en Publicaciones
 		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
 		elementos.get(0).click();
@@ -410,25 +415,26 @@ public class RedSocial1ApplicationTests {
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/create')]");
 		// Pinchamos en la pestaña para crear una punlicación
 		elementos.get(0).click();
-				
+
 		SeleniumUtils.esperarSegundos(driver, 1);
-		//Relleno la publicación
+		// Relleno la publicación
 		PO_PublicationView2.fillForm(driver, "Buenas tardes", "buenas tardes, buenas tardes");
-				
-		//Aparece la lista de publicciones
+
+		// Aparece la lista de publicciones
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
 		PO_View.checkElement(driver, "text", "Buenas tardes");
 		PO_View.checkElement(driver, "text", "buenas tardes, buenas tardes");
 		PO_View.checkElement(driver, "text", "Imagen");
 	}
-	
-	//12.1 [PubFot2Val] Crear una publicación con datos válidos y sin una foto adjunta
+
+	// 12.1 [PubFot2Val] Crear una publicación con datos válidos y sin una foto
+	// adjunta
 	@Test
 	public void PR19() {
-		//Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
+		// Iniciamos sesión, este ya tiene una amigo Juan@hotmail.com
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
 		PO_LoginView.fillForm(driver, "Juan@hotmail.com", "123456");
-		
+
 		// adripc2live.com entra en Publicaciones
 		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'publications-menu')]/a");
 		elementos.get(0).click();
@@ -436,79 +442,81 @@ public class RedSocial1ApplicationTests {
 		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, 'publication/create')]");
 		// Pinchamos en la pestaña para crear una punlicación
 		elementos.get(0).click();
-		
+
 		SeleniumUtils.esperarSegundos(driver, 1);
-		//Relleno la publicación
+		// Relleno la publicación
 		PO_PublicationView.fillForm(driver, "Me llamo Juan", "¿Han pensado alguna vez en ese tipo...");
-		
-		//Aparece la lista de publicciones
+
+		// Aparece la lista de publicciones
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
 		PO_View.checkElement(driver, "text", "Me llamo Juan");
 		PO_View.checkElement(driver, "text", "¿Han pensado alguna vez en ese tipo...");
 	}
-	
-	//13.1 [AdInVal] Inicio de sesión como administrador con datos válidos.
+
+	// 13.1 [AdInVal] Inicio de sesión como administrador con datos válidos.
 	@Test
 	public void PR21() {
-		driver.navigate().to(URL+"/admin/login");
+		driver.navigate().to(URL + "/admin/login");
 		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
-		
-		PO_RegisterView.checkKey(driver, "users.show.text",
-		PO_Properties.getSPANISH());
+
+		PO_RegisterView.checkKey(driver, "users.show.text", PO_Properties.getSPANISH());
 	}
-	
-	//13.2 [AdInInVal] Inicio de sesión como administrador con datos inválidos (usar los datos de un usuario
-	//que no tenga perfil administrador).
+
+	// 13.2 [AdInInVal] Inicio de sesión como administrador con datos inválidos
+	// (usar los datos de un usuario
+	// que no tenga perfil administrador).
 	@Test
 	public void PR22() {
-		
-		driver.navigate().to(URL+"/admin/login");
+
+		driver.navigate().to(URL + "/admin/login");
 		PO_LoginView.fillFormAdmin(driver, "a1@live.com", "123456");
-		
-		PO_RegisterView.checkKey(driver, "Error.admin.login",
-		PO_Properties.getSPANISH());
+
+		PO_RegisterView.checkKey(driver, "Error.admin.login", PO_Properties.getSPANISH());
 	}
-	
-	//14.1 [AdLisUsrVal] Desde un usuario identificado en sesión como administrador listar a todos los
-	//usuarios de la aplicación
+
+	// 14.1 [AdLisUsrVal] Desde un usuario identificado en sesión como administrador
+	// listar a todos los
+	// usuarios de la aplicación
 	@Test
 	public void PR23() {
-		
 
 	}
-	
-	//15.1 [AdBorUsrVal] Desde un usuario identificado en sesión como administrador eliminar un usuario
-	//existente en la aplicación.
+
+	// 15.1 [AdBorUsrVal] Desde un usuario identificado en sesión como administrador
+	// eliminar un usuario
+	// existente en la aplicación.
 	@Test
 	public void PR24() {
-		
-		//Inicio sesion con admin
-		driver.navigate().to(URL+"/admin/login");
+
+		// Inicio sesion con admin
+		driver.navigate().to(URL + "/admin/login");
 		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
-				
-		//Comprobamos que francisco12@live.com existe
+
+		// Comprobamos que francisco12@live.com existe
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
-				
-		//Borramos el segundo usuario que es francisco12@live.com
+
+		// Borramos el segundo usuario que es francisco12@live.com
 		driver.findElement(By.id("deleteButton2")).click();
-				
-		//Comprobamos que francisco12@live.com ya no existe
+
+		// Comprobamos que francisco12@live.com ya no existe
 		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Juan@hotmail.com", PO_View.getTimeout());
 	}
-	
-	//15.2 [AdBorUsrInVal] Intento de acceso vía URL al borrado de un usuario existente en la aplicación.
-	//Debe utilizarse un usuario identificado en sesión pero que no tenga perfil de administrador.
+
+	// 15.2 [AdBorUsrInVal] Intento de acceso vía URL al borrado de un usuario
+	// existente en la aplicación.
+	// Debe utilizarse un usuario identificado en sesión pero que no tenga perfil de
+	// administrador.
 	@Test
 	public void PR25() {
-		
+
 		PO_NavView.clickOption(driver, "login", "class", "btn btn-primary");
-		//Inicio sesión con usuario no admin
+		// Inicio sesión con usuario no admin
 		PO_LoginView.fillForm(driver, "a1@live.com", "123456");
-		
-		//Intento borrar al segundo de la lista
-		driver.navigate().to(URL+"/admin/delete/2");
-		
-		//Comprobamos que el Access is denied
+
+		// Intento borrar al segundo de la lista
+		driver.navigate().to(URL + "/admin/delete/2");
+
+		// Comprobamos que el Access is denied
 		PO_View.checkElement(driver, "text", "Access is denied");
 	}
 
