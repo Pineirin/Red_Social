@@ -213,7 +213,18 @@ public class UserController {
 		if (!petitions.isEmpty()) {
 			long idPetition = petitions.get(0).getId();
 			petitionsService.updateStatus(PetitionStatus.TERMINADA, idPetition);
+			/*Petition petition=petitionsService.getPetition(idPetition);
+			petition.setStatus(PetitionStatus.TERMINADA);
+			petitionsService.addPetition(petition);
+			
+			userDestination.getPetitions().add(petition);
+			usersService.addUser(userDestination);*/
+	
 		}
+		
+		
+		/*userOrigin = usersService.getUser(idOrigin);
+		userDestination = usersService.getUser(idDestination);*/
 		return "redirect:/user/petitions";
 	}
 
