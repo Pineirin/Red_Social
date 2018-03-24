@@ -141,6 +141,8 @@ public class UserController {
 
 		model.addAttribute("usersList", filteredUsers);
 		model.addAttribute("page", filteredUsers);
+		model.addAttribute("searchText", "");
+		
 		return "user/petitions";
 	}
 
@@ -154,7 +156,8 @@ public class UserController {
 
 		model.addAttribute("amigos", amigos);
 		model.addAttribute("page", amigos);
-
+		model.addAttribute("searchText", "");
+		
 		return "user/friends";
 	}
 
@@ -235,6 +238,7 @@ public class UserController {
 		model.addAttribute("peticionesSolicitadas", peticionesSolicitadas.getContent());
         model.addAttribute("amigos", amigosPage.getContent());
 		model.addAttribute("page", users);
+		model.addAttribute("searchText", "");
 
 		return "user/list :: tableUsers";
 	}
