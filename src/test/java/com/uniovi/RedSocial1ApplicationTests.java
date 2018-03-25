@@ -507,17 +507,17 @@ public class RedSocial1ApplicationTests {
 		// Pinchamos en la pestaña para ver los amigos
 		elementos.get(0).click();
 		
-		//vemos si existe Juan@hotmail.com
+		//vemos si existe en la lista de amigos Juan@hotmail.com
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
 		//--------------
 		
 		//Volvemos a la vista de la lista de usuarios
 		driver.navigate().to(URL + "/admin/list");
 		
-		// Borramos el segundo usuario que es francisco12@live.com
+		// Borramos el segundo usuario que es Juan@hotmail.com
 		driver.findElement(By.id("deleteButton2")).click();
 
-		// Comprobamos que francisco12@live.com ya no existe
+		// Comprobamos que Juan@hotmail.com ya no existe
 		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Juan@hotmail.com", PO_View.getTimeout());
 		
 		//Comprobamos que Juan@hotmail.com no aparece como amigo de adripc@live.com (el usuario en sesión)
