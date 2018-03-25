@@ -495,13 +495,41 @@ public class RedSocial1ApplicationTests {
 		driver.navigate().to(URL + "/admin/login");
 		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
 
-		// Comprobamos que francisco12@live.com existe
+		// Comprobamos que francisco12@live.com existe en la lista de usuarios
 		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
+		
+		//Comprobamos que Juan@hotmail.com aparece como amigo de adripc@live.com (el usuario en sesión)
+		List<WebElement> elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
+		elementos.get(0).click();
 
+		// Sacamos la pestaña para ver los amigos
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, '/user/friends')]");
+		// Pinchamos en la pestaña para ver los amigos
+		elementos.get(0).click();
+		
+		//vemos si existe Juan@hotmail.com
+		PO_View.checkElement(driver, "text", "Juan@hotmail.com");
+		//--------------
+		
+		//Volvemos a la vista de la lista de usuarios
+		driver.navigate().to(URL + "/admin/list");
+		
 		// Borramos el segundo usuario que es francisco12@live.com
 		driver.findElement(By.id("deleteButton2")).click();
 
 		// Comprobamos que francisco12@live.com ya no existe
+		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Juan@hotmail.com", PO_View.getTimeout());
+		
+		//Comprobamos que Juan@hotmail.com no aparece como amigo de adripc@live.com (el usuario en sesión)
+		elementos = PO_View.checkElement(driver, "free", "//li[contains(@id,'users-menu')]/a");
+		elementos.get(0).click();
+
+		// Sacamos la pestaña para ver los amigos
+		elementos = PO_View.checkElement(driver, "free", "//a[contains(@href, '/user/friends')]");
+		// Pinchamos en la pestaña para ver los amigos
+		elementos.get(0).click();
+
+		// vemos que no existe Juan@hotmail.com (JUAN Y ADRIAN ya no son amigos)
 		SeleniumUtils.EsperaCargaPaginaNoTexto(driver, "Juan@hotmail.com", PO_View.getTimeout());
 	}
 
