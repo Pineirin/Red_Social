@@ -207,7 +207,7 @@ public class RedSocial1ApplicationTests {
 		driver.findElement(By.id("cancelPetitionButton2")).click();
 		// Comprobamos que ahora la finalidad del boton es cancelar petición.
 		SeleniumUtils.esperarSegundos(driver, 1);
-		PO_RegisterView.checkKey(driver, "petition.cancel", PO_Properties.getSPANISH());
+		PO_RegisterView.checkKey(driver, "friend.add", PO_Properties.getSPANISH());
 	}
 
 	// PR06_1 Listar las invitaciones recibidas por un usuario, realizar la
