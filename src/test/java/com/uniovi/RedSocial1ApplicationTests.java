@@ -479,7 +479,12 @@ public class RedSocial1ApplicationTests {
 	// usuarios de la aplicación
 	@Test
 	public void PR23() {
-
+		driver.navigate().to(URL + "/admin/login");
+		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
+		
+		List<WebElement> elementos = SeleniumUtils.EsperaCargaPagina(driver, "free", "//tbody/tr",
+				PO_View.getTimeout());
+		assertTrue(elementos.size() == 12);
 	}
 
 	// 15.1 [AdBorUsrVal] Desde un usuario identificado en sesión como administrador
