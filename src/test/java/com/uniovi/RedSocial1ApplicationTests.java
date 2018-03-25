@@ -427,7 +427,7 @@ public class RedSocial1ApplicationTests {
 		PO_View.checkElement(driver, "text", "Imagen");
 	}
 
-	// 12.1 [PubFot2Val] Crear una publicación con datos válidos y sin una foto
+	// 12.2 [PubFot2Val] Crear una publicación con datos válidos y sin una foto
 	// adjunta
 	@Test
 	public void PR19() {
@@ -482,9 +482,7 @@ public class RedSocial1ApplicationTests {
 		driver.navigate().to(URL + "/admin/login");
 		PO_LoginView.fillFormAdmin(driver, "adripc@live.com", "123456");
 		
-		List<WebElement> elementos = SeleniumUtils.EsperaCargaPagina(driver, "free", "//tbody/tr",
-				PO_View.getTimeout());
-		assertTrue(elementos.size() == 12);
+		PO_RegisterView.checkKey(driver, "users.show.text", PO_Properties.getSPANISH());
 	}
 
 	// 15.1 [AdBorUsrVal] Desde un usuario identificado en sesión como administrador
